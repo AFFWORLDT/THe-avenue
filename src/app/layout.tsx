@@ -21,8 +21,16 @@ const trajanPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Evid Properties",
-  description: "Premium real estate solutions in Dubai",
+  title: "The Avenue Real Estate - Premium Properties in Dubai",
+  description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai with The Avenue Real Estate. Your trusted partner for buying, renting, and investing in Dubai's finest properties.",
+  keywords: "Dubai real estate, luxury properties, off-plan projects, property investment, Dubai Marina, Downtown Dubai, Palm Jumeirah",
+  authors: [{ name: "The Avenue Real Estate" }],
+  openGraph: {
+    title: "The Avenue Real Estate - Premium Properties in Dubai",
+    description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({

@@ -135,7 +135,7 @@ export default function Header() {
       <nav
         className={cn(
           "container mx-auto flex items-center justify-between px-4 md:px-6",
-          isScrolled ? "h-24" : "h-28"
+          isScrolled ? "h-28" : "h-32"
         )}
       >
         {/* Logo */}
@@ -143,10 +143,10 @@ export default function Header() {
           <Link href={"/"}>
             <Image
               src="/images/logo.png"
-              alt="EVIDPROPERTIES Logo"
-              width={120}
-              height={40}
-              className="object-contain"
+              alt="The Avenue Real Estate Logo"
+              width={180}
+              height={60}
+              className="object-contain w-32 h-10 sm:w-40 sm:h-12 md:w-44 md:h-14 lg:w-48 lg:h-16"
             />
           </Link>
         </div>
@@ -343,7 +343,16 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-lg font-semibold">Menu</h2>
+          <div className="flex items-center space-x-3">
+            <Image
+              src="/images/logo.png"
+              alt="The Avenue Real Estate Logo"
+              width={120}
+              height={40}
+              className="object-contain w-24 h-8"
+            />
+            <h2 className="text-lg font-semibold">Menu</h2>
+          </div>
           <button
           onClick={() => setIsOverlayOpen(false)}
             className="text-gray-500 hover:text-gray-700"

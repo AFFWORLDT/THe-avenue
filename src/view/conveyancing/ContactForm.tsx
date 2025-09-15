@@ -75,8 +75,8 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Email</div>
-                  <a href="mailto:info@providentestate.com" className="text-primary hover:text-primary/80 transition-colors duration-200">
-                    info@providentestate.com
+                  <a href="mailto:info@theavenuerealestate.com" className="text-primary hover:text-primary/80 transition-colors duration-200">
+                    info@theavenuerealestate.com
                   </a>
                 </div>
               </div>

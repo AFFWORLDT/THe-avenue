@@ -146,7 +146,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5 }}
               className="text-[#dbbb90] font-light text-lg tracking-wider"
             >
-              EVID PROPERTIES
+              THE AVENUE REAL ESTATE
             </motion.p>
           </div>
         </motion.div>
