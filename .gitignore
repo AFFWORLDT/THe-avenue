@@ -31,7 +31,6 @@ next-env.d.ts
 .idea/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
@@ -101,13 +100,3 @@ dist
 # Temporary folders
 tmp/
 temp/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
