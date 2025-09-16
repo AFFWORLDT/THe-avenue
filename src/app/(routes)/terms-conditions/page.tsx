@@ -36,10 +36,10 @@ export default function TermsConditionsPage() {
               <div className="bg-gray-50 p-6 rounded-lg mb-4">
                 <p className="text-gray-700 mb-2"><strong>Company Information:</strong></p>
                 <p className="text-gray-700 mb-2">The Avenue Realestate</p>
-                <p className="text-gray-700 mb-2">2107, Al Manara Tower, Business Bay</p>
+                <p className="text-gray-700 mb-2">1403, B2B Tower, Business Bay</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 54 252 4242</a></p>
-                <p className="text-gray-700">Email: <a href="mailto:info@theavenuerealestate.com" className="text-blue-600 hover:underline">info@theavenuerealestate.com</a></p>
+                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
+                <p className="text-gray-700">Email: <a href="mailto:info@theavenue.ae" className="text-blue-600 hover:underline">info@theavenue.ae</a></p>
               </div>
             </section>
 
@@ -210,11 +210,11 @@ export default function TermsConditionsPage() {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <p className="text-gray-700 mb-2"><strong>The Avenue Realestate</strong></p>
-                <p className="text-gray-700 mb-2">2107, Al Manara Tower, Business Bay</p>
+                <p className="text-gray-700 mb-2">1403, B2B Tower, Business Bay</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 54 252 4242</a></p>
-                <p className="text-gray-700 mb-2">Email: <a href="mailto:legal@theavenuerealestate.com" className="text-blue-600 hover:underline">legal@theavenuerealestate.com</a></p>
-                <p className="text-gray-700">General Email: <a href="mailto:info@theavenuerealestate.com" className="text-blue-600 hover:underline">info@theavenuerealestate.com</a></p>
+                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
+                <p className="text-gray-700 mb-2">Email: <a href="mailto:legal@theavenue.ae" className="text-blue-600 hover:underline">legal@theavenue.ae</a></p>
+                <p className="text-gray-700">General Email: <a href="mailto:info@theavenue.ae" className="text-blue-600 hover:underline">info@theavenue.ae</a></p>
               </div>
             </section>
 

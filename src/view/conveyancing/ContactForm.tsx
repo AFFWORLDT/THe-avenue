@@ -64,7 +64,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Phone</div>
-                  <div className="text-gray-600">+971 4 892 5831</div>
+                  <div className="text-gray-600">+971 50 770 5315</div>
                 </div>
               </div>
 
@@ -75,8 +75,8 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Email</div>
-                  <a href="mailto:info@theavenuerealestate.com" className="text-primary hover:text-primary/80 transition-colors duration-200">
-                    info@theavenuerealestate.com
+                  <a href="mailto:info@theavenue.ae" className="text-primary hover:text-primary/80 transition-colors duration-200">
+                    info@theavenue.ae
                   </a>
                 </div>
               </div>

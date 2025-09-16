@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Withdrawal of Consent:</strong> Withdraw consent for data processing</li>
               </ul>
               <p className="text-gray-700 mb-4">
-                To exercise these rights, please contact us at <a href="mailto:privacy@theavenuerealestate.com" className="text-blue-600 hover:underline">privacy@theavenuerealestate.com</a>.
+                To exercise these rights, please contact us at <a href="mailto:privacy@theavenue.ae" className="text-blue-600 hover:underline">privacy@theavenue.ae</a>.
               </p>
             </section>
 
@@ -158,11 +158,11 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <p className="text-gray-700 mb-2"><strong>The Avenue Realestate</strong></p>
-                <p className="text-gray-700 mb-2">2107, Al Manara Tower, Business Bay</p>
+                <p className="text-gray-700 mb-2">1403, B2B Tower, Business Bay</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 54 252 4242</a></p>
-                <p className="text-gray-700 mb-2">Email: <a href="mailto:privacy@theavenuerealestate.com" className="text-blue-600 hover:underline">privacy@theavenuerealestate.com</a></p>
-                <p className="text-gray-700">General Email: <a href="mailto:info@theavenuerealestate.com" className="text-blue-600 hover:underline">info@theavenuerealestate.com</a></p>
+                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
+                <p className="text-gray-700 mb-2">Email: <a href="mailto:privacy@theavenue.ae" className="text-blue-600 hover:underline">privacy@theavenue.ae</a></p>
+                <p className="text-gray-700">General Email: <a href="mailto:info@theavenue.ae" className="text-blue-600 hover:underline">info@theavenue.ae</a></p>
               </div>
             </section>
 

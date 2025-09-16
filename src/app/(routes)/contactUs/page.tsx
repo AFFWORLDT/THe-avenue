@@ -41,7 +41,7 @@ function ContactUs() {
                 </div>
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Address</p>
-                  <p className="text-gray-600 font-serif">2107, Al Manara Tower, Business Bay</p>
+                  <p className="text-gray-600 font-serif">1403, B2B Tower, Business Bay</p>
                   <p className="text-gray-600 font-serif">Dubai – UAE</p>
                 </div>
               </div>
@@ -55,10 +55,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Phone</p>
                   <a
-                    href="tel:+971542524242"
+                    href="tel:+971507705315"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    +971 54 252 4242
+                    +971 50 770 5315
                   </a>
                 </div>
               </div>
@@ -72,10 +72,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Email</p>
                   <a
-                    href="mailto:info@The Avenue Realestate.com"
+                    href="mailto:info@theavenue.ae"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    info@The Avenue Realestate.com
+                    info@theavenue.ae
                   </a>
                 </div>
               </div>

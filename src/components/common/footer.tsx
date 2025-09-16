@@ -61,30 +61,30 @@ export default function Footer() {
         <div className="font-serif">
           <h4 className="text-lg  mb-4 font-serif">Contact</h4>
           <address className="not-italic space-y-2 text-sm font-serif leading-relaxed">
-            <p>2107, Al Manara Tower, Business Bay</p>
+            <p>1403, B2B Tower, Business Bay</p>
             <p>Dubai, UAE</p>
             <p>
               <span className="font-serif">P</span>{" "}
               <a
-                href="tel:+971542524242"
+                href="tel:+971507705315"
                 className="relative inline-block hover:text-gray-300 transition-colors
                            after:content-[''] after:absolute after:left-0 after:bottom-0
                            after:h-[2px] after:w-0 after:bg-[#dbbb90]
                            after:transition-all after:duration-300 hover:after:w-full font-serif"
               >
-                +971 54 252 4242
+                +971 50 770 5315
               </a>
             </p>
             <p>
               <span className="font-sans">E</span>{" "}
               <a
-                href="mailto:info@theavenuerealestate.com"
+                href="mailto:info@theavenue.ae"
                 className="relative inline-block hover:text-gray-300 transition-colors
                            after:content-[''] after:absolute after:left-0 after:bottom-0
                            after:h-[2px] after:w-0 after:bg-[#dbbb90]
                            after:transition-all after:duration-300 hover:after:w-full font-serif"
               >
-                info@theavenuerealestate.com
+                info@theavenue.ae
               </a>
             </p>
           </address>
@@ -139,7 +139,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/971542524242"
+              href="https://wa.me/971507705315"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#dbbb90] transition-colors duration-300"
