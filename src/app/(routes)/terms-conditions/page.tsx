@@ -21,7 +21,7 @@ export default function TermsConditionsPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. Acceptance of Terms</h2>
               <p className="text-gray-700 mb-4">
-                Welcome to The Avenue Realestate. These Terms and Conditions ("Terms") govern your use of our website <a href="https://The Avenue Realestate.com" className="text-blue-600 hover:underline">The Avenue Realestate.com</a> and our services. By accessing or using our website, you agree to be bound by these Terms.
+                Welcome to The Avenue Realestate. These Terms and Conditions ("Terms") govern your use of our website <a href="https://theavenue.ae" className="text-blue-600 hover:underline">theavenue.ae</a> and our services. By accessing or using our website, you agree to be bound by these Terms.
               </p>
               <p className="text-gray-700 mb-4">
                 If you do not agree to these Terms, please do not use our website or services.
