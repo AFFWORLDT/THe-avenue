@@ -7,6 +7,7 @@ import { InsightsInspiration } from "@/src/view/landing/blog";
 import { CallToAction } from "@/src/view/landing/call-to-action";
 import PartnersSection from "../../view/landing/PartnersSection";
 import Solutions from "../../view/landing/solutions";
+import GoogleMapsSection from "@/src/components/common/GoogleMapsSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <PartnersSection />
       <Solutions/>
+      <GoogleMapsSection />
       <Feature />
       <Communities />
       <Property />
