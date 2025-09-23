@@ -30,12 +30,25 @@ export default function HeroSection() {
     const fetchOffPlanProjects = async () => {
       try {
         setIsLoading(true);
+        console.log("Starting to fetch off-plan projects...");
         const data = await getAllProperties();
-        if (data?.projects && data.projects.length > 0) {
+        console.log("Received data:", data);
+        
+        // Handle different response structures
+        if (data?.projects && Array.isArray(data.projects) && data.projects.length > 0) {
           setOffPlanProjects(data.projects);
+          console.log("Set projects:", data.projects.length);
+        } else if (Array.isArray(data) && data.length > 0) {
+          setOffPlanProjects(data);
+          console.log("Set projects from array:", data.length);
+        } else {
+          console.warn("No projects found in response:", data);
+          setOffPlanProjects([]);
         }
       } catch (error) {
         console.error("Error fetching off-plan projects:", error);
+        // Set empty array on error to prevent crashes
+        setOffPlanProjects([]);
       } finally {
         setIsLoading(false);
       }
