@@ -3,34 +3,25 @@ import React from 'react'
 function PartnersSection() {
   const partners = [
     {
-      name: "ANUBE PROPERTIES",
+      name: "AMAC",
       logo: (
-        <div className="flex flex-col items-center">
-          <span className="text-red-600 font-bold text-lg">ANUBE</span>
-          <span className="text-black font-medium text-sm">PROPERTIES</span>
-        </div>
-      )
-    },
-    {
-      name: "DAMAC",
-      logo: (
-        <div className="text-black font-bold text-xl italic">DAMAC</div>
+        <div className="text-gray-800 font-light text-lg tracking-wider font-serif">AMAC</div>
       )
     },
     {
       name: "EMAAR",
       logo: (
-        <div className="text-black font-bold text-xl serif">EMAAR</div>
+        <div className="text-gray-800 font-light text-lg tracking-wider font-serif">EMAAR</div>
       )
     },
     {
       name: "MERAAS",
       logo: (
-        <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 border-2 border-black flex items-center justify-center">
-            <div className="w-3 h-3 bg-black"></div>
+        <div className="flex items-center space-x-3">
+          <div className="w-4 h-4 border border-gray-800 flex items-center justify-center">
+            <div className="w-2 h-2 bg-gray-800"></div>
           </div>
-          <span className="text-black font-bold text-lg">MERAAS</span>
+          <span className="text-gray-800 font-light text-lg tracking-wider font-serif">MERAAS</span>
         </div>
       )
     },
@@ -38,59 +29,89 @@ function PartnersSection() {
       name: "SOBHA REALTY",
       logo: (
         <div className="flex flex-col items-center">
-          <span className="text-black font-bold text-lg serif">SOBHA</span>
-          <span className="text-black font-medium text-sm">REALTY</span>
+          <span className="text-gray-800 font-light text-lg tracking-wider font-serif">SOBHA</span>
+          <span className="text-gray-800 font-light text-sm tracking-wider font-serif">REALTY</span>
         </div>
       )
     },
     {
       name: "NAKHEEL",
       logo: (
-        <div className="text-black font-bold text-xl">NAKHEEL</div>
+        <div className="text-gray-800 font-light text-lg tracking-wider font-serif">NAKHEEL</div>
+      )
+    },
+    {
+      name: "A] PRO",
+      logo: (
+        <div className="flex flex-col items-center">
+          <span className="text-red-600 font-light text-lg tracking-wider font-serif">A]</span>
+          <span className="text-gray-800 font-light text-sm tracking-wider font-serif">PRO</span>
+        </div>
       )
     }
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-1">
+    <section className="py-8 md:py-12 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex max-w-6xl mx-auto items-center justify-between">
           {/* Header */}
-          <div className="flex items-center justify-center w-1/2">
-            <div className="flex items-center space-x-4">
-              <h2 className="text-gray-500    text-lg">
-              Partners with Dubai&apos;s leading developers
-              </h2>
-            </div>
+          <div className="flex-shrink-0">
+            <h2 className="text-gray-600 text-sm font-light tracking-widest font-serif leading-relaxed">
+              Partners with Dubai&apos;s<br />
+              leading developers
+            </h2>
           </div>
 
-          {/* Auto-scrolling Partners */}
-          <div className="relative overflow-hidden">
+          {/* Partners Logos */}
+          <div className="flex-1 w-full overflow-hidden relative">
             <div className="flex animate-scroll">
               {/* First set of logos */}
-              <div className="flex items-center space-x-16 min-w-max">
+              <div className="flex items-center space-x-8 lg:space-x-12 min-w-max">
                 {partners.map((partner, index) => (
                   <div
                     key={`first-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center h-16 px-8"
+                    className="flex-shrink-0 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
                   >
                     {partner.logo}
                   </div>
                 ))}
               </div>
-              
-              {/* Duplicate set for seamless loop */}
-              <div className="flex items-center space-x-16 min-w-max">
+              {/* Second set of logos for seamless loop */}
+              <div className="flex items-center space-x-8 lg:space-x-12 min-w-max">
                 {partners.map((partner, index) => (
                   <div
                     key={`second-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center h-16 px-8"
+                    className="flex-shrink-0 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
                   >
                     {partner.logo}
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-gray-600 text-xs font-light tracking-widest font-serif leading-relaxed">
+              Partners with Dubai&apos;s leading developers
+            </h2>
+          </div>
+
+          {/* Partners Logos Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 py-2"
+              >
+                {partner.logo}
+              </div>
+            ))}
           </div>
         </div>
       </div>

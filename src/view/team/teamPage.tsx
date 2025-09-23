@@ -165,7 +165,7 @@ export default function TeamPage() {
                   className="group cursor-pointer"
                   onClick={() => setSelectedAgent(agent)}
                 >
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-7 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-white/60 hover:border-[#dbbb90]/30 group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-7 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-white/60 hover:border-[#dbbb90]/30 group h-full flex flex-col">
                     {/* Agent Avatar */}
                     <div className="relative mb-4 md:mb-6">
                       <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden border-3 md:border-4 border-[#dbbb90] shadow-lg group-hover:shadow-xl group-hover:border-[#C2A17B] transition-all duration-300 relative">
@@ -193,10 +193,13 @@ export default function TeamPage() {
                     </div>
 
                     {/* Agent Info */}
-                    <div className="text-center mb-4 md:mb-6">
+                    <div className="text-center mb-4 md:mb-6 flex-1">
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 leading-tight">
                         {agent.name}
                       </h3>
+                      <p className="text-[#dbbb90] font-medium text-sm sm:text-base uppercase tracking-wider mb-2 md:mb-3">
+                        {agent.role_name || agent.role || 'Real Estate Agent'}
+                      </p>
                       {agent.team_name && agent.team_name !== 'No team assigned' && (
                         <p className="text-[#dbbb90] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
                           {agent.team_name}
@@ -211,30 +214,26 @@ export default function TeamPage() {
 
                     {/* Stats */}
                     <div className="grid grid-cols-2 gap-2 md:gap-4 mb-4 md:mb-6">
-                      {agent.experience_years && (
-                        <div className="text-center">
-                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
-                            {agent.experience_years}+
-                          </div>
-                          <div className="text-xs text-gray-600 uppercase tracking-wider">
-                            Years Exp
-                          </div>
+                      <div className="text-center">
+                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
+                          {agent.experience_years || 1}+
                         </div>
-                      )}
-                      {agent.specialities && agent.specialities.length > 0 && (
-                        <div className="text-center">
-                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
-                            {agent.specialities.length}
-                          </div>
-                          <div className="text-xs text-gray-600 uppercase tracking-wider">
-                            Specialties
-                          </div>
+                        <div className="text-xs text-gray-600 uppercase tracking-wider">
+                          Years Exp
                         </div>
-                      )}
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#dbbb90]">
+                          {agent.specialities?.length || 1}
+                        </div>
+                        <div className="text-xs text-gray-600 uppercase tracking-wider">
+                          Specialties
+                        </div>
+                      </div>
                     </div>
 
                     {/* Contact Buttons */}
-                    <div className="flex justify-center gap-3 md:gap-4">
+                    <div className="flex justify-center gap-3 md:gap-4 mt-auto">
                       <a
                         href={`https://wa.me/${agent.phone?.replace(/[^0-9]/g, '')}?text=Hi ${agent.name}, I'm interested in luxury properties in Dubai`}
                         target="_blank"

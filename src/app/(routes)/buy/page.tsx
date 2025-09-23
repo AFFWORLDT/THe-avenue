@@ -339,7 +339,7 @@ function Buy() {
           {FilterButton}
 
           {/* Desktop Search Form */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-4 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
             {/* Buy/Sell Filter */}
             {/* Listing Type Filter */}
             <div>
@@ -347,7 +347,7 @@ function Buy() {
                 value={filters.listing_type}
                 onValueChange={(value) => handleFilterChange("listing_type", value)}
               >
-                <SelectTrigger className="w-full bg-white/90 border border-[#dbbb90]/30 text-gray-800 h-14 hover:border-[#dbbb90]/50 transition-colors font-serif">
+                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm">
                   <SelectValue placeholder="Type" />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -363,7 +363,7 @@ function Buy() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
-                className="w-full text-black bg-white border border-gray-300 placeholder:text-gray-500 h-14"
+                className="w-full h-10 text-black bg-white border border-gray-300 placeholder:text-gray-500 text-sm font-serif"
               />
             </div>
 

@@ -286,11 +286,11 @@ function Rent() {
           {FilterButton}
 
           {/* Desktop Search Form */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-4 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
             {/* Listing Type Filter */}
             <div>
               <Select value={filters.listing_type} onValueChange={(value) => handleFilterChange("listing_type", value)}>
-                <SelectTrigger className="w-full bg-white/90 border border-[#dbbb90]/30 text-gray-800 h-14 hover:border-[#dbbb90]/50 transition-colors font-serif">
+                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm">
                   <SelectValue placeholder="Type" />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -306,7 +306,7 @@ function Rent() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
-                className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif h-14"
+                className="w-full h-10 text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm"
               />
             </div>
 

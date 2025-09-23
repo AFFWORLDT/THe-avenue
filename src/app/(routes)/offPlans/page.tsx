@@ -266,7 +266,7 @@ function OffPlansPage() {
         value={filters.property_type}
         onValueChange={(value) => handleFilterChange("property_type", value)}
       >
-        <SelectTrigger className="w-full bg-white border border-gray-300 text-black">
+        <SelectTrigger className="w-full h-10 bg-white border border-gray-300 text-black text-sm font-serif">
           <SelectValue placeholder="Property Type" />
         </SelectTrigger>
         <SelectContent>
@@ -288,7 +288,7 @@ function OffPlansPage() {
         value={filters.min_price}
         onValueChange={(value) => handleFilterChange("min_price", value)}
       >
-        <SelectTrigger className="w-full bg-white border border-gray-300 text-black">
+        <SelectTrigger className="w-full h-10 bg-white border border-gray-300 text-black text-sm font-serif">
           <SelectValue placeholder="Min Price" />
         </SelectTrigger>
         <SelectContent>
@@ -307,7 +307,7 @@ function OffPlansPage() {
         value={filters.max_price}
         onValueChange={(value) => handleFilterChange("max_price", value)}
       >
-        <SelectTrigger className="w-full bg-white border border-gray-300 text-black">
+        <SelectTrigger className="w-full h-10 bg-white border border-gray-300 text-black text-sm font-serif">
           <SelectValue placeholder="Max Price" />
         </SelectTrigger>
         <SelectContent>
@@ -331,7 +331,7 @@ function OffPlansPage() {
           {FilterButton}
 
           {/* Desktop Search Form */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-4 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
            
             {/* Location */}
             <div className="col-span-2">
@@ -339,7 +339,7 @@ function OffPlansPage() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
-                className="w-full text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif"
+                className="w-full h-10 text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm"
               />
             </div>
 
@@ -362,7 +362,7 @@ function OffPlansPage() {
                 value={filters.bedrooms}
                 onValueChange={(value) => handleFilterChange("bedrooms", value)}
               >
-                <SelectTrigger className="w-full bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif">
+                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm">
                   <SelectValue placeholder="Beds" />
                 </SelectTrigger>
                 <SelectContent>
@@ -381,19 +381,19 @@ function OffPlansPage() {
               <Button
                 onClick={toggleFilters}
                 variant="outline"
-                className="w-32 h-14 bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 flex items-center justify-center gap-2"
+                className="w-28 h-10 bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 flex items-center justify-center gap-1 text-xs font-serif"
               >
-                <Icon icon="lucide:sliders-horizontal" className="w-4 h-4" />
+                <Icon icon="lucide:sliders-horizontal" className="w-3 h-3" />
                 More Filters
               </Button>
 
               <Button
                 onClick={handleSearch}
-                className="h-14 w-14 bg-primary hover:bg-primary/90 text-white flex items-center justify-center shadow-lg"
+                className="h-10 w-10 bg-primary hover:bg-primary/90 text-white flex items-center justify-center shadow-md"
               >
                 <Icon
                   icon="iconamoon:search-fill"
-                  className="text-white text-xl"
+                  className="text-white text-lg"
                 />
               </Button>
             </div>

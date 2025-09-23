@@ -6,9 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
-  Globe,
   ChevronDown,
-  User,
   Settings,
   Home,
   DollarSign,
@@ -16,20 +14,11 @@ import {
   Bed,
   Wrench,
   Users,
-  Bitcoin,
-  TrendingUp,
-  Building2,
 } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/src/lib/utils";
 import { Icon } from "@iconify/react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
 import {
   HoverCard,
   HoverCardContent,
@@ -135,7 +124,7 @@ export default function Header() {
       <nav
         className={cn(
           "container mx-auto flex items-center justify-between px-4 md:px-6",
-          isScrolled ? "h-16" : "h-20"
+          isScrolled ? "h-14" : "h-16"
         )}
       >
         {/* Logo */}
@@ -146,13 +135,13 @@ export default function Header() {
               alt="The Avenue Real Estate Logo"
               width={180}
               height={60}
-              className="object-contain w-48 h-14 sm:w-52 sm:h-15 md:w-56 md:h-16 lg:w-60 lg:h-18"
+              className="object-contain w-44 h-12 sm:w-48 sm:h-13 md:w-52 md:h-14 lg:w-56 lg:h-15"
             />
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-10">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
               return (
@@ -161,14 +150,14 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative pb-1 transition-all duration-300 font-sans text-[15px]",
-                        isScrolled && pathname === "/" ? "text-black" : "text-gray-800",
-                        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                        "after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
+                        "relative pb-1 transition-all duration-300 font-serif text-[14px] font-light",
+                        isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
+                        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
+                        "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
                         pathname === link.href && "after:w-full"
                       )}
                       style={{
-                        letterSpacing: "1.5px",
+                        letterSpacing: "2px",
                       }}
                     >
                       {link.label}
@@ -246,14 +235,14 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "relative pb-1 transition-all duration-300 font-sans text-[15px]",
-                  isScrolled && pathname === "/" ? "text-black" : "text-gray-800",
-                "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                "after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
+                  "relative pb-1 transition-all duration-300 font-serif text-[14px] font-light",
+                  isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
+                "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
+                "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
                 pathname === link.href && "after:w-full"
               )}
               style={{
-                letterSpacing: "1.5px",
+                letterSpacing: "2px",
               }}
             >
               {link.label}
@@ -262,66 +251,8 @@ export default function Header() {
           })}
         </div>
 
-        {/* Right Side - Currency, Login, Signup */}
-        <div className="flex items-center space-x-4">
-          {/* Currency Selector */}
-          <div className="hidden md:flex items-center space-x-2">
-            <div
-              className={`w-px h-6 ${
-                isScrolled ? "bg-black/30" : "bg-black/30"
-              }`}
-            ></div>
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={cn(
-                  "flex items-center space-x-1 transition-colors",
-                  isScrolled
-                    ? "text-black hover:text-black/80"
-                    : "text-black hover:text-black/80"
-                )}
-              >
-                <Globe className="h-4 w-4" />
-                <span className="text-sm font-medium underline">USD</span>
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>USD</DropdownMenuItem>
-                <DropdownMenuItem>AED</DropdownMenuItem>
-                <DropdownMenuItem>EUR</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-
-          {/* Login Button */}
-          <Link href="/login">
-            <Button
-              variant="outline"
-              className={cn(
-                "hidden sm:flex items-center space-x-2 bg-transparent h-8 px-3 transition-all duration-200",
-                isScrolled
-                  ? "border-black text-black hover:bg-black/10"
-                  : "border-black text-black hover:bg-black/10"
-              )}
-            >
-              <User className="h-4 w-4" />
-              <span className="text-sm">Login</span>
-            </Button>
-          </Link>
-
-          {/* List Your Property Button */}
-          <Link href="/list-your-property">
-            <Button
-              className={cn(
-                "border h-8 px-3 text-sm transition-all duration-200",
-                isScrolled
-                  ? "bg-slate-200/20 border-black text-black hover:bg-slate-200/30"
-                  : "bg-slate-300/20 border-black text-black hover:bg-slate-300/30"
-              )}
-            >
-              List Your Property
-            </Button>
-          </Link>
-
+        {/* Right Side - Mobile Menu Only */}
+        <div className="flex items-center">
           {/* Mobile Menu Button */}
           <div
             className={cn(
@@ -349,7 +280,7 @@ export default function Header() {
               alt="The Avenue Real Estate Logo"
               width={120}
               height={40}
-              className="object-contain w-36 h-11"
+              className="object-contain w-32 h-9"
             />
             <h2 className="text-lg font-semibold">Menu</h2>
           </div>
@@ -427,42 +358,6 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="p-6 border-t border-gray-200 space-y-4">
-          {/* Mobile Currency Selector */}
-          <div className="flex items-center space-x-2">
-            <Globe className="h-4 w-4 text-gray-500" />
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700">
-                <span className="text-sm font-medium">USD</span>
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>USD</DropdownMenuItem>
-                <DropdownMenuItem>AED</DropdownMenuItem>
-                <DropdownMenuItem>EUR</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-
-          {/* Mobile Buttons */}
-          <div className="space-y-3">
-            <Link href="/login" onClick={() => setIsOverlayOpen(false)}>
-              <Button
-                variant="outline"
-                className="w-full flex items-center justify-center space-x-2"
-              >
-                <User className="h-4 w-4" />
-                <span>Login</span>
-              </Button>
-            </Link>
-            <Link href="/list-your-property" onClick={() => setIsOverlayOpen(false)}>
-              <Button className="w-full bg-slate-600 hover:bg-slate-700">
-                List Your Property
-              </Button>
-            </Link>
-          </div>
-
-        </div>
       </div>
     </header>
   );
