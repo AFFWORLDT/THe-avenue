@@ -118,41 +118,31 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled ? "luxury-glass shadow-2xl border-b-2 border-[#D4AF37]/20" : "luxury-glass-gold"
+        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-200" : "bg-white/95 backdrop-blur-sm"
       }`}
     >
-      {/* Ultra-Luxury Background Effects */}
-      <div className="absolute inset-0 luxury-bg-pattern opacity-5"></div>
-      <div className="absolute top-0 left-0 w-full h-1 luxury-bg-gold animate-luxuryShimmer"></div>
       
       <nav
         className={cn(
-          "container mx-auto flex items-center justify-between px-4 md:px-6 relative z-10",
+          "w-full flex items-center relative z-10 px-4 md:px-6",
           isScrolled ? "h-20" : "h-24"
         )}
       >
-        {/* Ultra-Luxury Logo */}
+        {/* Clean Logo - True Left Position */}
         <div className="flex items-center">
-          <Link href={"/"} className="luxury-hover group">
-            <div className="relative">
-              {/* Luxury Glow Effect */}
-              <div className="absolute inset-0 luxury-bg-gold rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
-              <Image
-                src="/images/logo.png"
-                alt="The Avenue Real Estate Logo"
-                width={220}
-                height={80}
-                className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24 transition-all duration-500 hover:scale-110 luxury-text-shadow relative z-10"
-              />
-              {/* Luxury Decorative Elements */}
-              <div className="absolute -top-1 -right-1 w-3 h-3 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-100 animate-luxurySparkle transition-opacity duration-300"></div>
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 luxury-bg-bronze rounded-full opacity-0 group-hover:opacity-100 animate-luxuryPulse transition-opacity duration-300"></div>
-            </div>
+          <Link href={"/"} className="transition-all duration-300 hover:scale-105">
+            <Image
+              src="/images/logo.png"
+              alt="The Avenue Real Estate Logo"
+              width={220}
+              height={80}
+              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24"
+            />
           </Link>
         </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-12">
+        {/* Desktop Nav - Right Position */}
+        <div className="hidden lg:flex items-center space-x-12 ml-auto mr-4">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
               return (
@@ -161,16 +151,14 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative pb-2 transition-all duration-500 font-serif text-[16px] font-medium tracking-[0.15em] luxury-hover group",
-                        isScrolled && pathname === "/" ? "text-gray-900 hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]",
+                        "relative pb-2 transition-all duration-300 font-serif text-[16px] font-medium tracking-[0.15em]",
+                        isScrolled && pathname === "/" ? "text-gray-900 hover:text-gray-600" : "text-gray-800 hover:text-gray-600",
                         "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                        "after:luxury-bg-gold after:transition-all after:duration-500 hover:after:w-full after:animate-luxuryShimmer",
-                        pathname === link.href && "after:w-full text-[#D4AF37] luxury-text-shadow"
+                        "after:bg-gray-600 after:transition-all after:duration-300 hover:after:w-full",
+                        pathname === link.href && "after:w-full text-gray-900"
                       )}
                     >
                       <span className="relative z-10">{link.label}</span>
-                      {/* Luxury Glow Effect */}
-                      <div className="absolute inset-0 luxury-bg-gold rounded-md opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
                     </Link>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-[500px] p-0" sideOffset={10}>
@@ -246,83 +234,80 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "relative pb-2 transition-all duration-500 font-serif text-[16px] font-medium tracking-[0.15em] luxury-hover group",
-                  isScrolled && pathname === "/" ? "text-gray-900 hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]",
+                  "relative pb-2 transition-all duration-300 font-serif text-[16px] font-medium tracking-[0.15em]",
+                  isScrolled && pathname === "/" ? "text-gray-900 hover:text-gray-600" : "text-gray-800 hover:text-gray-600",
                 "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
-                "after:luxury-bg-gold after:transition-all after:duration-500 hover:after:w-full after:animate-luxuryShimmer",
-                pathname === link.href && "after:w-full text-[#D4AF37] luxury-text-shadow"
+                "after:bg-gray-600 after:transition-all after:duration-300 hover:after:w-full",
+                pathname === link.href && "after:w-full text-gray-900"
               )}
             >
               <span className="relative z-10">{link.label}</span>
-              {/* Luxury Glow Effect */}
-              <div className="absolute inset-0 luxury-bg-gold rounded-md opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
             </Link>
             );
           })}
         </div>
 
         {/* Right Side - Mobile Menu Only */}
-        <div className="flex items-center">
-          {/* Ultra-Luxury Mobile Menu Button */}
+        <div className="flex items-center ml-auto lg:hidden">
+          {/* Clean Mobile Menu Button */}
           <div
-            className={cn(
-              "lg:hidden cursor-pointer transition-all duration-500 luxury-hover group p-2 rounded-xl",
-              isScrolled ? "text-[#D4AF37] hover:text-[#B8941F]" : "text-[#D4AF37] hover:text-[#B8941F]"
-            )}
+            className="cursor-pointer transition-all duration-300 p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100"
             onClick={() => setIsOverlayOpen(true)}
           >
-            <div className="relative">
-              <Menu className="h-7 w-7 transition-all duration-300 group-hover:scale-110" />
-              {/* Luxury Glow Effect */}
-              <div className="absolute inset-0 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
-            </div>
+            <Menu className="h-7 w-7" />
           </div>
         </div>
       </nav>
 
-      {/* Ultra-Luxury Mobile Overlay */}
+      {/* Luxury Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 luxury-bg text-gray-900 z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl ${
+        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 text-black z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl border-l-2 border-[#D4AF37]/30 ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ backgroundColor: '#ffffff' }}
       >
         {/* Luxury Background Effects */}
-        <div className="absolute inset-0 luxury-bg-pattern opacity-10"></div>
-        <div className="absolute top-0 left-0 w-full h-2 luxury-bg-gold animate-luxuryShimmer"></div>
+        <div className="absolute inset-0 luxury-bg-pattern opacity-3"></div>
+        <div className="absolute top-0 left-0 w-full h-1 luxury-bg-gold animate-luxuryShimmer"></div>
         
-        <div className="flex items-center justify-between p-6 border-b-2 border-[#D4AF37]/20 relative z-10">
-          <div className="flex items-center space-x-3">
-            <Image
-              src="/images/logo.png"
-              alt="The Avenue Real Estate Logo"
-              width={160}
-              height={50}
-              className="object-contain w-40 h-12"
-            />
-            <h2 className="text-lg font-semibold luxury-text-static tracking-[0.1em]">Menu</h2>
+        <div className="flex items-center justify-between p-6 border-b-2 border-[#D4AF37]/20 relative z-10" style={{ backgroundColor: '#ffffff' }}>
+          <div className="flex items-center">
+            <div className="relative">
+              <Image
+                src="/images/logo.png"
+                alt="The Avenue Real Estate Logo"
+                width={160}
+                height={50}
+                className="object-contain w-40 h-12"
+              />
+              <div className="absolute -top-1 -right-1 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+            </div>
           </div>
           <button
-          onClick={() => setIsOverlayOpen(false)}
-            className="text-[#D4AF37] hover:text-[#B8941F] luxury-hover p-2 rounded-xl transition-all duration-300"
-        >
-            <X className="h-6 w-6" />
+            onClick={() => setIsOverlayOpen(false)}
+            className="text-[#D4AF37] hover:text-[#B8941F] p-2 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 group"
+          >
+            <div className="relative">
+              <X className="h-6 w-6 transition-all duration-300 group-hover:scale-110" />
+              <div className="absolute inset-0 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
+            </div>
           </button>
         </div>
 
-        <nav className="flex flex-col p-6 space-y-6 relative z-10">
+        <nav className="flex flex-col p-6 space-y-3 relative z-10" style={{ backgroundColor: '#ffffff' }}>
           {navLinks.map((link, i) => {
             if (link.href === "/service") {
               return (
-                <div key={i} className="space-y-3">
+                <div key={i} className="space-y-2">
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className={cn(
-                      "flex items-center justify-between w-full text-left text-gray-700 hover:text-[#D4AF37] transition-all duration-300 py-3 px-4 rounded-xl luxury-hover font-serif tracking-[0.1em]",
-                      pathname === link.href && "text-[#D4AF37] font-medium luxury-text-shadow"
+                      "flex items-center justify-between w-full text-left text-black hover:text-[#D4AF37] transition-all duration-300 py-4 px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider",
+                      pathname === link.href && "text-[#D4AF37] font-medium bg-[#D4AF37]/10 border-[#D4AF37]/30"
                     )}
                   >
-                    <span className="text-lg">{link.label}</span>
+                    <span className="text-lg font-medium">{link.label}</span>
                     <ChevronDown className={cn(
                       "h-5 w-5 transition-transform duration-300 text-[#D4AF37]",
                       isServicesOpen && "rotate-180"
@@ -334,22 +319,25 @@ export default function Header() {
                     "overflow-hidden transition-all duration-300",
                     isServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   )}>
-                    <div className="pl-4 space-y-2 border-l-2 border-gray-200">
+                    <div className="pl-4 space-y-2 border-l-2 border-[#D4AF37]/30 bg-[#D4AF37]/5 rounded-r-2xl p-3">
                       {services.map((service, serviceIndex) => (
                         <Link
                           key={serviceIndex}
                           href={
                             service.name === "List Your Property" ? "/list-your-property" :
                             service.name === "Property Management" ? "/property-management" :
+                            service.name === "Mortgages" ? "/mortgages" :
+                            service.name === "Conveyancing" ? "/conveyancing" :
+                            service.name === "Short Term Rentals" ? "/short-term-rental" :
                             "/service"
                           }
                           onClick={() => setIsOverlayOpen(false)}
-                          className="flex items-center space-x-3 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                          className="flex items-center space-x-3 py-3 px-4 rounded-xl hover:bg-[#D4AF37]/10 transition-all duration-200 border border-transparent hover:border-[#D4AF37]/20"
                         >
-                          <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
+                          <div className="flex-shrink-0 text-[#D4AF37] transition-colors duration-200">
                             {service.icon}
                           </div>
-                          <span className="text-blue-900 font-medium text-sm group-hover:text-blue-700 transition-colors duration-200">
+                          <span className="text-black text-sm hover:text-[#D4AF37] transition-colors duration-200 font-medium">
                             {service.name}
                           </span>
                         </Link>
@@ -365,16 +353,48 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "text-gray-700 hover:text-gray-900 transition-colors duration-200 py-2",
-                  pathname === link.href && "text-gray-900 font-medium"
+                  "text-black hover:text-[#D4AF37] transition-all duration-300 py-4 px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-lg font-medium",
+                  pathname === link.href && "text-[#D4AF37] font-medium bg-[#D4AF37]/10 border-[#D4AF37]/30"
               )}
-                onClick={() => setIsOverlayOpen(false)}
+              onClick={() => setIsOverlayOpen(false)}
             >
               {link.label}
             </Link>
             );
           })}
         </nav>
+
+        {/* Luxury Footer Section */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t-2 border-[#D4AF37]/20 relative z-10" style={{ backgroundColor: '#ffffff' }}>
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
+              <span className="luxury-text-static font-serif text-sm font-semibold tracking-wider">
+                The Avenue
+              </span>
+            </div>
+            <p className="text-[#D4AF37] font-medium text-xs tracking-wider font-serif mb-4">
+              Dubai's NO 1 Luxury Real Estate
+            </p>
+            <button
+              onClick={() => setIsOverlayOpen(false)}
+              className="text-[#D4AF37] hover:text-[#B8941F] px-6 py-3 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-sm font-medium group"
+            >
+              <div className="relative">
+                <span className="relative z-10">Close Menu</span>
+                <div className="absolute inset-0 luxury-bg-gold rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              </div>
+            </button>
+          </div>
+        </div>
 
       </div>
     </header>

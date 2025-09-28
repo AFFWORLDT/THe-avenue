@@ -335,8 +335,8 @@ export default function Footer() {
                   &copy; 2025 The Avenue Real Estate. All Rights Reserved.
                 </p>
               </div>
-              <div className="text-white/60 text-sm font-serif font-light tracking-widest">
-                Crafted with luxury in mind
+              <div className="text-[#D4AF37] text-sm font-serif font-medium tracking-widest luxury-text-shadow">
+                Dubai's NO 1 Luxury Real Estate
               </div>
             </div>
           </div>

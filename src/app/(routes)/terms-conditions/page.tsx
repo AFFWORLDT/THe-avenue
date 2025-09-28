@@ -8,58 +8,136 @@ export const metadata: Metadata = {
 
 export default function TermsConditionsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Terms and Conditions</h1>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-600 mb-6">
-              <strong>Last updated:</strong> January 2025
-            </p>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. Acceptance of Terms</h2>
-              <p className="text-gray-700 mb-4">
-                Welcome to The Avenue Realestate. These Terms and Conditions ("Terms") govern your use of our website <a href="https://theavenue.ae" className="text-blue-600 hover:underline">theavenue.ae</a> and our services. By accessing or using our website, you agree to be bound by these Terms.
-              </p>
-              <p className="text-gray-700 mb-4">
-                If you do not agree to these Terms, please do not use our website or services.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">2. About The Avenue Realestate</h2>
-              <p className="text-gray-700 mb-4">
-                The Avenue Realestate is a real estate platform based in Dubai, UAE, providing property listings, real estate services, and related services. We are committed to connecting property buyers, sellers, and renters in the Dubai real estate market.
-              </p>
-              <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                <p className="text-gray-700 mb-2"><strong>Company Information:</strong></p>
-                <p className="text-gray-700 mb-2">The Avenue Realestate</p>
-                <p className="text-gray-700 mb-2">1403, B2B Tower, Business Bay</p>
-                <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
-                <p className="text-gray-700">Email: <a href="mailto:info@theavenue.ae" className="text-blue-600 hover:underline">info@theavenue.ae</a></p>
+    <div className="min-h-screen luxury-bg">
+      {/* Proper Navbar Spacing */}
+      <div className="pt-28 pb-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          {/* Ultra-Luxury Content Card */}
+          <div className="luxury-card rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16 border-2 border-[#D4AF37]/20 relative overflow-hidden">
+            
+            {/* Luxury Background Effects */}
+            <div className="absolute inset-0 luxury-bg-pattern opacity-5"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 luxury-bg-radial rounded-full blur-3xl opacity-15 animate-luxuryBreathe"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 luxury-bg-gold rounded-full blur-2xl opacity-10 animate-luxuryPulse"></div>
+            
+            {/* Content Wrapper */}
+            <div className="relative z-10">
+              {/* Luxury Header */}
+              <div className="text-center mb-16">
+                <div className="relative inline-block">
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-0.5 luxury-bg-gold animate-luxuryShimmer"></div>
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+                  
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 font-serif tracking-wide luxury-text-shadow">
+                    Terms and <span className="luxury-text-static">Conditions</span>
+                  </h1>
+                  
+                  {/* Premium Separator */}
+                  <div className="flex items-center justify-center gap-4 mt-8">
+                    <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+                    <div className="w-3 h-3 luxury-bg-gold rounded-full animate-luxuryPulse"></div>
+                    <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+                  </div>
+                </div>
               </div>
-            </section>
+          
+              {/* Last Updated */}
+              <div className="text-center mb-12">
+                <p className="text-[#D4AF37] font-medium text-lg tracking-wider font-serif">
+                  Last updated: January 2025
+                </p>
+              </div>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">3. Services Provided</h2>
-              <p className="text-gray-700 mb-4">The Avenue Realestate provides the following services:</p>
-              <ul className="list-disc pl-6 mb-4 text-gray-700">
-                <li>Property listings for sale and rent</li>
-                <li>Off-plan property information and sales</li>
-                <li>Community information and details</li>
-                <li>Property management services</li>
-                <li>Mortgage and financing assistance</li>
-                <li>Conveyancing services</li>
-                <li>Short-term rental services</li>
-                <li>Real estate consultation and advisory</li>
-              </ul>
-            </section>
+              {/* Luxury Content Sections */}
+              <div className="space-y-12">
+                <section className="luxury-hover p-6 rounded-2xl border border-[#D4AF37]/10 hover:border-[#D4AF37]/20 transition-all duration-300">
+                  <h2 className="text-3xl font-semibold text-gray-900 mb-6 font-serif luxury-text-static flex items-center gap-3">
+                    <span className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center text-white font-bold text-sm">1</span>
+                    Acceptance of Terms
+                  </h2>
+                  <div className="space-y-4 text-gray-700 leading-relaxed">
+                    <p className="font-serif text-lg">
+                      Welcome to The Avenue Realestate. These Terms and Conditions ("Terms") govern your use of our website <a href="https://theavenue.ae" className="text-[#D4AF37] hover:text-[#B8941F] underline transition-colors">theavenue.ae</a> and our services. By accessing or using our website, you agree to be bound by these Terms.
+                    </p>
+                    <p className="font-serif text-lg">
+                      If you do not agree to these Terms, please do not use our website or services.
+                    </p>
+                  </div>
+                </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">4. User Accounts and Registration</h2>
+                <section className="luxury-hover p-6 rounded-2xl border border-[#D4AF37]/10 hover:border-[#D4AF37]/20 transition-all duration-300">
+                  <h2 className="text-3xl font-semibold text-gray-900 mb-6 font-serif luxury-text-static flex items-center gap-3">
+                    <span className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center text-white font-bold text-sm">2</span>
+                    About The Avenue Realestate
+                  </h2>
+                  <div className="space-y-6 text-gray-700 leading-relaxed">
+                    <p className="font-serif text-lg">
+                      The Avenue Realestate is a real estate platform based in Dubai, UAE, providing property listings, real estate services, and related services. We are committed to connecting property buyers, sellers, and renters in the Dubai real estate market.
+                    </p>
+                    <div className="luxury-glass-gold p-6 rounded-2xl border border-[#D4AF37]/20">
+                      <p className="text-gray-800 mb-4 font-semibold text-lg font-serif"><span className="luxury-text-static">Company Information:</span></p>
+                      <div className="space-y-2 text-gray-700 font-serif">
+                        <p className="text-lg font-medium">The Avenue Realestate</p>
+                        <p>1403, B2B Tower, Business Bay</p>
+                        <p>Dubai, UAE</p>
+                        <p>Phone: <a href="tel:+971507705315" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">+971 50 770 5315</a></p>
+                        <p>Email: <a href="mailto:info@theavenue.ae" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">info@theavenue.ae</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="luxury-hover p-6 rounded-2xl border border-[#D4AF37]/10 hover:border-[#D4AF37]/20 transition-all duration-300">
+                  <h2 className="text-3xl font-semibold text-gray-900 mb-6 font-serif luxury-text-static flex items-center gap-3">
+                    <span className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center text-white font-bold text-sm">3</span>
+                    Services Provided
+                  </h2>
+                  <div className="space-y-4 text-gray-700 leading-relaxed">
+                    <p className="font-serif text-lg mb-6">The Avenue Realestate provides the following luxury services:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Property listings for sale and rent</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Off-plan property information and sales</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Community information and details</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Property management services</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Mortgage and financing assistance</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Conveyancing services</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Short-term rental services</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-[#D4AF37]/5 rounded-xl border border-[#D4AF37]/10">
+                        <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span className="font-serif">Real estate consultation and advisory</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Additional sections will maintain the same luxury styling pattern */}
+                <section className="luxury-hover p-6 rounded-2xl border border-[#D4AF37]/10 hover:border-[#D4AF37]/20 transition-all duration-300">
+                  <h2 className="text-3xl font-semibold text-gray-900 mb-6 font-serif luxury-text-static flex items-center gap-3">
+                    <span className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center text-white font-bold text-sm">4</span>
+                    User Accounts and Registration
+                  </h2>
               <h3 className="text-xl font-semibold text-gray-800 mb-3 font-serif">4.1 Account Creation</h3>
               <p className="text-gray-700 mb-4">
                 To access certain features of our website, you may need to create an account. You agree to:
@@ -214,16 +292,36 @@ export default function TermsConditionsPage() {
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
                 <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
                 <p className="text-gray-700 mb-2">Email: <a href="mailto:legal@theavenue.ae" className="text-blue-600 hover:underline">legal@theavenue.ae</a></p>
-                <p className="text-gray-700">General Email: <a href="mailto:info@theavenue.ae" className="text-blue-600 hover:underline">info@theavenue.ae</a></p>
-              </div>
-            </section>
+                  <p className="text-gray-700">General Email: <a href="mailto:info@theavenue.ae" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">info@theavenue.ae</a></p>
+                </div>
+              </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">17. Entire Agreement</h2>
-              <p className="text-gray-700 mb-4">
-                These Terms, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and The Avenue Realestate regarding your use of our website and services.
-              </p>
-            </section>
+              {/* Note: Additional sections can be styled similarly with luxury-hover, numbered badges, and gold accents */}
+              <section className="luxury-hover p-6 rounded-2xl border border-[#D4AF37]/10 hover:border-[#D4AF37]/20 transition-all duration-300">
+                <h2 className="text-3xl font-semibold text-gray-900 mb-6 font-serif luxury-text-static flex items-center gap-3">
+                  <span className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center text-white font-bold text-sm">17</span>
+                  Entire Agreement
+                </h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p className="font-serif text-lg">
+                    These Terms, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and The Avenue Realestate regarding your use of our website and services.
+                  </p>
+                </div>
+              </section>
+              </div>
+              
+              {/* Luxury Bottom Section */}
+              <div className="text-center mt-16 pt-8 border-t border-[#D4AF37]/20">
+                <div className="luxury-glass-gold p-6 rounded-2xl border border-[#D4AF37]/20 inline-block">
+                  <p className="luxury-text-static font-serif text-lg font-semibold tracking-wider">
+                    Dubai's NO 1 Luxury Real Estate
+                  </p>
+                  <p className="text-gray-600 font-serif mt-2">
+                    Trusted by thousands of discerning clients
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

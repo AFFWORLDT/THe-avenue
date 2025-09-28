@@ -8,15 +8,49 @@ export const metadata: Metadata = {
 
 export default function CookiePolicyPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Cookie Policy</h1>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-600 mb-6">
-              <strong>Last updated:</strong> January 2025
-            </p>
+    <div className="min-h-screen luxury-bg">
+      {/* Proper Navbar Spacing */}
+      <div className="pt-28 pb-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          {/* Ultra-Luxury Content Card */}
+          <div className="luxury-card rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16 border-2 border-[#D4AF37]/20 relative overflow-hidden">
+            
+            {/* Luxury Background Effects */}
+            <div className="absolute inset-0 luxury-bg-pattern opacity-5"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 luxury-bg-radial rounded-full blur-3xl opacity-15 animate-luxuryBreathe"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 luxury-bg-gold rounded-full blur-2xl opacity-10 animate-luxuryPulse"></div>
+            
+            {/* Content Wrapper */}
+            <div className="relative z-10">
+              {/* Luxury Header */}
+              <div className="text-center mb-16">
+                <div className="relative inline-block">
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-0.5 luxury-bg-gold animate-luxuryShimmer"></div>
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+                  
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 font-serif tracking-wide luxury-text-shadow">
+                    Cookie <span className="luxury-text-static">Policy</span>
+                  </h1>
+                  
+                  {/* Premium Separator */}
+                  <div className="flex items-center justify-center gap-4 mt-8">
+                    <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+                    <div className="w-3 h-3 luxury-bg-gold rounded-full animate-luxuryPulse"></div>
+                    <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Last Updated */}
+              <div className="text-center mb-12">
+                <p className="text-[#D4AF37] font-medium text-lg tracking-wider font-serif">
+                  Last updated: January 2025
+                </p>
+              </div>
+
+              {/* Luxury Content Sections */}
+              <div className="space-y-12">
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">1. What Are Cookies?</h2>
@@ -260,7 +294,20 @@ export default function CookiePolicyPage() {
                 <li><strong>Analytics Cookies:</strong> Generally retained for up to 2 years</li>
                 <li><strong>Marketing Cookies:</strong> Retained for up to 1 year or until consent is withdrawn</li>
               </ul>
-            </section>
+              </div>
+              
+              {/* Luxury Bottom Section */}
+              <div className="text-center mt-16 pt-8 border-t border-[#D4AF37]/20">
+                <div className="luxury-glass-gold p-6 rounded-2xl border border-[#D4AF37]/20 inline-block">
+                  <p className="luxury-text-static font-serif text-lg font-semibold tracking-wider">
+                    Dubai's NO 1 Luxury Real Estate
+                  </p>
+                  <p className="text-gray-600 font-serif mt-2">
+                    Transparent cookie practices
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
