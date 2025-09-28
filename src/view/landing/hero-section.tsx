@@ -115,11 +115,11 @@ export default function HeroSection() {
             <div className="relative z-10 grid grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3">
             {/* Location */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-2.5 left-2.5 z-10">
+              <div className="absolute top-2 left-2.5 z-10">
                 <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pl-9 hover:border-[#dbbb90]/50 transition-colors text-sm">
+                <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pl-9 hover:border-[#dbbb90]/50 transition-colors text-sm">
                   <SelectValue placeholder="Location" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -136,11 +136,11 @@ export default function HeroSection() {
 
             {/* Type */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-2.5 left-2.5 z-10">
+              <div className="absolute top-2 left-2.5 z-10">
                 <Home className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
+                <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
                   <SelectValue placeholder="Type" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -159,11 +159,11 @@ export default function HeroSection() {
 
             {/* Bedrooms */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-2.5 left-2.5 z-10">
+              <div className="absolute top-2 left-2.5 z-10">
                 <Bed className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
+                <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
                   <SelectValue placeholder="Bedrooms" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
@@ -181,9 +181,9 @@ export default function HeroSection() {
 
 
             {/* Compact Search Button */}
-            <div className="lg:col-span-2 col-span-2">
-              <Button className="w-full luxury-button h-9 sm:h-10 font-semibold tracking-[0.1em] animate-luxuryGlow shadow-xl hover:shadow-[#D4AF37]/25 hover:shadow-2xl transform hover:scale-102 transition-all duration-300 flex items-center justify-center rounded-lg">
-                <Search className="w-4 h-4 text-white" />
+            <div className="lg:col-span-1 col-span-1 flex justify-center">
+              <Button className="w-12 h-7 sm:w-14 sm:h-8 luxury-button font-semibold tracking-[0.1em] animate-luxuryGlow shadow-xl hover:shadow-[#D4AF37]/25 hover:shadow-2xl transform hover:scale-102 transition-all duration-300 flex items-center justify-center rounded-lg">
+                <Search className="w-1.5 h-1.5 text-white" />
               </Button>
             </div>
             </div>
