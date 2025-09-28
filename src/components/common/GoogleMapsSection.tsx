@@ -20,6 +20,7 @@ export default function GoogleMapsSection() {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [projects, setProjects] = useState<ProjectLocation[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   // Load Google Maps script
   useEffect(() => {
@@ -30,10 +31,17 @@ export default function GoogleMapsSection() {
       }
 
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}&libraries=places`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCuk4slyXMzBAh1XocahaRnpkp_2sueWas&libraries=places`;
       script.async = true;
       script.defer = true;
-      script.onload = () => setIsLoaded(true);
+      script.onload = () => {
+        console.log('Google Maps loaded successfully');
+        setIsLoaded(true);
+      };
+      script.onerror = () => {
+        console.error('Failed to load Google Maps');
+        setHasError(true);
+      };
       document.head.appendChild(script);
     };
 
@@ -45,18 +53,19 @@ export default function GoogleMapsSection() {
     if (!isLoaded || !mapRef.current) return;
 
     const initMap = () => {
-      const mapInstance = new google.maps.Map(mapRef.current!, {
-        center: { lat: 25.2048, lng: 55.2708 }, // Dubai center
-        zoom: 11,
-        restriction: {
-          latLngBounds: {
-            north: 25.5,
-            south: 24.8,
-            east: 55.6,
-            west: 54.8
+      try {
+        const mapInstance = new google.maps.Map(mapRef.current!, {
+          center: { lat: 25.2048, lng: 55.2708 }, // Dubai center
+          zoom: 11,
+          restriction: {
+            latLngBounds: {
+              north: 25.5,
+              south: 24.8,
+              east: 55.6,
+              west: 54.8
+            },
+            strictBounds: true
           },
-          strictBounds: true
-        },
         styles: [
           {
             featureType: "all",
@@ -119,9 +128,14 @@ export default function GoogleMapsSection() {
             stylers: [{ color: "#f5f5f5" }]
           }
         ]
-      });
+        });
 
-      setMap(mapInstance);
+        setMap(mapInstance);
+        console.log('Map initialized successfully');
+      } catch (error) {
+        console.error('Error initializing map:', error);
+        setHasError(true);
+      }
     };
 
     initMap();
@@ -305,11 +319,62 @@ export default function GoogleMapsSection() {
             </div>
 
             {/* Loading State */}
-            {!isLoaded && (
+            {!isLoaded && !hasError && (
               <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-12 h-12 border-4 border-[#dbbb90]/30 border-t-[#dbbb90] rounded-full animate-spin mx-auto mb-4"></div>
                   <p className="text-gray-600 font-light font-serif">Loading Map...</p>
+                </div>
+              </div>
+            )}
+
+            {/* Error State - Show Static Map Fallback */}
+            {hasError && (
+              <div className="absolute inset-0 bg-gray-100">
+                {/* Static Map Fallback */}
+                <div className="w-full h-full bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
+                  {/* Dubai Skyline Background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="w-full h-full bg-gradient-to-t from-gray-300 via-gray-200 to-gray-100"></div>
+                  </div>
+                  
+                  {/* Property Markers */}
+                  <div className="relative z-10 grid grid-cols-3 gap-4 p-8">
+                    {projects.slice(0, 6).map((project, index) => (
+                      <div key={project.id} className="bg-white rounded-lg p-4 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                        <div className="w-3 h-3 bg-[#dbbb90] rounded-full mx-auto mb-2"></div>
+                        <h4 className="text-sm font-medium text-gray-900 text-center mb-1 font-serif">{project.name}</h4>
+                        <p className="text-xs text-gray-600 text-center">{project.community}</p>
+                        {project.price && (
+                          <p className="text-xs text-[#dbbb90] font-medium text-center mt-1">AED {project.price}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Overlay Message */}
+                  <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-[#dbbb90] rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700 font-serif">
+                        {projects.length} Luxury Properties
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Retry Button */}
+                  <div className="absolute top-6 right-6">
+                    <button 
+                      onClick={() => {
+                        setHasError(false);
+                        setIsLoaded(false);
+                        window.location.reload();
+                      }}
+                      className="bg-[#dbbb90] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#dbbb90]/90 transition-colors text-sm"
+                    >
+                      Load Interactive Map
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

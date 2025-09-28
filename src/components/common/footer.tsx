@@ -14,33 +14,41 @@ const sitemapLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden">
       {/* Luxury Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dbbb90' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dbbb90' fill-opacity='0.15'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
       
-      <div className="relative z-10 py-16 px-6 md:px-8">
+      {/* Premium Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+      
+      {/* Luxury Accent Lines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#dbbb90]/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#dbbb90]/20 to-transparent"></div>
+      
+      <div className="relative z-10 py-12 px-6 md:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Newsletter Section */}
-          <div className="mb-16">
-            <div className="relative bg-gradient-to-r from-[#dbbb90]/15 via-[#C2A17B]/10 to-[#dbbb90]/15 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#dbbb90]/30 shadow-2xl">
-              {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-[#dbbb90]/20 to-transparent rounded-full blur-xl"></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-tr from-[#C2A17B]/20 to-transparent rounded-full blur-lg"></div>
+          <div className="mb-12">
+            <div className="relative bg-gradient-to-r from-[#dbbb90]/10 via-[#C2A17B]/8 to-[#dbbb90]/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-[#dbbb90]/20 shadow-xl">
+              {/* Premium Decorative Elements */}
+              <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[#dbbb90]/15 to-transparent rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-tr from-[#C2A17B]/15 to-transparent rounded-full blur-lg"></div>
               
-              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8">
+              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-light tracking-wider leading-relaxed text-white font-serif mb-2">
-                    Stay Connected with Luxury
+                  <h3 className="text-2xl md:text-3xl font-light tracking-widest leading-relaxed text-white font-serif mb-2">
+                    Stay Connected with
+                    <span className="block text-[#dbbb90] font-normal">Luxury</span>
                   </h3>
-                  <p className="text-white/80 text-lg font-light leading-relaxed font-serif">
+                  <p className="text-white/85 text-lg font-light leading-relaxed font-serif max-w-2xl">
                     Receive our exceptional real estate listings and exclusive market insights delivered straight to your inbox.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto lg:min-w-[400px]">
+                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-[400px]">
                   <label htmlFor="email-subscribe" className="sr-only">
                     Email address for newsletter subscription
                   </label>
@@ -48,9 +56,9 @@ export default function Footer() {
                     id="email-subscribe"
                     type="email"
                     placeholder="Enter your email address"
-                    className="flex-grow bg-white/10 text-white border-[#dbbb90]/50 placeholder:text-white/60 focus-visible:ring-offset-0 focus-visible:ring-[#dbbb90] focus:border-[#dbbb90] rounded-xl h-14 backdrop-blur-sm font-serif text-lg px-6"
+                    className="flex-grow bg-white/8 text-white border-[#dbbb90]/40 placeholder:text-white/50 focus-visible:ring-offset-0 focus-visible:ring-[#dbbb90]/50 focus:border-[#dbbb90] rounded-xl h-12 backdrop-blur-sm font-serif text-base px-6 transition-all duration-300 hover:bg-white/12"
                   />
-                  <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest py-4 px-8 transition-all duration-300 uppercase h-14 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-serif text-lg min-w-[140px]">
+                  <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest py-3 px-6 transition-all duration-300 uppercase h-12 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-serif text-base min-w-[140px] border border-[#dbbb90]/20">
                     Subscribe
                   </Button>
                 </div>
@@ -59,19 +67,23 @@ export default function Footer() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Sitemap */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-wider mb-6 font-serif text-[#dbbb90]">Sitemap</h4>
+              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+                Sitemap
+                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+              </h4>
               <ul className="space-y-3">
                 {sitemapLinks.map((link, i) => (
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="relative inline-block text-white/80 hover:text-white transition-all duration-300 font-light
+                      className="relative inline-block text-white/75 hover:text-white transition-all duration-300 font-light group
                                  after:content-[''] after:absolute after:left-0 after:bottom-0
                                  after:h-[1px] after:w-0 after:bg-[#dbbb90]
-                                 after:transition-all after:duration-300 hover:after:w-full font-serif text-lg"
+                                 after:transition-all after:duration-300 hover:after:w-full font-serif text-base
+                                 hover:translate-x-1"
                     >
                       {link.label}
                     </a>
@@ -82,28 +94,31 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-wider mb-6 font-serif text-[#dbbb90]">Contact</h4>
-              <address className="not-italic space-y-4 text-white/80 font-light leading-relaxed">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-[#dbbb90]/20 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+                Contact
+                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+              </h4>
+              <address className="not-italic space-y-4 text-white/75 font-light leading-relaxed">
+                <div className="flex items-start gap-3 group">
+                  <div className="w-6 h-6 bg-[#dbbb90]/15 rounded-full flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-[#dbbb90]/25 transition-colors duration-300">
                     <svg className="w-3 h-3 text-[#dbbb90]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-serif">1403, B2B Tower, Business Bay</p>
-                    <p className="font-serif">Dubai, UAE</p>
+                    <p className="font-serif text-base">1403, B2B Tower, Business Bay</p>
+                    <p className="font-serif text-base">Dubai, UAE</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 bg-[#dbbb90]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center gap-3 group">
+                  <div className="w-6 h-6 bg-[#dbbb90]/15 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#dbbb90]/25 transition-colors duration-300">
                     <svg className="w-3 h-3 text-[#dbbb90]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <a
                     href="tel:+971507705315"
-                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-lg
+                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-base
                                after:content-[''] after:absolute after:left-0 after:bottom-0
                                after:h-[1px] after:w-0 after:bg-[#dbbb90]
                                after:transition-all after:duration-300 hover:after:w-full"
@@ -111,8 +126,8 @@ export default function Footer() {
                     +971 50 770 5315
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 bg-[#dbbb90]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center gap-3 group">
+                  <div className="w-6 h-6 bg-[#dbbb90]/15 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#dbbb90]/25 transition-colors duration-300">
                     <svg className="w-3 h-3 text-[#dbbb90]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -120,7 +135,7 @@ export default function Footer() {
                   </div>
                   <a
                     href="mailto:info@theavenue.ae"
-                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-lg
+                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-base
                                after:content-[''] after:absolute after:left-0 after:bottom-0
                                after:h-[1px] after:w-0 after:bg-[#dbbb90]
                                after:transition-all after:duration-300 hover:after:w-full"
@@ -133,13 +148,16 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-wider mb-6 font-serif text-[#dbbb90]">Follow Us</h4>
-              <div className="flex flex-wrap gap-4">
+              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+                Follow Us
+                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+              </h4>
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="https://www.facebook.com/theavenuerealestate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/10 hover:bg-[#dbbb90]/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -150,7 +168,7 @@ export default function Footer() {
                   href="https://www.instagram.com/theavenuerealestate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/10 hover:bg-[#dbbb90]/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -161,7 +179,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/the-avenue-real-estate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/10 hover:bg-[#dbbb90]/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -172,7 +190,7 @@ export default function Footer() {
                   href="https://www.youtube.com/@theavenuerealestate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/10 hover:bg-[#dbbb90]/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30"
                   aria-label="YouTube"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -183,7 +201,7 @@ export default function Footer() {
                   href="https://wa.me/971507705315"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/10 hover:bg-[#dbbb90]/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30"
                   aria-label="WhatsApp"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -195,13 +213,16 @@ export default function Footer() {
 
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-wider mb-6 font-serif text-[#dbbb90]">About Us</h4>
-              <div className="space-y-4 text-white/80 font-light leading-relaxed">
-                <p className="font-serif text-lg">
+              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+                About Us
+                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+              </h4>
+              <div className="space-y-4 text-white/75 font-light leading-relaxed">
+                <p className="font-serif text-lg leading-relaxed">
                   Dubai's premier luxury real estate destination, connecting discerning clients with exceptional properties.
                 </p>
                 <div className="flex items-center gap-3 pt-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/5">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/8 backdrop-blur-sm">
                     <Image
                       src="/images/logo.png"
                       alt="The Avenue Real Estate Logo"
@@ -211,8 +232,8 @@ export default function Footer() {
                     />
                   </div>
                   <div>
-                    <p className="font-serif font-medium text-white">The Avenue</p>
-                    <p className="text-sm text-white/60 font-serif">Real Estate</p>
+                    <p className="font-serif font-medium text-white text-lg">The Avenue</p>
+                    <p className="text-base text-white/60 font-serif">Real Estate</p>
                   </div>
                 </div>
               </div>
@@ -220,27 +241,27 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div className="border-t border-white/10 pt-12">
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/60 mb-8">
-              <a href="/privacy-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-wider relative
+          <div className="border-t border-white/10 pt-8">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-white/60 mb-8">
+              <a href="/privacy-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
                 Privacy Policy
               </a>
-              <a href="/terms-conditions" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-wider relative
+              <a href="/terms-conditions" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
                 Terms & Conditions
               </a>
-              <a href="/cookie-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-wider relative
+              <a href="/cookie-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
                 Cookie Policy
               </a>
-              <a href="/disclaimer" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-wider relative
+              <a href="/disclaimer" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
@@ -250,10 +271,10 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-white/10 pt-8 pb-6">
+          <div className="border-t border-white/10 pt-6 pb-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/5">
+                <div className="w-10 h-10 rounded-xl overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/8 backdrop-blur-sm">
                   <Image
                     src="/images/logo.png"
                     alt="The Avenue Real Estate Logo"
@@ -262,11 +283,11 @@ export default function Footer() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="font-serif font-light text-white/70 tracking-wider">
+                <p className="font-serif font-light text-white/75 tracking-widest text-base">
                   &copy; 2025 The Avenue Real Estate. All Rights Reserved.
                 </p>
               </div>
-              <div className="text-white/50 text-sm font-serif font-light">
+              <div className="text-white/60 text-sm font-serif font-light tracking-widest">
                 Crafted with luxury in mind
               </div>
             </div>
