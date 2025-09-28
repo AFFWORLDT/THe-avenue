@@ -9,59 +9,23 @@ import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { MapPin, Home, Bed, Search } from "lucide-react";
 
 export default function HeroSection() {
-  const [priceRange, setPriceRange] = useState({ min: "", max: "" });
-  const [isPriceOpen, setIsPriceOpen] = useState(false);
-
-  const handlePriceChange = (field: "min" | "max", value: string) => {
-    setPriceRange((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const getPriceDisplayValue = () => {
-    if (priceRange.min && priceRange.max) {
-      return `${parseInt(priceRange.min).toLocaleString()} - ${parseInt(
-        priceRange.max
-      ).toLocaleString()}`;
-    } else if (priceRange.min) {
-      return `${parseInt(priceRange.min).toLocaleString()}`;
-    } else if (priceRange.max) {
-      return `Up to ${parseInt(priceRange.max).toLocaleString()} `;
-    }
-    return "Price";
-  };
-
-  // Price options starting from 250,000
-  const priceOptions = [
-    { value: "250000", label: "250,000" },
-    { value: "500000", label: "500,000" },
-    { value: "750000", label: "750,000" },
-    { value: "1000000", label: "1,000,000" },
-    { value: "1500000", label: "1,500,000" },
-    { value: "2000000", label: "2,000,000" },
-    { value: "2500000", label: "2,500,000" },
-    { value: "3000000", label: "3,000,000" },
-    { value: "4000000", label: "4,000,000" },
-    { value: "5000000", label: "5,000,000" },
-    { value: "7500000", label: "7,500,000" },
-    { value: "10000000", label: "10,000,000" },
-    { value: "15000000", label: "15,000,000" },
-    { value: "20000000", label: "20,000,000" },
-    { value: "30000000", label: "30,000,000" },
-    { value: "40000000", label: "40,000,000" },
-    { value: "50000000", label: "50,000,000" },
-    { value: "60000000", label: "60,000,000" },
-    { value: "70000000", label: "70,000,000" },
-    { value: "80000000", label: "80,000,000" },
-    { value: "90000000", label: "90,000,000" },
-    { value: "100000000", label: "100,000,000" },
-  ];
 
 
   return (
     <section 
-      className="relative h-screen md:h-[115vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] overflow-hidden"
+      className="relative h-screen md:h-[115vh] w-full flex items-center justify-center text-center luxury-bg overflow-hidden"
     >
+      {/* Ultra-Luxury Background Effects */}
+      <div className="absolute inset-0 luxury-bg-pattern opacity-20"></div>
+      
+      {/* Luxury Animated Background Elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 luxury-bg-radial rounded-full animate-luxuryFloat opacity-30 blur-xl"></div>
+      <div className="absolute top-20 right-20 w-24 h-24 luxury-bg-gold rounded-full animate-luxuryBreathe opacity-20 blur-lg"></div>
+      <div className="absolute bottom-20 left-20 w-28 h-28 luxury-bg-bronze rounded-full animate-luxuryPulse opacity-25 blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-36 h-36 luxury-bg-radial rounded-full animate-luxuryFloat opacity-20 blur-2xl"></div>
 
       {/* Ultra-Rich Cinematic Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -73,53 +37,90 @@ export default function HeroSection() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{
-            filter: 'brightness(1.2) contrast(1.1) saturate(1.1)'
+            filter: 'brightness(1.3) contrast(1.2) saturate(1.2) sepia(0.1)'
           }}
         >
           <source src="/herooo.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Enhanced Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 z-10" />
+      {/* Ultra-Luxury Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 z-15" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#D4AF37]/5 to-transparent z-16" />
       
-      {/* Cinematic Overlay Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-15" />
+      {/* Luxury Cinematic Vignette */}
+      <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/50 z-17" />
 
-      {/* Hero Title - Center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-4xl w-full px-4">
+      {/* Ultra-Luxury Hero Title - Center */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-6xl w-full px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 50, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-light mb-4 sm:mb-6 text-white font-serif tracking-wide">
-            Luxury Living Reimagined
+          {/* Luxury Decorative Elements */}
+          <div className="relative mb-8">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-0.5 luxury-bg-gold animate-luxuryGlow"></div>
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-light mb-6 sm:mb-8 text-white font-serif tracking-wider leading-tight">
+            <span className="luxury-text-shadow">Luxury Living</span>
+            <br />
+            <span className="luxury-text inline-block animate-luxuryGoldFlow">Reimagined</span>
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg uppercase max-w-2xl mx-auto text-white/90 leading-relaxed tracking-widest font-serif">
-            EMBRACE TO A JOURNEY OF PURE SOPHISTICATION
-          </p>
+          
+          {/* Luxury Separator */}
+          <div className="flex items-center justify-center gap-4 mb-6 sm:mb-8">
+            <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+            <div className="w-3 h-3 luxury-bg-gold rounded-full animate-luxuryPulse"></div>
+            <div className="w-12 h-px luxury-bg-gold animate-luxuryShimmer"></div>
+          </div>
+          
+          <motion.p 
+            className="text-base sm:text-lg lg:text-xl xl:text-2xl uppercase max-w-3xl mx-auto text-white/95 leading-relaxed tracking-[0.2em] font-serif luxury-text-shadow"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Embrace a Journey of Pure Sophistication
+          </motion.p>
+          
+          {/* Luxury Decorative Elements Bottom */}
+          <div className="relative mt-8">
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-0.5 luxury-bg-gold animate-luxuryGlow"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Search Form - Bottom */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
+      {/* Ultra-Luxury Search Form - Bottom */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white px-4 sm:px-6 lg:px-8 container w-full max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
+          className="luxury-hover"
         >
-
         <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-3 p-3 sm:p-4 bg-white/95 sm:bg-black/20 backdrop-blur-md rounded-lg sm:rounded-xl border border-white/20 shadow-xl">
+          {/* Compact Luxury Form Container */}
+          <div className="relative luxury-glass-gold rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-[#D4AF37]/30 shadow-xl overflow-hidden">
+            {/* Minimalist Background Pattern */}
+            <div className="absolute inset-0 luxury-bg-pattern opacity-5"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 luxury-bg-radial rounded-full blur-2xl opacity-15 animate-luxuryBreathe"></div>
+            <div className="absolute bottom-0 left-0 w-12 h-12 luxury-bg-gold rounded-full blur-xl opacity-10 animate-luxuryPulse"></div>
+            
+            {/* Compact Form Grid */}
+            <div className="relative z-10 grid grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3">
             {/* Location */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-1.5 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
-                Location
+              <div className="absolute top-2.5 left-2.5 z-10">
+                <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-11 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-md pt-4 pb-1 hover:border-[#dbbb90]/50 transition-colors">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-1" />
+                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pl-9 hover:border-[#dbbb90]/50 transition-colors text-sm">
+                  <SelectValue placeholder="Location" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
@@ -135,12 +136,12 @@ export default function HeroSection() {
 
             {/* Type */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-1.5 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
-                Type
+              <div className="absolute top-2.5 left-2.5 z-10">
+                <Home className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-11 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-md focus:ring-offset-0 focus:ring-transparent pt-4 pb-1">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-1" />
+                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
+                  <SelectValue placeholder="Type" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
@@ -155,82 +156,15 @@ export default function HeroSection() {
               </Select>
             </div>
 
-            {/* Price */}
-            <div className="lg:col-span-1 relative">
-              <div className="absolute top-1.5 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
-                Price
-              </div>
-              <div
-                className="relative w-full h-10 sm:h-11 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-md focus:ring-offset-0 focus:ring-transparent cursor-pointer flex items-center px-3 pt-4 pb-1"
-                onClick={() => setIsPriceOpen(!isPriceOpen)}
-              >
-                <span className="text-white max-sm:text-black max-sm:hidden pt-1">
-                  {getPriceDisplayValue()}
-                </span>
-              </div>
-
-              {isPriceOpen && (
-                <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 shadow-lg z-50 p-4 w-72 max-sm:w-full">
-                  <div className="flex gap-4">
-                    <div className="flex-1">
-                      <label className="block text-xs text-gray-500 mb-2">
-                        Min Price
-                      </label>
-                      <Select
-                        value={priceRange.min}
-                        onValueChange={(value) =>
-                          handlePriceChange("min", value)
-                        }
-                      >
-                        <SelectTrigger className="w-full h-10 text-gray-900 border-gray-300 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 border">
-                          <SelectValue placeholder="Any" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white text-gray-900 max-h-48 overflow-y-auto">
-                          <SelectItem value="any">Any</SelectItem>
-                          {priceOptions.map((option) => (
-                            <SelectItem key={option.value} value={option.value}>
-                              {option.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="flex-1">
-                      <label className="block text-xs text-gray-500 mb-2">
-                        Max Price
-                      </label>
-                      <Select
-                        value={priceRange.max}
-                        onValueChange={(value) =>
-                          handlePriceChange("max", value)
-                        }
-                      >
-                        <SelectTrigger className="w-full h-10 text-gray-900 border-gray-300 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 border">
-                          <SelectValue placeholder="Any" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white text-gray-900 max-h-48 overflow-y-auto">
-                          <SelectItem value="any">Any</SelectItem>
-                          {priceOptions.map((option) => (
-                            <SelectItem key={option.value} value={option.value}>
-                              {option.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
 
             {/* Bedrooms */}
             <div className="lg:col-span-1 relative">
-              <div className="absolute top-1.5 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
-                Bedrooms
+              <div className="absolute top-2.5 left-2.5 z-10">
+                <Bed className="w-3.5 h-3.5 text-[#D4AF37]" />
               </div>
               <Select>
-                <SelectTrigger className="w-full h-10 sm:h-11 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-md focus:ring-offset-0 focus:ring-transparent pt-4 pb-1">
-                  <SelectValue placeholder="Any" className="max-sm:hidden pt-1" />
+                <SelectTrigger className="w-full h-9 sm:h-10 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
+                  <SelectValue placeholder="Bedrooms" className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
@@ -245,29 +179,18 @@ export default function HeroSection() {
               </Select>
             </div>
 
-            {/* Ref Number */}
-            <div className="lg:col-span-1 relative">
-              <div className="absolute top-1.5 left-3 text-xs text-white/70 max-sm:text-gray-500 z-10 font-serif">
-                Ref Number
-              </div>
-              <Input
-                type="text"
-                placeholder=""
-                className="w-full h-10 sm:h-11 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-md placeholder:text-white/70 max-sm:placeholder:text-black/70 focus-visible:ring-offset-0 focus-visible:ring-transparent pt-4 pb-1"
-              />
-            </div>
 
-            {/* Search Button */}
-            <div className="lg:col-span-1 sm:col-span-2">
-              <Button className="w-full bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light py-1.5 px-3 rounded-md transition-all duration-300 h-10 sm:h-11 uppercase tracking-wider text-xs sm:text-sm shadow-md hover:shadow-lg">
-                Search
+            {/* Compact Search Button */}
+            <div className="lg:col-span-2 col-span-2">
+              <Button className="w-full luxury-button h-9 sm:h-10 font-semibold tracking-[0.1em] animate-luxuryGlow shadow-xl hover:shadow-[#D4AF37]/25 hover:shadow-2xl transform hover:scale-102 transition-all duration-300 flex items-center justify-center rounded-lg">
+                <Search className="w-4 h-4 text-white" />
               </Button>
+            </div>
             </div>
           </div>
         </div>
         </motion.div>
       </div>
-
 
     </section>
   );

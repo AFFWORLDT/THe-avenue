@@ -117,26 +117,37 @@ export default function Header() {
   }, [isOverlayOpen]);
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isScrolled ? "luxury-glass shadow-2xl border-b-2 border-[#D4AF37]/20" : "luxury-glass-gold"
       }`}
     >
+      {/* Ultra-Luxury Background Effects */}
+      <div className="absolute inset-0 luxury-bg-pattern opacity-5"></div>
+      <div className="absolute top-0 left-0 w-full h-1 luxury-bg-gold animate-luxuryShimmer"></div>
+      
       <nav
         className={cn(
-          "container mx-auto flex items-center justify-between px-4 md:px-6",
+          "container mx-auto flex items-center justify-between px-4 md:px-6 relative z-10",
           isScrolled ? "h-20" : "h-24"
         )}
       >
-        {/* Logo */}
+        {/* Ultra-Luxury Logo */}
         <div className="flex items-center">
-          <Link href={"/"}>
-            <Image
-              src="/images/logo.png"
-              alt="The Avenue Real Estate Logo"
-              width={220}
-              height={80}
-              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24 transition-all duration-300 hover:scale-105"
-            />
+          <Link href={"/"} className="luxury-hover group">
+            <div className="relative">
+              {/* Luxury Glow Effect */}
+              <div className="absolute inset-0 luxury-bg-gold rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
+              <Image
+                src="/images/logo.png"
+                alt="The Avenue Real Estate Logo"
+                width={220}
+                height={80}
+                className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24 transition-all duration-500 hover:scale-110 luxury-text-shadow relative z-10"
+              />
+              {/* Luxury Decorative Elements */}
+              <div className="absolute -top-1 -right-1 w-3 h-3 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-100 animate-luxurySparkle transition-opacity duration-300"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 luxury-bg-bronze rounded-full opacity-0 group-hover:opacity-100 animate-luxuryPulse transition-opacity duration-300"></div>
+            </div>
           </Link>
         </div>
 
@@ -150,24 +161,24 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative pb-1 transition-all duration-300 font-serif text-[16px] font-light",
-                        isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
-                        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
-                        "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
-                        pathname === link.href && "after:w-full"
+                        "relative pb-2 transition-all duration-500 font-serif text-[16px] font-medium tracking-[0.15em] luxury-hover group",
+                        isScrolled && pathname === "/" ? "text-gray-900 hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]",
+                        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
+                        "after:luxury-bg-gold after:transition-all after:duration-500 hover:after:w-full after:animate-luxuryShimmer",
+                        pathname === link.href && "after:w-full text-[#D4AF37] luxury-text-shadow"
                       )}
-                      style={{
-                        letterSpacing: "2px",
-                      }}
                     >
-                      {link.label}
+                      <span className="relative z-10">{link.label}</span>
+                      {/* Luxury Glow Effect */}
+                      <div className="absolute inset-0 luxury-bg-gold rounded-md opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
                     </Link>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-[500px] p-0" sideOffset={10}>
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-200">
-                      {/* Header */}
-                      <div className="p-4 border-b border-gray-100">
-                        <h3 className="text-gray-500 text-sm font-light">Our Services</h3>
+                    <div className="luxury-glass-gold rounded-2xl shadow-2xl border-2 border-[#D4AF37]/20 overflow-hidden">
+                      {/* Ultra-Luxury Header */}
+                      <div className="p-6 border-b border-[#D4AF37]/20 luxury-bg">
+                        <h3 className="luxury-text-static text-lg font-semibold tracking-[0.1em]">Our Luxury Services</h3>
+                        <div className="w-12 h-0.5 luxury-bg-gold mt-2 animate-luxuryShimmer"></div>
                       </div>
                       
                       {/* Services Grid */}
@@ -186,7 +197,7 @@ export default function Header() {
                                   service.name === "Short Term Rentals" ? "/short-term-rental" :
                                   "/service"
                                 }
-                                className="flex items-center space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                                className="flex items-center space-x-3 p-3 rounded-xl hover:luxury-bg-gold/10 transition-all duration-300 cursor-pointer group luxury-hover border border-transparent hover:border-[#D4AF37]/20"
                               >
                                 <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
                                   {service.icon}
@@ -211,7 +222,7 @@ export default function Header() {
                                   service.name === "Short-Term Rental" ? "/short-term-rental" :
                                   "/service"
                                 }
-                                className="flex items-center space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                                className="flex items-center space-x-3 p-3 rounded-xl hover:luxury-bg-gold/10 transition-all duration-300 cursor-pointer group luxury-hover border border-transparent hover:border-[#D4AF37]/20"
                               >
                                 <div className="flex-shrink-0 transition-colors duration-200 group-hover:text-blue-600">
                                   {service.icon}
@@ -235,17 +246,16 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "relative pb-1 transition-all duration-300 font-serif text-[16px] font-light",
-                  isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
-                "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
-                "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
-                pathname === link.href && "after:w-full"
+                  "relative pb-2 transition-all duration-500 font-serif text-[16px] font-medium tracking-[0.15em] luxury-hover group",
+                  isScrolled && pathname === "/" ? "text-gray-900 hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]",
+                "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
+                "after:luxury-bg-gold after:transition-all after:duration-500 hover:after:w-full after:animate-luxuryShimmer",
+                pathname === link.href && "after:w-full text-[#D4AF37] luxury-text-shadow"
               )}
-              style={{
-                letterSpacing: "2px",
-              }}
             >
-              {link.label}
+              <span className="relative z-10">{link.label}</span>
+              {/* Luxury Glow Effect */}
+              <div className="absolute inset-0 luxury-bg-gold rounded-md opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
             </Link>
             );
           })}
@@ -253,27 +263,35 @@ export default function Header() {
 
         {/* Right Side - Mobile Menu Only */}
         <div className="flex items-center">
-          {/* Mobile Menu Button */}
+          {/* Ultra-Luxury Mobile Menu Button */}
           <div
             className={cn(
-              "lg:hidden cursor-pointer transition-colors duration-200",
-              isScrolled ? "text-black" : "text-black"
+              "lg:hidden cursor-pointer transition-all duration-500 luxury-hover group p-2 rounded-xl",
+              isScrolled ? "text-[#D4AF37] hover:text-[#B8941F]" : "text-[#D4AF37] hover:text-[#B8941F]"
             )}
             onClick={() => setIsOverlayOpen(true)}
           >
-            <Menu className="h-7 w-7" />
+            <div className="relative">
+              <Menu className="h-7 w-7 transition-all duration-300 group-hover:scale-110" />
+              {/* Luxury Glow Effect */}
+              <div className="absolute inset-0 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Overlay */}
+      {/* Ultra-Luxury Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 bg-white text-gray-900 z-[100] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 luxury-bg text-gray-900 z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        {/* Luxury Background Effects */}
+        <div className="absolute inset-0 luxury-bg-pattern opacity-10"></div>
+        <div className="absolute top-0 left-0 w-full h-2 luxury-bg-gold animate-luxuryShimmer"></div>
+        
+        <div className="flex items-center justify-between p-6 border-b-2 border-[#D4AF37]/20 relative z-10">
           <div className="flex items-center space-x-3">
             <Image
               src="/images/logo.png"
@@ -282,31 +300,31 @@ export default function Header() {
               height={50}
               className="object-contain w-40 h-12"
             />
-            <h2 className="text-lg font-semibold">Menu</h2>
+            <h2 className="text-lg font-semibold luxury-text-static tracking-[0.1em]">Menu</h2>
           </div>
           <button
           onClick={() => setIsOverlayOpen(false)}
-            className="text-gray-500 hover:text-gray-700"
+            className="text-[#D4AF37] hover:text-[#B8941F] luxury-hover p-2 rounded-xl transition-all duration-300"
         >
             <X className="h-6 w-6" />
           </button>
         </div>
 
-        <nav className="flex flex-col p-6 space-y-4">
+        <nav className="flex flex-col p-6 space-y-6 relative z-10">
           {navLinks.map((link, i) => {
             if (link.href === "/service") {
               return (
-                <div key={i} className="space-y-2">
+                <div key={i} className="space-y-3">
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className={cn(
-                      "flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 transition-colors duration-200 py-2",
-                      pathname === link.href && "text-gray-900 font-medium"
+                      "flex items-center justify-between w-full text-left text-gray-700 hover:text-[#D4AF37] transition-all duration-300 py-3 px-4 rounded-xl luxury-hover font-serif tracking-[0.1em]",
+                      pathname === link.href && "text-[#D4AF37] font-medium luxury-text-shadow"
                     )}
                   >
-                    <span>{link.label}</span>
+                    <span className="text-lg">{link.label}</span>
                     <ChevronDown className={cn(
-                      "h-4 w-4 transition-transform duration-200",
+                      "h-5 w-5 transition-transform duration-300 text-[#D4AF37]",
                       isServicesOpen && "rotate-180"
                     )} />
                   </button>
