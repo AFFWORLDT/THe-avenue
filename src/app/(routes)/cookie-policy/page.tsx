@@ -294,7 +294,7 @@ export default function CookiePolicyPage() {
                 <li><strong>Analytics Cookies:</strong> Generally retained for up to 2 years</li>
                 <li><strong>Marketing Cookies:</strong> Retained for up to 1 year or until consent is withdrawn</li>
               </ul>
-              </div>
+            </section>
               
               {/* Luxury Bottom Section */}
               <div className="text-center mt-16 pt-8 border-t border-[#D4AF37]/20">
