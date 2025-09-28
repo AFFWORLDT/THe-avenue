@@ -124,7 +124,7 @@ export default function Header() {
       <nav
         className={cn(
           "container mx-auto flex items-center justify-between px-4 md:px-6",
-          isScrolled ? "h-14" : "h-16"
+          isScrolled ? "h-20" : "h-24"
         )}
       >
         {/* Logo */}
@@ -133,15 +133,15 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="The Avenue Real Estate Logo"
-              width={180}
-              height={60}
-              className="object-contain w-44 h-12 sm:w-48 sm:h-13 md:w-52 md:h-14 lg:w-56 lg:h-15"
+              width={220}
+              height={80}
+              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24 transition-all duration-300 hover:scale-105"
             />
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-10">
+        <div className="hidden lg:flex items-center space-x-12">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
               return (
@@ -150,7 +150,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative pb-1 transition-all duration-300 font-serif text-[14px] font-light",
+                        "relative pb-1 transition-all duration-300 font-serif text-[16px] font-light",
                         isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
                         "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
                         "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
@@ -235,7 +235,7 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "relative pb-1 transition-all duration-300 font-serif text-[14px] font-light",
+                  "relative pb-1 transition-all duration-300 font-serif text-[16px] font-light",
                   isScrolled && pathname === "/" ? "text-gray-900" : "text-gray-800",
                 "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
                 "after:bg-[#dbbb90] after:transition-all after:duration-300 hover:after:w-full",
@@ -261,7 +261,7 @@ export default function Header() {
             )}
             onClick={() => setIsOverlayOpen(true)}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-7 w-7" />
           </div>
         </div>
       </nav>
@@ -278,9 +278,9 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="The Avenue Real Estate Logo"
-              width={120}
-              height={40}
-              className="object-contain w-32 h-9"
+              width={160}
+              height={50}
+              className="object-contain w-40 h-12"
             />
             <h2 className="text-lg font-semibold">Menu</h2>
           </div>
