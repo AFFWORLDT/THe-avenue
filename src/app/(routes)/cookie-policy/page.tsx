@@ -307,6 +307,7 @@ export default function CookiePolicyPage() {
                   </p>
                 </div>
               </div>
+              </div>
             </div>
           </div>
         </div>
