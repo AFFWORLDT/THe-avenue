@@ -16,6 +16,7 @@ export default function DetailPage({ id }: any) {
   const [heroImageIndex, setHeroImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   useEffect(() => {
     async function fetchProperty() {
@@ -110,7 +111,6 @@ export default function DetailPage({ id }: any) {
           </div>
         </div>
         <div className="relative z-30 text-white px-4 mt-[60vh]">
-          <span>#{id}</span>
           <h1 className="text-3xl md:text-4xl font-light mb-4 leading-tight tracking-wide">
             {property?.name}
           </h1>
@@ -129,14 +129,6 @@ export default function DetailPage({ id }: any) {
               onClick={() => setIsOpen(true)}
             >
               Enquire Now
-            </a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">
-              Brochure
-            </a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">
-              <Icon icon="lucide:heart" className="w-4 h-4 inline-block" />
             </a>
             {property?.agent && (
               <>
@@ -246,9 +238,45 @@ export default function DetailPage({ id }: any) {
             <h2 className="text-4xl font-serif text-gray-800 mb-8">
               Description
             </h2>
-            <p className="text-sm font-light text-gray-600 leading-relaxed mb-6 line-clamp-4">
-              {property?.description}
-            </p>
+            <div className="relative">
+              <p className={`text-sm font-light text-gray-600 leading-relaxed mb-6 transition-all duration-500 ${
+                isDescriptionExpanded ? '' : 'line-clamp-4'
+              }`}>
+                {property?.description}
+              </p>
+              
+              {/* Luxury Read More Button */}
+              <div className="flex justify-center mt-8">
+                <motion.button
+                  onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                  className="group relative overflow-hidden bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest uppercase px-8 py-4 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-[#dbbb90]/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Luxury Background Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  
+                  {/* Button Content */}
+                  <div className="relative flex items-center gap-3">
+                    <span className="font-serif text-base">
+                      {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: isDescriptionExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Icon 
+                        icon={isDescriptionExpanded ? "lucide:chevron-up" : "lucide:chevron-down"} 
+                        className="w-5 h-5" 
+                      />
+                    </motion.div>
+                  </div>
+                  
+                  {/* Luxury Accent Line */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></div>
+                </motion.button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
