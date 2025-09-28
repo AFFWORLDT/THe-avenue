@@ -407,6 +407,154 @@ export default function DetailPage({ id }: any) {
         <div className="my-5">
           <LocationSection property={property} />
         </div>
+
+        {/* Luxury Agents Section */}
+        {property?.assigned_agents && property.assigned_agents.length > 0 && (
+          <section className="bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] py-20 px-4 md:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 font-serif">
+                  Meet Your <span className="text-[#dbbb90] font-normal">Property Specialists</span>
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] mx-auto mb-6"></div>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-serif">
+                  Our experienced real estate professionals are here to guide you through every step of your property journey with personalized service and expert knowledge.
+                </p>
+              </div>
+
+              {/* Agents Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {property.assigned_agents.map((agent: any, index: number) => (
+                  <motion.div
+                    key={agent.id || index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group relative"
+                  >
+                    {/* Luxury Agent Card */}
+                    <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 hover:border-[#dbbb90]/30 overflow-hidden">
+                      {/* Luxury Background Effects */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#dbbb90]/10 to-transparent rounded-full blur-2xl"></div>
+                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#C2A17B]/10 to-transparent rounded-full blur-xl"></div>
+                      
+                      {/* Agent Avatar */}
+                      <div className="relative mb-6 flex justify-center">
+                        <div className="relative">
+                          <div className="w-24 h-24 rounded-2xl overflow-hidden border-3 border-[#dbbb90]/30 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                            {agent.avatar ? (
+                              <Image
+                                src={agent.avatar}
+                                alt={agent.name}
+                                width={96}
+                                height={96}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gradient-to-br from-[#dbbb90] to-[#C2A17B] flex items-center justify-center">
+                                <span className="text-2xl font-bold text-white">
+                                  {agent.name?.charAt(0) || 'A'}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          {/* Online Status */}
+                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-3 border-white flex items-center justify-center shadow-lg">
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Agent Information */}
+                      <div className="text-center mb-6">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2 font-serif">
+                          {agent.name}
+                        </h3>
+                        <p className="text-[#dbbb90] font-medium text-sm uppercase tracking-wider mb-3">
+                          Property Specialist
+                        </p>
+                        
+                        {/* Agent Details */}
+                        <div className="space-y-2 text-sm text-gray-600">
+                          {agent.phone && (
+                            <div className="flex items-center justify-center gap-2">
+                              <Icon icon="lucide:phone" className="w-4 h-4 text-[#dbbb90]" />
+                              <span>{agent.phone}</span>
+                            </div>
+                          )}
+                          {agent.email && (
+                            <div className="flex items-center justify-center gap-2">
+                              <Icon icon="lucide:mail" className="w-4 h-4 text-[#dbbb90]" />
+                              <span className="truncate">{agent.email}</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Languages */}
+                        {agent.languages && agent.languages.length > 0 && (
+                          <div className="mt-4">
+                            <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Languages</p>
+                            <div className="flex flex-wrap justify-center gap-1">
+                              {agent.languages.slice(0, 2).map((lang: string, langIndex: number) => (
+                                <span key={langIndex} className="px-2 py-1 bg-[#dbbb90]/10 text-[#dbbb90] text-xs rounded-full border border-[#dbbb90]/20">
+                                  {lang.split(':')[1] || lang}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Contact Actions */}
+                      <div className="flex justify-center gap-3">
+                        {agent.phone && (
+                          <a
+                            href={`https://wa.me/${agent.phone.replace(/[^0-9]/g, '')}?text=Hi ${agent.name}, I'm interested in ${property.name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/btn w-12 h-12 bg-green-500 hover:bg-green-600 rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                          >
+                            <Icon icon="iconoir:whatsapp-solid" className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform duration-200" />
+                          </a>
+                        )}
+                        {agent.phone && (
+                          <a
+                            href={`tel:${agent.phone}`}
+                            className="group/btn w-12 h-12 bg-[#dbbb90] hover:bg-[#C2A17B] rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                          >
+                            <Icon icon="lucide:phone" className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform duration-200" />
+                          </a>
+                        )}
+                        {agent.email && (
+                          <a
+                            href={`mailto:${agent.email}?subject=Inquiry about ${property.name}`}
+                            className="group/btn w-12 h-12 bg-gray-700 hover:bg-gray-800 rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                          >
+                            <Icon icon="lucide:mail" className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform duration-200" />
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Luxury Hover Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#dbbb90]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Bottom CTA */}
+              <div className="text-center mt-16">
+                <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-4 border border-[#dbbb90]/20 shadow-lg">
+                  <Icon icon="lucide:users" className="w-6 h-6 text-[#dbbb90]" />
+                  <p className="text-gray-700 font-serif">
+                    <span className="font-semibold">{property.assigned_agents.length}</span> specialist{property.assigned_agents.length !== 1 ? 's' : ''} ready to assist you
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <AnimatePresence>
             <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-none px-8 py-4">
