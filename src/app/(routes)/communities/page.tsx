@@ -60,8 +60,7 @@ function Communities() {
     } else {
       const filtered = communities.filter((community) =>
         community.name?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.location?.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        community.description?.toLowerCase().includes(searchKeyword.toLowerCase())
+        community.city?.toLowerCase().includes(searchKeyword.toLowerCase())
       );
       setFilteredCommunities(filtered);
     }
@@ -87,13 +86,20 @@ function Communities() {
           <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 font-serif">
             Unveiling Dubai&rsquo;s <span className="text-[#dbbb90] font-normal">Vibrant</span> Communities
           </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-serif">
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-serif mb-6">
             Dubai is a city of diverse neighborhoods, each offering a unique
             character &amp; lifestyle. Beyond the stunning architecture, your
             bespoke community awaits. Explore the soul of Dubai&rsquo;s
             communities, ensuring your new property seamlessly integrates with
             your personal demographics &amp; desired lifestyle.
           </p>
+          {total > 0 && (
+            <div className="inline-flex items-center px-6 py-3 bg-[#dbbb90]/10 rounded-full border border-[#dbbb90]/20">
+              <p className="text-[#dbbb90] font-medium font-serif">
+                {total} Communities Available
+              </p>
+            </div>
+          )}
         </div>
         
         {/* Enhanced Search Input */}
