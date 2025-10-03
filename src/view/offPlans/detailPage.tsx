@@ -11,7 +11,6 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import LocationSection from "./Location";
 import PaymentPlanSection from "./PaymentPlanSection";
 import FloorPlansSection from "./FloorPlansSection";
-import InvestmentReasonsSection from "./InvestmentReasonsSection";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
@@ -622,8 +621,6 @@ export default function DetailPage({ id }: any) {
         {/* Floor Plans Section */}
         <FloorPlansSection property={property} />
 
-        {/* Investment Reasons Section */}
-        <InvestmentReasonsSection property={property} />
 
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
