@@ -25,10 +25,7 @@ export default function LeadCaptureForm({
     name: "",
     email: "",
     phone: "",
-    message: "",
-    propertyInterest: "",
-    budget: "",
-    timeline: ""
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,20 +43,15 @@ export default function LeadCaptureForm({
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       setIsSubmitted(true);
       onSuccess?.();
       
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
-        message: "",
-        propertyInterest: "",
-        budget: "",
-        timeline: ""
+        message: ""
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -117,45 +109,16 @@ export default function LeadCaptureForm({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="relative">
-          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-          <Input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number *"
-            value={formData.phone}
-            onChange={handleInputChange}
-            required
-            className="pl-10 rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
-          />
-        </div>
+      <div className="relative">
+        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
         <Input
-          type="text"
-          name="propertyInterest"
-          placeholder="Property Type Interest"
-          value={formData.propertyInterest}
+          type="tel"
+          name="phone"
+          placeholder="Phone Number *"
+          value={formData.phone}
           onChange={handleInputChange}
-          className="rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
-        />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
-          type="text"
-          name="budget"
-          placeholder="Budget Range"
-          value={formData.budget}
-          onChange={handleInputChange}
-          className="rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
-        />
-        <Input
-          type="text"
-          name="timeline"
-          placeholder="Timeline to Purchase"
-          value={formData.timeline}
-          onChange={handleInputChange}
-          className="rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
+          required
+          className="pl-10 rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
         />
       </div>
 

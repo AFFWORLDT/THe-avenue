@@ -22,7 +22,7 @@ import { Loader, X, Search } from "lucide-react";
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import Link from "next/link";
-import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
+import LeadCaptureForm from "../../components/common/LeadCaptureForm";
 import { useRouter } from "next/navigation";
 
 // Constants

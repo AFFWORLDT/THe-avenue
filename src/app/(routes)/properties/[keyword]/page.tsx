@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { motion } from "framer-motion";
 import { Bed, Bath, SquareGanttChart, MapPin, Search, Filter } from "lucide-react";
 import { SEO_KEYWORDS, generatePageTitle, generatePropertySEO } from "@/src/lib/seo";
-import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
+import LeadCaptureForm from "../../../components/common/LeadCaptureForm";
 import PropertyCardSkeleton from "@/src/components/common/property-card-skeleton";
 
 export default function KeywordPropertyPage() {
