@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai with The Avenue Real Estate. Your trusted partner for buying, renting, and investing in Dubai's finest properties.",
   keywords: "Dubai real estate, luxury properties, off-plan projects, property investment, Dubai Marina, Downtown Dubai, Palm Jumeirah",
   authors: [{ name: "The Avenue Real Estate" }],
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
   openGraph: {
     title: "The Avenue Real Estate - Premium Properties in Dubai",
     description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai",
