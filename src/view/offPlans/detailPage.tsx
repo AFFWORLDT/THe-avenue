@@ -12,7 +12,6 @@ import LocationSection from "./Location";
 import PaymentPlanSection from "./PaymentPlanSection";
 import FloorPlansSection from "./FloorPlansSection";
 import InvestmentReasonsSection from "./InvestmentReasonsSection";
-import RelatedProjectsSection from "./RelatedProjectsSection";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
@@ -626,8 +625,6 @@ export default function DetailPage({ id }: any) {
         {/* Investment Reasons Section */}
         <InvestmentReasonsSection property={property} />
 
-        {/* Related Projects Section */}
-        <RelatedProjectsSection property={property} />
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <AnimatePresence>
