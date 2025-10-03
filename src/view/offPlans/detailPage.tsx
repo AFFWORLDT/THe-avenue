@@ -13,7 +13,6 @@ import PaymentPlanSection from "./PaymentPlanSection";
 import FloorPlansSection from "./FloorPlansSection";
 import InvestmentReasonsSection from "./InvestmentReasonsSection";
 import RelatedProjectsSection from "./RelatedProjectsSection";
-import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
@@ -630,16 +629,6 @@ export default function DetailPage({ id }: any) {
         {/* Related Projects Section */}
         <RelatedProjectsSection property={property} />
 
-        {/* Lead Capture Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto max-w-4xl">
-            <LeadCaptureForm 
-              title="Ready to Invest in This Project?"
-              subtitle="Get exclusive access to this project and personalized investment guidance from our experts"
-              variant="default"
-            />
-          </div>
-        </section>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <AnimatePresence>
             <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-lg px-8 py-4">
