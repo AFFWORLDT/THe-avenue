@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import LocationSection from "./Location";
 import PaymentPlanSection from "./PaymentPlanSection";
-import FloorPlansSection from "./FloorPlansSection";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
@@ -618,8 +617,6 @@ export default function DetailPage({ id }: any) {
         {/* Payment Plans Section */}
         <PaymentPlanSection property={property} />
 
-        {/* Floor Plans Section */}
-        <FloorPlansSection property={property} />
 
 
 
