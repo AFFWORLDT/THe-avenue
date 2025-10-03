@@ -24,7 +24,7 @@ import React, { useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
+import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 
 // Constants
 const COMPLETION_STATUS_OPTIONS = [

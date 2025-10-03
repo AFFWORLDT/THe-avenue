@@ -8,7 +8,7 @@ import { CallToAction } from "@/src/view/landing/call-to-action";
 import PartnersSection from "../../view/landing/PartnersSection";
 import Solutions from "../../view/landing/solutions";
 import GoogleMapsSection from "@/src/components/common/GoogleMapsSection";
-import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
+import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 
 export default function Home() {
   return (

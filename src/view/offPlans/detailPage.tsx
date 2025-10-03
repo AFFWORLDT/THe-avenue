@@ -13,7 +13,7 @@ import PaymentPlanSection from "./PaymentPlanSection";
 import FloorPlansSection from "./FloorPlansSection";
 import InvestmentReasonsSection from "./InvestmentReasonsSection";
 import RelatedProjectsSection from "./RelatedProjectsSection";
-import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
+import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 
 export default function DetailPage({ id }: any) {
   const [property, setProperty] = useState<any>(null);
