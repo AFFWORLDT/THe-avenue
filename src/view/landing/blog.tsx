@@ -70,7 +70,7 @@ export function InsightsInspiration() {
           whileTap={{ scale: 0.95 }}
         >
        <Link href={"/blog"} passHref>
-        <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-extralight tracking-wider py-2 px-4 rounded-none transition-colors uppercase">
+        <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-extralight tracking-wider py-2 px-4 rounded-lg transition-colors uppercase">
        VIEW ALL BLOGS
           </Button>
        </Link>

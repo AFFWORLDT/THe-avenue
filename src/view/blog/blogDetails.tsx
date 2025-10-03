@@ -77,7 +77,7 @@ export default function DetailsBlog() {
       </div>
       {/* Featured Image */}
       <div className="max-w-5xl mx-auto px-6 mt-8 mb-12">
-        <div className="relative rounded-none overflow-hidden ">
+        <div className="relative rounded-lg overflow-hidden ">
           <Image
             src={"/images/blog1.webp"}
             alt="Featured image"

@@ -331,7 +331,7 @@ function OffPlansPage() {
           {FilterButton}
 
           {/* Desktop Search Form */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
            
             {/* Location */}
             <div className="col-span-2">
@@ -339,7 +339,7 @@ function OffPlansPage() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
-                className="w-full h-10 text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm"
+                className="w-full h-10 text-gray-800 bg-white/90 border border-[#dbbb90]/30 placeholder:text-gray-600 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm rounded-lg"
               />
             </div>
 
@@ -362,7 +362,7 @@ function OffPlansPage() {
                 value={filters.bedrooms}
                 onValueChange={(value) => handleFilterChange("bedrooms", value)}
               >
-                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm">
+                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm rounded-lg">
                   <SelectValue placeholder="Beds" />
                 </SelectTrigger>
                 <SelectContent>
@@ -429,7 +429,7 @@ function OffPlansPage() {
                   handleFilterChange("handover_year", value)
                 }
               >
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -447,7 +447,7 @@ function OffPlansPage() {
             <div className="space-y-2 md:hidden">
               <label className="text-sm font-medium text-gray-700">Type</label>
               <Select value={filters.type} onValueChange={(value) => handleFilterChange("type", value)}>
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-14 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-14 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -467,7 +467,7 @@ function OffPlansPage() {
                   placeholder="City, building or community"
                   value={filters.title}
                   onChange={(e) => handleFilterChange("title", e.target.value)}
-                  className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary"
+                  className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary"
                 />
                 <Icon
                   icon="heroicons:magnifying-glass"
@@ -487,7 +487,7 @@ function OffPlansPage() {
                   handleFilterChange("property_type", value)
                 }
               >
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white max-h-60">
@@ -512,7 +512,7 @@ function OffPlansPage() {
                   handleFilterChange("completion_status", value)
                 }
               >
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -535,7 +535,7 @@ function OffPlansPage() {
                   placeholder="Search developers..."
                   value={developerSearch}
                   onChange={(e) => setDeveloperSearch(e.target.value)}
-                  className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary pr-10"
+                  className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 placeholder:text-gray-600 focus-visible:ring-2 focus-visible:ring-primary pr-10"
                 />
                 {searchingDevelopers && (
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -544,7 +544,7 @@ function OffPlansPage() {
                 )}
               </div>
               {developers.length > 0 && (
-                <div className="max-h-40 overflow-y-auto border border-gray-200 rounded-md bg-white">
+                <div className="max-h-40 overflow-y-auto border border-gray-200 rounded-lg bg-white">
                   {developers.map((developer: any) => (
                     <div
                       key={developer.id}
@@ -577,7 +577,7 @@ function OffPlansPage() {
                     handleFilterChange("min_price", value)
                   }
                 >
-                  <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                  <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white max-h-60">
@@ -601,7 +601,7 @@ function OffPlansPage() {
                     handleFilterChange("max_price", value)
                   }
                 >
-                  <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                  <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white max-h-60">
@@ -625,7 +625,7 @@ function OffPlansPage() {
                 value={filters.bedrooms}
                 onValueChange={(value) => handleFilterChange("bedrooms", value)}
               >
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -650,7 +650,7 @@ function OffPlansPage() {
                   handleFilterChange("bathrooms", value)
                 }
               >
-                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-md h-12 text-gray-900 focus:ring-2 focus:ring-primary">
+                <SelectTrigger className="w-full bg-white border border-gray-300 rounded-lg h-12 text-gray-900 focus:ring-2 focus:ring-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -667,7 +667,7 @@ function OffPlansPage() {
             {/* Search Button */}
             <Button
               onClick={handleSearch}
-              className="w-full bg-primary hover:bg-primary/90 text-white font-medium h-12 rounded-md"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-medium h-12 rounded-lg"
             >
               <Search className="w-5 h-5 mr-2" />
               Search Properties

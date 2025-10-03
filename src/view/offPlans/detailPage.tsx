@@ -126,7 +126,7 @@ export default function DetailPage({ id }: any) {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-base md:text-lg font-light uppercase text-primary mb-8 md:mb-12">
             <a
-              className="hover:underline cursor-pointer bg-[#dbbb90] text-white px-6 py-3 rounded-lg md:bg-transparent md:text-primary md:px-0 md:py-0 md:rounded-none transition-all duration-300"
+              className="hover:underline cursor-pointer bg-[#dbbb90] text-white px-6 py-3 rounded-lg md:bg-transparent md:text-primary md:px-0 md:py-0 transition-all duration-300"
               onClick={() => setIsOpen(true)}
             >
               Enquire Now
@@ -614,7 +614,7 @@ export default function DetailPage({ id }: any) {
         </div>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <AnimatePresence>
-            <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-none px-8 py-4">
+            <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-lg px-8 py-4">
               <motion.div
                 key="dialog"
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}

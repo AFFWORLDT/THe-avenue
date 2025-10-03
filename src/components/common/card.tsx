@@ -27,19 +27,19 @@ export function PropertyCard({
   propertyId,
 }: PropertyCardProps) {
   return (
-    <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border">
+    <Card className="relative overflow-hidden rounded-lg shadow-sm bg-white p-0 border">
       <div className="relative w-full h-80">
         <Image
           src={photos}
           alt={title}
           fill
-          className="rounded-none object-cover"
+          className="rounded-lg object-cover"
         />
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="bg-[#D4B88C] text-white px-3 py-1 rounded-none text-xs font-light tracking-wider uppercase">
+          <span className="bg-[#D4B88C] text-white px-3 py-1 rounded-lg text-xs font-light tracking-wider uppercase">
             FOR SALE
           </span>
-          <span className="bg-white text-gray-800 px-3 py-1 rounded-none text-xs font-light tracking-wider uppercase">
+          <span className="bg-white text-gray-800 px-3 py-1 rounded-lg text-xs font-light tracking-wider uppercase">
             AVAILABLE
           </span>
         </div>
@@ -106,7 +106,7 @@ export function BlogCard({
   return (
     <motion.div
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-none shadow-sm overflow-hidden group min-h-[550px] max-h-[550px]"
+      className="bg-white rounded-lg shadow-sm overflow-hidden group min-h-[550px] max-h-[550px]"
     >
       <div className="relative h-80 w-full overflow-hidden">
         <div

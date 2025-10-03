@@ -132,7 +132,7 @@ export default function Component() {
                 key={`${community.id ?? idx}-${idx}`}
                 className="pl-6 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <Card className="relative w-full h-[650px] rounded-none overflow-hidden shadow-lg group border-none">
+                <Card className="relative w-full h-[650px] rounded-lg overflow-hidden shadow-lg group border-none">
                   <CardContent className="p-0 h-full">
                     <Image
                       src={community.photos[0]}
@@ -189,7 +189,7 @@ export default function Component() {
         <div className="w-full flex justify-center items-center mt-11 mb-4">
           
         <Link href={"/communities"}>
-           <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-none transition-colors uppercase">
+           <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-lg transition-colors uppercase">
             View All Communities
           </Button>
         </Link>

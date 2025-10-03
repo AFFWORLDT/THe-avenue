@@ -399,7 +399,7 @@ export default function DetailPage({ id }: any) {
       
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <AnimatePresence>
-          <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-none px-8 py-4">
+          <DialogContent className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-[#F2EEE8] rounded-lg px-8 py-4">
             <motion.div
               key="dialog"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}

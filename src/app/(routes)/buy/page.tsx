@@ -274,7 +274,7 @@ function Buy() {
         value={filters.property_type}
         onValueChange={(value) => handleFilterChange("property_type", value)}
       >
-        <SelectTrigger className="w-full sm:w-40 bg-white border-0 rounded-md h-12 text-gray-900 focus:ring-0 focus:ring-offset-0 px-4">
+        <SelectTrigger className="w-full sm:w-40 bg-white border-0 rounded-lg h-12 text-gray-900 focus:ring-0 focus:ring-offset-0 px-4">
           <SelectValue />
         </SelectTrigger>
         <SelectContent className="bg-white">
@@ -339,7 +339,7 @@ function Buy() {
           {FilterButton}
 
           {/* Desktop Search Form */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-8 gap-3 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
             {/* Buy/Sell Filter */}
             {/* Listing Type Filter */}
             <div>
@@ -347,7 +347,7 @@ function Buy() {
                 value={filters.listing_type}
                 onValueChange={(value) => handleFilterChange("listing_type", value)}
               >
-                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm">
+                <SelectTrigger className="w-full h-10 bg-white/90 border border-[#dbbb90]/30 text-gray-800 hover:border-[#dbbb90]/50 transition-colors font-serif text-sm rounded-lg">
                   <SelectValue placeholder="Type" />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
@@ -363,7 +363,7 @@ function Buy() {
                 placeholder="City, building or community"
                 value={filters.title}
                 onChange={(e) => handleFilterChange("title", e.target.value)}
-                className="w-full h-10 text-black bg-white border border-gray-300 placeholder:text-gray-500 text-sm font-serif"
+                className="w-full h-10 text-black bg-white border border-gray-300 placeholder:text-gray-500 text-sm font-serif rounded-lg"
               />
             </div>
 

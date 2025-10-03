@@ -45,7 +45,7 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
 
   if (!data) {
     return (
-      <Card className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border">
+      <Card className="relative overflow-hidden rounded-lg shadow-sm bg-white p-0 border">
         <CardContent className="p-6 text-center text-gray-500">
           No property data available
         </CardContent>
@@ -64,7 +64,7 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
 
   return (
     <Card
-      className="relative overflow-hidden rounded-none shadow-sm bg-white p-0 border cursor-pointer"
+      className="relative overflow-hidden rounded-lg shadow-sm bg-white p-0 border cursor-pointer"
       onClick={() => router.push(`/buy/details/${data.id}`)}
     >
       <div className="relative w-full h-80">
@@ -72,7 +72,7 @@ export function RentCard({ data, onFavorite }: RentCardProps) {
           src={imageUrl}
           alt={data?.title || "Property image"}
           fill
-          className="rounded-none object-cover"
+          className="rounded-lg object-cover"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="bg-[#D4B88C] text-white px-3 py-1 text-xs tracking-wider uppercase">

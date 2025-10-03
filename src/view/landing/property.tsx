@@ -80,7 +80,7 @@ export default function Property() {
 
         <div className="text-center">
          <Link href={"/buy"}>
-           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-light tracking-wider rounded-none shadow-md uppercase">
+           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-light tracking-wider rounded-lg shadow-md uppercase">
             VIEW ALL PROPERTIES
           </Button>
          </Link>

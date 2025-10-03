@@ -10,30 +10,30 @@ function EnquireForm({ type }: { type: string }) {
         <Input
           type="text"
           placeholder="Name"
-          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-none"
+          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-lg"
         />
         <Input
           type="text"
           placeholder="Surname"
-          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-none"
+          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-lg"
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Input
           type="email"
           placeholder="Email"
-          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-none"
+          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-lg"
         />
         <Input
           type="tel"
           placeholder="Telephone"
-          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-none"
+          className="bg-white h-12 px-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold font-mono rounded-lg"
         />
       </div>
       {type !== "offPlan" && (
         <Textarea
           placeholder="Write your message here..."
-          className="bg-white min-h-[150px] p-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold resize-y font-mono"
+          className="bg-white min-h-[150px] p-4 border border-gray-300 focus:border-brand-gold focus:ring-brand-gold resize-y font-mono rounded-lg"
         />
       )}
 
@@ -51,7 +51,7 @@ function EnquireForm({ type }: { type: string }) {
       </p>
       <Button
         type="submit"
-        className="w-full rounded-none md:w-auto px-8 py-3 bg-brand-gold text-white font-semibold uppercase tracking-wider hover:bg-brand-gold/90 transition-colors bg-primary font-mono"
+        className="w-full rounded-lg md:w-auto px-8 py-3 bg-brand-gold text-white font-semibold uppercase tracking-wider hover:bg-brand-gold/90 transition-colors bg-primary font-mono"
       >
         Submit
       </Button>
