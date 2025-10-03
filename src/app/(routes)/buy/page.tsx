@@ -24,6 +24,8 @@ import React, { useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
+import OptimizedPropertyGrid from "@/src/components/common/OptimizedPropertyGrid";
 
 // Constants
 const COMPLETION_STATUS_OPTIONS = [
@@ -787,14 +789,12 @@ function Buy() {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 container my-4 mx-auto">
-          {property?.map((item: any, index: number) => (
-            <BuyCard
-              key={item.id ?? index}
-              data={item}
-              onFavorite={handleFavorite}
-            />
-          ))}
+        <div className="px-4 container my-4 mx-auto">
+          <OptimizedPropertyGrid
+            properties={property}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            itemsPerPage={24}
+          />
         </div>
       )}
 
@@ -855,6 +855,17 @@ function Buy() {
           </div>
         </div>
       )}
+
+      {/* Lead Capture Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto max-w-4xl">
+          <LeadCaptureForm 
+            title="Need Help Finding the Perfect Property?"
+            subtitle="Our expert agents will help you find properties that match your exact requirements"
+            variant="default"
+          />
+        </div>
+      </section>
     </div>
   );
 }

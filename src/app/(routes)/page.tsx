@@ -8,6 +8,7 @@ import { CallToAction } from "@/src/view/landing/call-to-action";
 import PartnersSection from "../../view/landing/PartnersSection";
 import Solutions from "../../view/landing/solutions";
 import GoogleMapsSection from "@/src/components/common/GoogleMapsSection";
+import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
 
 export default function Home() {
   return (
@@ -20,6 +21,18 @@ export default function Home() {
       <Communities />
       <Property />
       <InsightsInspiration />
+      
+      {/* Lead Capture Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto max-w-4xl">
+          <LeadCaptureForm 
+            title="Ready to Find Your Dream Property?"
+            subtitle="Get personalized property recommendations and expert guidance from our team"
+            variant="default"
+          />
+        </div>
+      </section>
+      
       <CallToAction />
     </div>
   );

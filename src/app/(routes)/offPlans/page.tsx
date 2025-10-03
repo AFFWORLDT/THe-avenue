@@ -22,6 +22,7 @@ import { Loader, X, Search } from "lucide-react";
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import Link from "next/link";
+import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
 import { useRouter } from "next/navigation";
 
 // Constants
@@ -765,6 +766,17 @@ function OffPlansPage() {
             </div>
           </div>
         )}
+
+        {/* Lead Capture Section */}
+        <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container mx-auto max-w-4xl">
+            <LeadCaptureForm 
+              title="Interested in Off-Plan Investment Opportunities?"
+              subtitle="Get exclusive access to the latest off-plan projects and investment opportunities in Dubai"
+              variant="default"
+            />
+          </div>
+        </section>
       </div>
     </div>
   );

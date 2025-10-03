@@ -41,6 +41,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${trajanPro.variable} antialiased`}>
+      <head>
+        <script 
+          src="https://www.google.com/recaptcha/api.js" 
+          async 
+          defer
+        ></script>
+      </head>
       <body className="luxury-bg">
         {children}
       </body>
