@@ -24,7 +24,7 @@ import React, { useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import LeadCaptureForm from "../../components/common/LeadCaptureForm";
+// import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 import OptimizedPropertyGrid from "@/src/components/common/OptimizedPropertyGrid";
 
 // Constants
@@ -859,11 +859,11 @@ function Buy() {
       {/* Lead Capture Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
-          <LeadCaptureForm 
+          {/* <LeadCaptureForm 
             title="Need Help Finding the Perfect Property?"
             subtitle="Our expert agents will help you find properties that match your exact requirements"
             variant="default"
-          />
+          /> */}
         </div>
       </section>
     </div>

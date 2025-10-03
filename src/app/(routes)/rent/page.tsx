@@ -24,7 +24,7 @@ import React, { useCallback, useMemo } from "react";
 import { api } from "@/src/lib/axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import LeadCaptureForm from "../../components/common/LeadCaptureForm";
+// import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 
 // Constants
 const COMPLETION_STATUS_OPTIONS = [
@@ -718,11 +718,11 @@ function Rent() {
       {/* Lead Capture Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
-          <LeadCaptureForm 
+          {/* <LeadCaptureForm 
             title="Looking for Your Ideal Rental Property?"
             subtitle="Let our rental specialists help you find the perfect home that fits your lifestyle and budget"
             variant="default"
-          />
+          /> */}
         </div>
       </section>
     </div>

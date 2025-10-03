@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { motion } from "framer-motion";
 import { Bed, Bath, SquareGanttChart, MapPin, Search, Filter } from "lucide-react";
 import { SEO_KEYWORDS, generatePageTitle, generatePropertySEO } from "@/src/lib/seo";
-import LeadCaptureForm from "../../../components/common/LeadCaptureForm";
+// import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
 import PropertyCardSkeleton from "@/src/components/common/property-card-skeleton";
 
 export default function KeywordPropertyPage() {
@@ -366,11 +366,11 @@ export default function KeywordPropertyPage() {
       {/* Lead Capture Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
-          <LeadCaptureForm 
+          {/* <LeadCaptureForm 
             title={`Interested in ${keyword.replace(/-/g, ' ')}?`}
             subtitle="Get personalized property recommendations and expert guidance from our team"
             variant="default"
-          />
+          /> */}
         </div>
       </section>
     </div>
