@@ -15,6 +15,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { getAllCommunities } from "@/src/api/communities";
 import { cn } from "@/src/lib/utils";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 const communities = [
   {
@@ -60,6 +61,7 @@ export default function Component() {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [communities, setCommunities] = useState<any[]>([]);
+  const { t } = useLanguage();
 
   const plugin = useRef(
     Autoplay({ delay: 1000, stopOnInteraction: false, stopOnMouseEnter: true })
@@ -102,16 +104,13 @@ export default function Component() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 text-center px-4">
         <p className="text-[#D4B88C] text-sm uppercase tracking-widest mb-2 font-light">
-          COMMUNITIES
+          {t('communities.title')}
         </p>
         <h1 className="text-3xl sm:text-4xl font-mono text-gray-800 mb-6 tracking-wide">
-          Discover Dubai&apos;s Finest
+          {t('communities.headline')}
         </h1>
         <p className="max-w-4xl mx-auto text-gray-600 text-sm tracking-tight font-light">
-          Explore the diverse tapestry of Dubai&apos;s most sought-after areas
-          and communities. From serene waterfront retreats to bustling urban
-          hubs, our curated selection showcases the essence of luxury living in
-          each locale.
+          {t('communities.description')}
         </p>
       </section>
 

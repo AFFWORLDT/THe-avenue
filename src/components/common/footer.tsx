@@ -1,6 +1,9 @@
+"use client";
+
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 const sitemapLinks = [
   { href: "/buy", label: "Buy" },
@@ -13,6 +16,7 @@ const sitemapLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden">
       {/* Luxury Background Pattern */}
@@ -41,11 +45,11 @@ export default function Footer() {
               <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
                 <div className="flex-1">
                   <h3 className="text-2xl md:text-3xl font-light tracking-widest leading-relaxed text-white font-serif mb-2">
-                    Stay Connected with
-                    <span className="block text-[#dbbb90] font-normal">Luxury</span>
+                    {t('footer.newsletter.title')}
+                    <span className="block text-[#dbbb90] font-normal">{t('footer.newsletter.subtitle')}</span>
                   </h3>
                   <p className="text-white/85 text-lg font-light leading-relaxed font-serif max-w-2xl">
-                    Receive our exceptional real estate listings and exclusive market insights delivered straight to your inbox.
+                    {t('footer.newsletter.description')}
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-[400px]">

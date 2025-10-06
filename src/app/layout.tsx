@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "../lib/crypto-polyfill";
+import Header from "@/src/components/common/header";
+import Footer from "@/src/components/common/footer";
+import { LanguageProvider } from "@/src/contexts/LanguageContext";
 
 const trajanPro = localFont({
   src: [
@@ -54,7 +57,13 @@ export default function RootLayout({
         ></script>
       </head>
       <body className="luxury-bg">
-        {children}
+        <LanguageProvider>
+          <main className="min-h-screen">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,33 +1,33 @@
+"use client";
+
 import { ArrowRight, User, Building, Download, MapPin } from "lucide-react";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 function Solutions() {
+  const { t } = useLanguage();
   const solutions = [
     {
       icon: <User className="h-12 w-12 text-[#dbbb90]" />,
-      title: "Connect with a Specialist",
-      description:
-        "Access our dedicated team of over 400+ expert agents ready to assist you.",
+      title: t('solutions.connect.title'),
+      description: t('solutions.connect.description'),
       arrow: <ArrowRight className="h-6 w-6 text-white" />,
     },
     {
       icon: <Building className="h-12 w-12 text-[#dbbb90]" />,
-      title: "List Your Property",
-      description:
-        "Achieve optimal value by listing your property with our expert marketing strategies.",
+      title: t('solutions.list.title'),
+      description: t('solutions.list.description'),
       arrow: <ArrowRight className="h-6 w-6 text-white" />,
     },
     {
       icon: <Download className="h-12 w-12 text-[#dbbb90]" />,
-      title: "Download Report",
-      description:
-        "Download the latest Comprehensive Dubai Real Estate Market Report Q1 2025",
+      title: t('solutions.download.title'),
+      description: t('solutions.download.description'),
       arrow: <ArrowRight className="h-6 w-6 text-white" />,
     },
     {
       icon: <MapPin className="h-12 w-12 text-[#dbbb90]" />,
-      title: "Explore Dubai Projects",
-      description:
-        "Browse and find your ideal property from our extensive portfolio of Dubai projects.",
+      title: t('solutions.explore.title'),
+      description: t('solutions.explore.description'),
       arrow: <ArrowRight className="h-6 w-6 text-white" />,
     },
   ];
@@ -64,10 +64,10 @@ function Solutions() {
             <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-gradient-to-tr from-[#C2A17B]/8 to-transparent rounded-full blur-3xl"></div>
             
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-gray-900 leading-[0.9] font-serif tracking-tight relative">
-              <span className="block mb-2">Dubai real estate solutions</span>
-              <span className="block mb-2">focused around</span>
+              <span className="block mb-2">{t('solutions.headline.part1')}</span>
+              <span className="block mb-2">{t('solutions.headline.part2')}</span>
               <span className="block text-[#dbbb90] font-normal relative">
-                excellent customer service
+                {t('solutions.headline.part3')}
                 {/* Luxury Underline */}
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent"></div>
               </span>

@@ -24,12 +24,15 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/src/components/ui/hover-card";
+import SimpleLanguageSwitcher from "./SimpleLanguageSwitcher";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -46,56 +49,56 @@ export default function Header() {
   }, [isOverlayOpen]);
 
   const navLinks = [
-    { href: "/buy", label: "Buy" },
-    { href: "/rent", label: "Rent" },
-    { href: "/offPlans", label: "Projects" },
-    { href: "/team", label: "Teams" },
-    { href: "/communities", label: "Areas" },
-    { href: "/service", label: "Services" },
-    { href: "/blog", label: "Blogs" },
-    { href: "/contactUs", label: "More" },
+    { href: "/buy", label: t('navigation.buy') },
+    { href: "/rent", label: t('navigation.rent') },
+    { href: "/offPlans", label: t('navigation.projects') },
+    { href: "/team", label: t('navigation.teams') },
+    { href: "/communities", label: t('navigation.areas') },
+    { href: "/service", label: t('navigation.services') },
+    { href: "/blog", label: t('navigation.blogs') },
+    { href: "/contactUs", label: t('navigation.more') },
   ];
   const services = [
     {
       icon: <Settings className="h-4 w-4 text-gray-500" />,
-      name: "Property Management"
+      name: t('services.propertyManagement')
     },
     {
       icon: <Home className="h-4 w-4 text-gray-500" />,
-      name: "List Your Property"
+      name: t('services.listYourProperty')
     },
     {
       icon: <DollarSign className="h-4 w-4 text-gray-500" />,
-      name: "Mortgages"
+      name: t('services.mortgages')
     },
     {
       icon: <Scale className="h-4 w-4 text-gray-500" />,
-      name: "Conveyancing"
+      name: t('services.conveyancing')
     },
     {
       icon: <Bed className="h-4 w-4 text-gray-500" />,
-      name: "Short Term Rentals"
+      name: t('services.shortTermRentals')
     },
     {
       icon: <Wrench className="h-4 w-4 text-gray-500" />,
-      name: "Property Snagging"
+      name: t('services.propertySnagging')
     },
     {
       icon: <Users className="h-4 w-4 text-gray-500" />,
-      name: "Partner Program"
+      name: t('services.partnerProgram')
     },
     
   ];
 
   const headerLink = [
-    { href: "/buy", label: "Buy" },
-    { href: "/rent", label: "Rent" },
-    { href: "/offPlans", label: "Projects" },
-    { href: "/team", label: "Teams" },
-    { href: "/communities", label: "Areas" },
-    { href: "/service", label: "Services", hasDropdown: true },
-    { href: "/blog", label: "Blogs" },
-    { href: "/contactUs", label: "More" },
+    { href: "/buy", label: t('navigation.buy') },
+    { href: "/rent", label: t('navigation.rent') },
+    { href: "/offPlans", label: t('navigation.projects') },
+    { href: "/team", label: t('navigation.teams') },
+    { href: "/communities", label: t('navigation.areas') },
+    { href: "/service", label: t('navigation.services'), hasDropdown: true },
+    { href: "/blog", label: t('navigation.blogs') },
+    { href: "/contactUs", label: t('navigation.more') },
   ];
   useEffect(() => {
     if (!isOverlayOpen) return;
@@ -142,7 +145,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav - Right Position */}
-        <div className="hidden lg:flex items-center space-x-12 ml-auto mr-4">
+        <div className="hidden lg:flex items-center space-x-8 ml-auto mr-4">
           {headerLink.map((link, i) => {
             if (link.hasDropdown) {
               return (
@@ -245,10 +248,14 @@ export default function Header() {
             </Link>
             );
           })}
+          {/* Language Switcher - Right Corner */}
+          <SimpleLanguageSwitcher variant="compact" />
         </div>
 
         {/* Right Side - Mobile Menu Only */}
-        <div className="flex items-center ml-auto lg:hidden">
+        <div className="flex items-center space-x-3 ml-auto lg:hidden">
+          {/* Language Switcher for Mobile */}
+          <SimpleLanguageSwitcher variant="minimal" />
           {/* Clean Mobile Menu Button */}
           <div
             className="cursor-pointer transition-all duration-300 p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100"

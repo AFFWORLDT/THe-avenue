@@ -1,6 +1,10 @@
+"use client";
+
 import React from 'react'
+import { useLanguage } from '@/src/contexts/LanguageContext';
 
 function PartnersSection() {
+  const { t } = useLanguage();
   const partners = [
     {
       name: "AMAC",
@@ -59,8 +63,7 @@ function PartnersSection() {
           {/* Header */}
           <div className="flex-shrink-0">
             <h2 className="text-gray-600 text-sm font-light tracking-widest font-serif leading-relaxed">
-              Partners with Dubai&apos;s<br />
-              leading developers
+              {t('partners.title')}
             </h2>
           </div>
 
@@ -98,7 +101,7 @@ function PartnersSection() {
           {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-gray-600 text-xs font-light tracking-widest font-serif leading-relaxed">
-              Partners with Dubai&apos;s leading developers
+              {t('partners.title')}
             </h2>
           </div>
 

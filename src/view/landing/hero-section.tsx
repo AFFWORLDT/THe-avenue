@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Select,
   SelectContent,
@@ -10,9 +12,10 @@ import { Button } from "@/src/components/ui/button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Home, Bed, Search } from "lucide-react";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 export default function HeroSection() {
-
+  const { t } = useLanguage();
 
   return (
     <section 
@@ -66,9 +69,9 @@ export default function HeroSection() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-light mb-6 sm:mb-8 text-white font-serif tracking-wider leading-tight">
-            <span className="luxury-text-shadow">Luxury Living</span>
+            <span className="luxury-text-shadow">{t('hero.title')}</span>
             <br />
-            <span className="luxury-text inline-block animate-luxuryGoldFlow">Reimagined</span>
+            <span className="luxury-text inline-block animate-luxuryGoldFlow">{t('hero.subtitle')}</span>
           </h1>
           
           {/* Luxury Separator */}
@@ -84,7 +87,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Embrace a Journey of Pure Sophistication
+            {t('hero.description')}
           </motion.p>
           
           {/* Luxury Decorative Elements Bottom */}
@@ -120,7 +123,7 @@ export default function HeroSection() {
               </div>
               <Select>
                 <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black focus:ring-offset-0 focus:ring-transparent bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg pl-9 hover:border-[#dbbb90]/50 transition-colors text-sm">
-                  <SelectValue placeholder="Location" className="max-sm:hidden" />
+                  <SelectValue placeholder={t('search.location')} className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
@@ -141,7 +144,7 @@ export default function HeroSection() {
               </div>
               <Select>
                 <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black bg-white/10 max-sm:bg-white border border-white/30 max-sm:border-gray-300 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
-                  <SelectValue placeholder="Type" className="max-sm:hidden" />
+                  <SelectValue placeholder={t('search.type')} className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
@@ -164,7 +167,7 @@ export default function HeroSection() {
               </div>
               <Select>
                 <SelectTrigger className="w-full h-7 sm:h-8 text-white max-sm:text-black bg-white/10 max-sm:bg-white border max-sm:border-gray-300 border-white/30 rounded-lg focus:ring-offset-0 focus:ring-transparent pl-9 text-sm">
-                  <SelectValue placeholder="Bedrooms" className="max-sm:hidden" />
+                  <SelectValue placeholder={t('search.bedrooms')} className="max-sm:hidden" />
                 </SelectTrigger>
                 <SelectContent className="bg-white text-gray-900">
                   <SelectItem value="any">Any</SelectItem>
