@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "@/src/view/landing/hero-section";
 import Feature from "@/src/view/landing/feature";
 import Communities from "@/src/view/landing/Communities";
