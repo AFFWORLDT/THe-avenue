@@ -3,6 +3,7 @@ import { BlogCard } from "@/src/components/common/card"
 import { Button } from "@/src/components/ui/button"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useLanguage } from "@/src/contexts/LanguageContext"
 
 const blogPosts = [
   {
@@ -29,6 +30,8 @@ const blogPosts = [
 ]
 
 export function InsightsInspiration() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="mx-auto px-6 md:px-10 lg:px-20 text-center">
@@ -38,12 +41,12 @@ export function InsightsInspiration() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-lg text-[#dbbb90] uppercase font-extralight tracking-wider mb-2">INSIGHTS & INSPIRATION</p>
+          <p className="text-lg text-[#dbbb90] uppercase font-extralight tracking-wider mb-2">{t('blog.title')}</p>
           <h2 className="text-3xl sm:text-4xl font-mono text-gray-800 mb-4 ">
-            Unveiling Dubai&apos;s Luxurious Real Estate Landscape
+            {t('blog.headline')}
           </h2>
           <p className="text-sm font-extralight text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed tracking-wide">
-            Dive into our curated collection of articles, designed to enlighten, inspire, and guide you through Dubai&apos;s dynamic real estate market.
+            {t('blog.description')}
           </p>
         </motion.div>
 
@@ -71,7 +74,7 @@ export function InsightsInspiration() {
         >
        <Link href={"/blog"} passHref>
         <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-extralight tracking-wider py-2 px-4 rounded-lg transition-colors uppercase">
-       VIEW ALL BLOGS
+       {t('blog.viewAll')}
           </Button>
        </Link>
         </motion.div>

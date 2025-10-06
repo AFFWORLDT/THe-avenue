@@ -102,6 +102,38 @@ export const translations = {
       companySlogan: "Real Estate",
       tagline: "Dubai's NO 1 Luxury Real Estate"
     },
+    property: {
+      title: "FEATURED PROPERTIES",
+      headline: "Handpicked Luxury Listings in Dubai",
+      description: "Step into a realm of unparalleled sophistication with our featured properties. Explore these exclusive gems and envision your next luxurious retreat with The Avenue Real Estate.",
+      viewAll: "VIEW ALL PROPERTIES"
+    },
+    blog: {
+      title: "INSIGHTS & INSPIRATION",
+      headline: "Unveiling Dubai's Luxurious Real Estate Landscape",
+      description: "Dive into our curated collection of articles, designed to enlighten, inspire, and guide you through Dubai's dynamic real estate market.",
+      viewAll: "VIEW ALL BLOGS"
+    },
+    callToAction: {
+      subtitle: "JOIN THE ELITE",
+      title: "Elevate Your Real Estate Journey",
+      description: "Ready to embark on a luxurious real estate experience tailored just for you? Take the first step towards unparalleled living.",
+      button: "CONTACT US"
+    },
+    map: {
+      title: "Explore Our",
+      subtitle: "Featured Projects",
+      description: "Discover luxury properties across Dubai's most prestigious locations",
+      loading: "Loading Map...",
+      properties: "Luxury Properties",
+      loadInteractive: "Load Interactive Map",
+      stats: {
+        properties: "Properties",
+        communities: "Communities",
+        yearsExperience: "Years Experience",
+        happyClients: "Happy Clients"
+      }
+    },
     legal: {
       privacyPolicy: "Privacy Policy",
       termsConditions: "Terms & Conditions",
@@ -210,6 +242,38 @@ export const translations = {
       companySlogan: "العقارات",
       tagline: "أفضل عقارات فاخرة في دبي"
     },
+    property: {
+      title: "العقارات المميزة",
+      headline: "قائمة العقارات الفاخرة المختارة بعناية في دبي",
+      description: "ادخل إلى عالم من الأناقة التي لا مثيل لها مع عقاراتنا المميزة. استكشف هذه الجواهر الحصرية وتخيل ملاذك الفاخر التالي مع ذا أفينيو العقارية.",
+      viewAll: "عرض جميع العقارات"
+    },
+    blog: {
+      title: "الرؤى والإلهام",
+      headline: "كشف المشهد العقاري الفاخر في دبي",
+      description: "اغمر نفسك في مجموعتنا المنتقاة من المقالات، المصممة لإلهامك وإرشادك من خلال السوق العقاري الديناميكي في دبي.",
+      viewAll: "عرض جميع المدونات"
+    },
+    callToAction: {
+      subtitle: "انضم إلى النخبة",
+      title: "ارتق برحلتك العقارية",
+      description: "هل أنت مستعد للانطلاق في تجربة عقارية فاخرة مصممة خصيصاً لك؟ اتخذ الخطوة الأولى نحو عيش لا مثيل له.",
+      button: "اتصل بنا"
+    },
+    map: {
+      title: "استكشف",
+      subtitle: "مشاريعنا المميزة",
+      description: "اكتشف العقارات الفاخرة في أكثر المواقع المرموقة في دبي",
+      loading: "جارٍ تحميل الخريطة...",
+      properties: "عقارات فاخرة",
+      loadInteractive: "تحميل الخريطة التفاعلية",
+      stats: {
+        properties: "العقارات",
+        communities: "المجتمعات",
+        yearsExperience: "سنوات من الخبرة",
+        happyClients: "عملاء سعداء"
+      }
+    },
     legal: {
       privacyPolicy: "سياسة الخصوصية",
       termsConditions: "الشروط والأحكام",
@@ -292,6 +356,38 @@ export const translations = {
       companySlogan: "Immobilier",
       tagline: "N°1 Immobilier de Luxe à Dubaï"
     },
+    property: {
+      title: "PROPRIÉTÉS EN VEDETTE",
+      headline: "Sélection de Luxe Cuvée à Dubaï",
+      description: "Entrez dans un royaume de sophistication sans pareil avec nos propriétés en vedette. Explorez ces joyaux exclusifs et imaginez votre prochaine retraite luxueuse avec The Avenue Real Estate.",
+      viewAll: "VOIR TOUTES LES PROPRIÉTÉS"
+    },
+    blog: {
+      title: "PERSPECTIVES & INSPIRATION",
+      headline: "Dévoiler le Paysage Immobilier Luxueux de Dubaï",
+      description: "Plongez dans notre collection curée d'articles, conçus pour éclairer, inspirer et vous guider à travers le marché immobilier dynamique de Dubaï.",
+      viewAll: "VOIR TOUS LES BLOGS"
+    },
+    callToAction: {
+      subtitle: "REJOIGNEZ L'ÉLITE",
+      title: "Élevez Votre Parcours Immobilier",
+      description: "Prêt à vous lancer dans une expérience immobilière luxueuse taillée sur mesure pour vous ? Faites le premier pas vers un mode de vie incomparable.",
+      button: "NOUS CONTACTER"
+    },
+    map: {
+      title: "Explorez Nos",
+      subtitle: "Projets en Vedette",
+      description: "Découvrez des propriétés de luxe dans les emplacements les plus prestigieux de Dubaï",
+      loading: "Chargement de la Carte...",
+      properties: "Propriétés de Luxe",
+      loadInteractive: "Charger la Carte Interactive",
+      stats: {
+        properties: "Propriétés",
+        communities: "Communautés",
+        yearsExperience: "Années d'Expérience",
+        happyClients: "Clients Satisfaits"
+      }
+    },
     legal: {
       privacyPolicy: "Politique de Confidentialité",
       termsConditions: "Conditions Générales",
@@ -373,6 +469,38 @@ export const translations = {
       companyName: "The Avenue",
       companySlogan: "Недвижимость",
       tagline: "Недвижимость №1 в Дубае"
+    },
+    property: {
+      title: "РЕКОМЕНДУЕМЫЕ ОБЪЕКТЫ",
+      headline: "Отборные Роскошные Объекты в Дубае",
+      description: "Войдите в царство непревзойденной изысканности с нашими рекомендуемыми объектами. Исследуйте эти эксклюзивные жемчужины и представьте себе ваше следующее роскошное убежище с The Avenue Real Estate.",
+      viewAll: "ПОСМОТРЕТЬ ВСЕ ОБЪЕКТЫ"
+    },
+    blog: {
+      title: "ИНСАЙТЫ И ВДОХНОВЕНИЕ",
+      headline: "Раскрытие Роскошного Недвижимого Ландшафта Дубая",
+      description: "Погрузитесь в нашу кураторскую коллекцию статей, разработанных для просвещения, вдохновения и руководства через динамичный рынок недвижимости Дубая.",
+      viewAll: "ПОСМОТРЕТЬ ВСЕ БЛОГИ"
+    },
+    callToAction: {
+      subtitle: "ПРИСОЕДИНЯЙТЕСЬ К ЭЛИТЕ",
+      title: "Поднимите Ваше Путешествие в Недвижимости",
+      description: "Готовы отправиться в роскошный опыт недвижимости, созданный специально для вас? Сделайте первый шаг к непревзойденной жизни.",
+      button: "СВЯЗАТЬСЯ С НАМИ"
+    },
+    map: {
+      title: "Исследуйте Наши",
+      subtitle: "Рекомендуемые Проекты",
+      description: "Откройте для себя роскошные объекты в самых престижных местах Дубая",
+      loading: "Загрузка Карты...",
+      properties: "Роскошные Объекты",
+      loadInteractive: "Загрузить Интерактивную Карту",
+      stats: {
+        properties: "Объекты",
+        communities: "Сообщества",
+        yearsExperience: "Лет Опыта",
+        happyClients: "Довольных Клиентов"
+      }
     },
     legal: {
       privacyPolicy: "Политика Конфиденциальности",
@@ -481,6 +609,38 @@ export const translations = {
       companyName: "The Avenue",
       companySlogan: "房地产",
       tagline: "迪拜第一豪华房地产"
+    },
+    property: {
+      title: "精选房产",
+      headline: "迪拜精选豪华房源",
+      description: "步入我们精选房产的无与伦比的精致境界。探索这些独家瑰宝，想象您与The Avenue房地产的下一个豪华度假胜地。",
+      viewAll: "查看所有房产"
+    },
+    blog: {
+      title: "洞察与灵感",
+      headline: "揭示迪拜豪华房地产景观",
+      description: "深入了解我们精心策划的文章集，旨在启发、激励并指导您了解迪拜充满活力的房地产市场。",
+      viewAll: "查看所有博客"
+    },
+    callToAction: {
+      subtitle: "加入精英",
+      title: "提升您的房地产之旅",
+      description: "准备好开始专为您量身定制的豪华房地产体验了吗？迈出通往无与伦比生活的第一步。",
+      button: "联系我们"
+    },
+    map: {
+      title: "探索我们的",
+      subtitle: "精选项目",
+      description: "在迪拜最负盛名的地点发现豪华房产",
+      loading: "加载地图中...",
+      properties: "豪华房产",
+      loadInteractive: "加载交互式地图",
+      stats: {
+        properties: "房产",
+        communities: "社区",
+        yearsExperience: "年经验",
+        happyClients: "满意客户"
+      }
     },
     legal: {
       privacyPolicy: "隐私政策",

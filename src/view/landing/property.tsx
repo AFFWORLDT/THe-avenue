@@ -1,12 +1,15 @@
+"use client";
 import { getAllBuyProperties } from "@/src/api/buy";
 import { PropertyCard } from "@/src/components/common/card";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 export default function Property() {
   const [property, setProperty] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const { t } = useLanguage();
 
   const fetchproperty = async () => {
     setLoading(true);
@@ -50,15 +53,13 @@ export default function Property() {
       <main className="container mx-auto py-12 px-4 md:px-6 lg:px-8">
         <section className="text-center mb-12">
           <h2 className="text-black text-sm font-light tracking-widest mb-2 uppercase">
-            FEATURED PROPERTIES
+            {t('property.title')}
           </h2>
           <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
-            Handpicked Luxury Listings in Dubai
+            {t('property.headline')}
           </h1>
           <p className="max-w-4xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
-            Step into a realm of unparalleled sophistication with our featured
-            properties. Explore these exclusive gems and envision your next
-            luxurious retreat with The Avenue Real Estate.
+            {t('property.description')}
           </p>
         </section>
 
@@ -81,7 +82,7 @@ export default function Property() {
         <div className="text-center">
          <Link href={"/buy"}>
            <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-light tracking-wider rounded-lg shadow-md uppercase">
-            VIEW ALL PROPERTIES
+            {t('property.viewAll')}
           </Button>
          </Link>
         </div>

@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { getAllProperties } from "@/src/api/offPlans";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 interface ProjectLocation {
   id: number;
@@ -21,6 +22,7 @@ export default function GoogleMapsSection() {
   const [projects, setProjects] = useState<ProjectLocation[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const { t } = useLanguage();
 
   // Load Google Maps script
   useEffect(() => {
@@ -283,12 +285,12 @@ export default function GoogleMapsSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 font-serif">
-              Explore Our
-              <span className="text-[#dbbb90] block">Featured Projects</span>
+              {t('map.title')}
+              <span className="text-[#dbbb90] block">{t('map.subtitle')}</span>
             </h2>
             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#dbbb90] to-transparent mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto leading-relaxed font-serif">
-              Discover luxury properties across Dubai's most prestigious locations
+              {t('map.description')}
             </p>
           </motion.div>
         </div>
@@ -313,7 +315,7 @@ export default function GoogleMapsSection() {
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-[#dbbb90] rounded-full"></div>
                 <span className="text-sm font-medium text-gray-700 font-serif">
-                  {projects.length} Luxury Properties
+                  {projects.length} {t('map.properties')}
                 </span>
               </div>
             </div>
@@ -323,7 +325,7 @@ export default function GoogleMapsSection() {
               <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-12 h-12 border-4 border-[#dbbb90]/30 border-t-[#dbbb90] rounded-full animate-spin mx-auto mb-4"></div>
-                  <p className="text-gray-600 font-light font-serif">Loading Map...</p>
+                  <p className="text-gray-600 font-light font-serif">{t('map.loading')}</p>
                 </div>
               </div>
             )}
@@ -357,7 +359,7 @@ export default function GoogleMapsSection() {
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-[#dbbb90] rounded-full"></div>
                       <span className="text-sm font-medium text-gray-700 font-serif">
-                        {projects.length} Luxury Properties
+                        {projects.length} {t('map.properties')}
                       </span>
                     </div>
                   </div>
@@ -372,7 +374,7 @@ export default function GoogleMapsSection() {
                       }}
                       className="bg-[#dbbb90] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#dbbb90]/90 transition-colors text-sm"
                     >
-                      Load Interactive Map
+                      {t('map.loadInteractive')}
                     </button>
                   </div>
                 </div>
@@ -390,10 +392,10 @@ export default function GoogleMapsSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 md:mt-16"
         >
           {[
-            { label: "Properties", value: projects.length.toString() },
-            { label: "Communities", value: "12+" },
-            { label: "Years Experience", value: "15+" },
-            { label: "Happy Clients", value: "500+" }
+            { label: t('map.stats.properties'), value: projects.length.toString() },
+            { label: t('map.stats.communities'), value: "12+" },
+            { label: t('map.stats.yearsExperience'), value: "15+" },
+            { label: t('map.stats.happyClients'), value: "500+" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl md:text-3xl font-light text-[#dbbb90] mb-2 font-serif">
