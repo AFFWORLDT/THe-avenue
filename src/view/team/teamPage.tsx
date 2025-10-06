@@ -5,11 +5,13 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { getAllAgents, Agent } from "@/src/api/agents";
+import { useLanguage } from "@/src/contexts/LanguageContext";
 
 export default function TeamPage() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
+  const { t } = useLanguage();
 
   // Utility function to parse nationality
   const parseNationality = (nationality: string) => {
@@ -66,7 +68,7 @@ export default function TeamPage() {
       <div className="min-h-screen bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8] flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#dbbb90] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600 font-light">Loading our luxury team...</p>
+          <p className="text-gray-600 font-light">{t('team.loading')}</p>
         </div>
       </div>
     );
@@ -98,15 +100,15 @@ export default function TeamPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-gray-800 mb-6 md:mb-8 leading-[0.9] tracking-tight font-serif"
             >
-              Our <span className="text-[#dbbb90] font-normal relative">
-                Luxury
+              {t('team.title')} <span className="text-[#dbbb90] font-normal relative">
+                {t('team.titleHighlight')}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 1, delay: 0.8 }}
                   className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-full"
                 />
-              </span> Team
+              </span> {t('team.titleSuffix')}
             </motion.h1>
             
             {/* Subtitle */}
@@ -116,7 +118,7 @@ export default function TeamPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-light max-w-5xl mx-auto leading-relaxed px-4 font-serif"
             >
-              Meet the exceptional professionals who make luxury real estate dreams come true in Dubai
+              {t('team.subtitle')} {t('team.location')}
             </motion.p>
             
             {/* Decorative Line */}
@@ -142,10 +144,10 @@ export default function TeamPage() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-700 mb-4">
-              Meet Our <span className="text-[#dbbb90] font-normal">Experts</span>
+              {t('team.meetExperts')} <span className="text-[#dbbb90] font-normal">{t('team.meetExpertsHighlight')}</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Dedicated professionals committed to delivering exceptional real estate experiences
+              {t('team.expertsDescription')}
             </p>
           </motion.div>
 
@@ -219,7 +221,7 @@ export default function TeamPage() {
                           {agent.experience_years || 1}+
                         </div>
                         <div className="text-xs text-gray-600 uppercase tracking-wider">
-                          Years Exp
+                          {t('team.yearsExp')}
                         </div>
                       </div>
                       <div className="text-center">
@@ -227,7 +229,7 @@ export default function TeamPage() {
                           {agent.specialities?.length || 1}
                         </div>
                         <div className="text-xs text-gray-600 uppercase tracking-wider">
-                          Specialties
+                          {t('team.specialties')}
                         </div>
                       </div>
                     </div>
@@ -276,23 +278,23 @@ export default function TeamPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-6">
-              Ready to Start Your <span className="text-[#dbbb90] font-normal">Luxury Journey</span>?
+              {t('team.ctaTitle')} <span className="text-[#dbbb90] font-normal">{t('team.ctaTitleHighlight')}</span>{t('team.ctaTitleSuffix')}
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Connect with our expert team and discover the perfect property that matches your dreams
+              {t('team.ctaDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contactUs"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Get In Touch
+                {t('team.getInTouch')}
               </a>
               <a
                 href="/buy"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white font-medium rounded-full transition-all duration-300"
               >
-                Browse Properties
+                {t('team.browseProperties')}
               </a>
             </div>
           </motion.div>
@@ -356,7 +358,7 @@ export default function TeamPage() {
 
               {selectedAgent.remarks && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">About</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('team.about')}</h3>
                   <p className="text-gray-600 leading-relaxed">{selectedAgent.remarks}</p>
                 </div>
               )}
@@ -364,13 +366,13 @@ export default function TeamPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 {selectedAgent.experience_years && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Experience</h4>
+                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">{t('team.experience')}</h4>
                     <p className="text-gray-600 text-sm md:text-base">{selectedAgent.experience_years} Years</p>
                   </div>
                 )}
                 {selectedAgent.nationality && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Nationality</h4>
+                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">{t('team.nationality')}</h4>
                     <p className="text-gray-600 text-sm md:text-base">
                       {parseNationality(selectedAgent.nationality)}
                     </p>
@@ -378,15 +380,15 @@ export default function TeamPage() {
                 )}
                 {selectedAgent.kyc_verification && (
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Verification</h4>
-                    <p className="text-green-600 text-sm md:text-base">✓ KYC Verified</p>
+                    <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">{t('team.verification')}</h4>
+                    <p className="text-green-600 text-sm md:text-base">{t('team.verified')}</p>
                   </div>
                 )}
               </div>
 
               {selectedAgent.languages && selectedAgent.languages.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Languages</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">{t('team.languages')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.languages.map((lang, index) => (
                       <span
@@ -402,7 +404,7 @@ export default function TeamPage() {
 
               {selectedAgent.specialities && selectedAgent.specialities.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Specialties</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">{t('team.specialtiesModal')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedAgent.specialities.map((specialty, index) => (
                       <span
@@ -424,21 +426,21 @@ export default function TeamPage() {
                   className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
                 >
                   <Icon icon="iconoir:whatsapp-solid" className="w-4 h-4 md:w-5 md:h-5" />
-                  <span>WhatsApp</span>
+                  <span>{t('team.whatsapp')}</span>
                 </a>
                 <a
                   href={`tel:${selectedAgent.phone}`}
                   className="flex items-center justify-center gap-2 bg-[#dbbb90] hover:bg-[#C2A17B] text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
                 >
                   <Icon icon="line-md:phone-call-filled" className="w-4 h-4 md:w-5 md:h-5" />
-                  <span>Call</span>
+                  <span>{t('team.call')}</span>
                 </a>
                 <a
                   href={`mailto:${selectedAgent.email}?subject=Luxury Property Inquiry`}
                   className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm md:text-base"
                 >
                   <Icon icon="material-symbols:mail-outline" className="w-4 h-4 md:w-5 md:h-5" />
-                  <span>Email</span>
+                  <span>{t('team.email')}</span>
                 </a>
               </div>
             </motion.div>
