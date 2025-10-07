@@ -9,7 +9,7 @@ function PartnersSection() {
     {
       name: "AMAC",
       logo: (
-        <div className="text-gray-800 font-light text-lg tracking-wider font-serif">AMAC</div>
+        <div className="text-gray-800 font-light text-lg tracking-wider font-serif">DAMAC</div>
       )
     },
     {
@@ -39,18 +39,16 @@ function PartnersSection() {
       )
     },
     {
-      name: "NAKHEEL",
+      name: "NAKHEEL ",
       logo: (
         <div className="text-gray-800 font-light text-lg tracking-wider font-serif">NAKHEEL</div>
       )
+      
     },
     {
-      name: "A] PRO",
+      name: "DAMAC",
       logo: (
-        <div className="flex flex-col items-center">
-          <span className="text-red-600 font-light text-lg tracking-wider font-serif">A]</span>
-          <span className="text-gray-800 font-light text-sm tracking-wider font-serif">PRO</span>
-        </div>
+        <div className="text-gray-800 font-light text-lg tracking-wider font-serif"> </div>
       )
     }
   ]

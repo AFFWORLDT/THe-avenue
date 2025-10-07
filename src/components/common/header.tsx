@@ -139,7 +139,7 @@ export default function Header() {
               alt="The Avenue Real Estate Logo"
               width={220}
               height={80}
-              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24 animate-[circularEnter_3s_ease-out_forwards]"
+              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24"
             />
           </Link>
         </div>
