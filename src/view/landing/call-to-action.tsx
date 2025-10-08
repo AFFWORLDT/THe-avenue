@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/src/contexts/LanguageContext";
-import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
+import LeadCaptureForm from "@/src/components/common/leadCaptureForm";
 
 export function CallToAction() {
   const { t } = useLanguage();

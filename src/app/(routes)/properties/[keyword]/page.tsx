@@ -7,7 +7,7 @@ import { MapPin, Home, Bed, Bath, Car, Ruler, TrendingUp, Star, Search } from 'l
 import { Button } from '@/src/components/ui/button';
 import { Card, CardContent } from '@/src/components/ui/card';
 import SchemaMarkup from '@/src/components/seo/SchemaMarkup';
-import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
+import LeadCaptureForm from '@/src/components/common/leadCaptureForm';
 
 export default function KeywordPropertyPage() {
   const params = useParams();

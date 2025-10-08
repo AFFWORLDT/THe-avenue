@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Key, Search, Filter, Shield, Clock, Users, MapPin, Star } from 'lucide-react';
 import { Button } from '@/src/components/ui/button';
 import { useLanguage } from '@/src/contexts/LanguageContext';
-import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
+import LeadCaptureForm from '@/src/components/common/leadCaptureForm';
 
 export default function RentingPropertiesPage() {
   const { t } = useLanguage();

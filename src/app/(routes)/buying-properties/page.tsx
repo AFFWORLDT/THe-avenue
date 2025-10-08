@@ -6,7 +6,7 @@ import { Search, MapPin, Home, TrendingUp, Star, Shield, Users, Award } from 'lu
 import { Button } from '@/src/components/ui/button';
 import { useLanguage } from '@/src/contexts/LanguageContext';
 import Image from 'next/image';
-import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
+import LeadCaptureForm from '@/src/components/common/leadCaptureForm';
 
 export default function BuyingPropertiesPage() {
   const { t } = useLanguage();
