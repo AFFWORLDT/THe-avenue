@@ -15,6 +15,7 @@ export const languages: Language[] = [
   { code: 'fr', name: 'Français', flag: '🇫🇷', dir: 'ltr' },
   { code: 'ru', name: 'Русский', flag: '🇷🇺', dir: 'ltr' },
   { code: 'zh', name: '中文', flag: '🇨🇳', dir: 'ltr' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪', dir: 'ltr' },
 ];
 
 export const translations = {
@@ -809,6 +810,175 @@ export const translations = {
       learnMore: "了解更多",
       getStarted: "开始",
       contactUs: "联系我们"
+    }
+  },
+  de: {
+    navigation: {
+      buy: "Kaufen",
+      rent: "Mieten",
+      projects: "Projekte",
+      teams: "Teams",
+      areas: "Bereiche",
+      services: "Dienstleistungen",
+      blogs: "Blogs",
+      more: "Mehr"
+    },
+    services: {
+      propertyManagement: "Immobilienverwaltung",
+      listYourProperty: "Immobilie Auflisten",
+      mortgages: "Hypotheken",
+      conveyancing: "Grundstücksübertragung",
+      shortTermRentals: "Kurzzeitmiete",
+      propertySnagging: "Immobilienprüfung",
+      partnerProgram: "Partnerprogramm"
+    },
+    hero: {
+      title: "Luxusleben",
+      subtitle: "Neu Erfunden",
+      description: "ERLEBEN SIE EINE REISE REINER SOFISTIKATION"
+    },
+    search: {
+      location: "Standort",
+      type: "Typ",
+      bedrooms: "Schlafzimmer"
+    },
+    featured: {
+      title: "AUSGEWÄHLTE PROJEKTE",
+      headline: "Luxus Enthüllt, Komfort und Sophistikation",
+      description: "Entdecken Sie eine kuratierte Auswahl der exquisitesten Immobilien Dubais, die Luxus, Eleganz und unvergleichliches Design verkörpern.",
+      viewAll: "Alle Projekte Anzeigen"
+    },
+    communities: {
+      title: "GEMEINSCHAFTEN",
+      headline: "Entdecken Sie Dubais Beste",
+      description: "Erkunden Sie das vielfältige Gefüge der begehrtesten Gebiete und Gemeinden Dubais. Von ruhigen Wasserfront-Retreats bis hin zu geschäftigen urbanen Zentren zeigt unsere kuratierte Auswahl das Wesen luxuriösen Lebens in jedem Ort."
+    },
+    partners: {
+      title: "Partner mit Dubais führenden Entwicklern"
+    },
+    solutions: {
+      headline: {
+        part1: "Dubai Immobilienlösungen",
+        part2: "fokussiert auf",
+        part3: "hervorragenden Kundenservice"
+      },
+      connect: {
+        title: "Mit einem Spezialisten Verbinden",
+        description: "Zugang zu unserem engagierten Team von über 400+ Expertenmaklern, die Ihnen gerne helfen."
+      },
+      list: {
+        title: "Ihre Immobilie Auflisten",
+        description: "Erreichen Sie optimalen Wert, indem Sie Ihre Immobilie mit unseren Experten-Marketingstrategien auflisten."
+      },
+      download: {
+        title: "Bericht Herunterladen",
+        description: "Laden Sie den neuesten Umfassenden Dubai Immobilienmarktbericht Q1 2025 herunter"
+      },
+      explore: {
+        title: "Dubai Projekte Erkunden",
+        description: "Durchsuchen und finden Sie Ihre ideale Immobilie aus unserem umfangreichen Portfolio von Dubai-Projekten."
+      }
+    },
+    footer: {
+      newsletter: {
+        title: "Bleiben Sie Verbunden mit",
+        subtitle: "Luxus",
+        description: "Erhalten Sie unsere außergewöhnlichen Immobilienangebote und exklusive Markteinblicke direkt in Ihren Posteingang.",
+        placeholder: "Geben Sie Ihre E-Mail-Adresse ein",
+        button: "Abonnieren"
+      },
+      sitemap: "Sitemap",
+      contact: "Kontakt",
+      followUs: "Folgen Sie Uns",
+      aboutUs: "Über Uns",
+      description: "Dubais führendes Luxus-Immobilienziel, das anspruchsvolle Kunden mit außergewöhnlichen Immobilien verbindet.",
+      companyName: "The Avenue",
+      companySlogan: "Immobilien",
+      tagline: "Dubais Nr. 1 Luxus-Immobilien"
+    },
+    property: {
+      title: "AUSGEWÄHLTE IMMOBILIEN",
+      headline: "Handverlesene Luxus-Immobilien in Dubai",
+      description: "Betreten Sie ein Reich unvergleichlicher Sophistikation mit unseren ausgewählten Immobilien. Erkunden Sie diese exklusiven Juwelen und stellen Sie sich Ihr nächstes luxuriöses Refugium mit The Avenue Real Estate vor.",
+      viewAll: "ALLE IMMOBILIEN ANZEIGEN"
+    },
+    blog: {
+      title: "EINBLICKE & INSPIRATION",
+      headline: "Enthüllung von Dubais Luxus-Immobilienlandschaft",
+      description: "Tauchen Sie in unsere kuratierte Sammlung von Artikeln ein, die darauf ausgelegt sind, zu erleuchten, zu inspirieren und Sie durch Dubais dynamischen Immobilienmarkt zu führen.",
+      viewAll: "ALLE BLOGS ANZEIGEN"
+    },
+    callToAction: {
+      subtitle: "TRETEN SIE DER ELITE BEI",
+      title: "Erhöhen Sie Ihre Immobilienreise",
+      description: "Bereit, sich auf eine luxuriöse Immobilienerfahrung einzulassen, die speziell für Sie maßgeschneidert ist? Machen Sie den ersten Schritt zu einem unvergleichlichen Leben.",
+      button: "KONTAKTIEREN SIE UNS"
+    },
+    map: {
+      title: "Erkunden Sie Unsere",
+      subtitle: "Ausgewählten Projekte",
+      description: "Entdecken Sie Luxusimmobilien in Dubais prestigeträchtigsten Standorten",
+      loading: "Karte Wird Geladen...",
+      properties: "Luxusimmobilien",
+      loadInteractive: "Interaktive Karte Laden",
+      stats: {
+        properties: "Immobilien",
+        communities: "Gemeinden",
+        yearsExperience: "Jahre Erfahrung",
+        happyClients: "Zufriedene Kunden"
+      }
+    },
+    team: {
+      title: "Unser",
+      titleHighlight: "Luxus",
+      titleSuffix: "Team",
+      subtitle: "Lernen Sie die außergewöhnlichen Fachleute kennen, die Luxus-Immobilienträume wahr werden lassen",
+      location: "in Dubai",
+      meetExperts: "Treffen Sie Unsere",
+      meetExpertsHighlight: "Experten",
+      expertsDescription: "Engagierte Fachleute, die sich der Bereitstellung außergewöhnlicher Immobilienerfahrungen verschrieben haben",
+      loading: "Unser Luxus-Team wird geladen...",
+      yearsExp: "Jahre Erfahrung",
+      specialties: "Spezialitäten",
+      ctaTitle: "Bereit, Ihre",
+      ctaTitleHighlight: "Luxusreise",
+      ctaTitleSuffix: "zu Beginnen?",
+      ctaDescription: "Verbinden Sie sich mit unserem Expertenteam und entdecken Sie die perfekte Immobilie, die zu Ihren Träumen passt",
+      getInTouch: "Kontakt Aufnehmen",
+      browseProperties: "Immobilien Durchsuchen",
+      about: "Über",
+      experience: "Erfahrung",
+      nationality: "Nationalität",
+      verification: "Verifizierung",
+      verified: "✓ KYC Verifiziert",
+      languages: "Sprachen",
+      specialtiesModal: "Spezialitäten",
+      whatsapp: "WhatsApp",
+      call: "Anrufen",
+      email: "E-Mail"
+    },
+    legal: {
+      privacyPolicy: "Datenschutzrichtlinie",
+      termsConditions: "Allgemeine Geschäftsbedingungen",
+      cookiePolicy: "Cookie-Richtlinie",
+      disclaimer: "Haftungsausschluss"
+    },
+    common: {
+      loading: "Wird Geladen...",
+      error: "Fehler",
+      success: "Erfolg",
+      submit: "Senden",
+      cancel: "Abbrechen",
+      save: "Speichern",
+      edit: "Bearbeiten",
+      delete: "Löschen",
+      search: "Suchen",
+      filter: "Filtern",
+      clear: "Löschen",
+      viewMore: "Mehr Anzeigen",
+      learnMore: "Mehr Erfahren",
+      getStarted: "Loslegen",
+      contactUs: "Kontaktieren Sie Uns"
     }
   }
 };

@@ -5,18 +5,19 @@ import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
 import { useLanguage } from "@/src/contexts/LanguageContext";
 
-const sitemapLinks = [
-  { href: "/buy", label: "Buy" },
-  { href: "/offPlans", label: "Off-Plan" },
-  { href: "/rent", label: "Rent" },
-  { href: "/communities", label: "Communities" },
+const getSitemapLinks = (t: (key: string) => string) => [
+  { href: "/buy", label: t('navigation.buy') },
+  { href: "/offPlans", label: t('navigation.projects') },
+  { href: "/rent", label: t('navigation.rent') },
+  { href: "/communities", label: t('navigation.areas') },
   { href: "/whyDubai", label: "Why Dubai" },
-  { href: "/service", label: "Services" },
-  { href: "/contactUs", label: "Contact Us" },
+  { href: "/service", label: t('navigation.services') },
+  { href: "/contactUs", label: t('navigation.more') },
 ];
 
 export default function Footer() {
   const { t } = useLanguage();
+  const sitemapLinks = getSitemapLinks(t);
   return (
     <footer className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden">
       {/* Luxury Background Pattern */}
@@ -59,11 +60,11 @@ export default function Footer() {
                   <Input
                     id="email-subscribe"
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder={t('footer.newsletter.placeholder')}
                     className="flex-grow bg-white/8 text-white border-[#dbbb90]/40 placeholder:text-white/50 focus-visible:ring-offset-0 focus-visible:ring-[#dbbb90]/50 focus:border-[#dbbb90] rounded-xl h-12 backdrop-blur-sm font-serif text-base px-6 transition-all duration-300 hover:bg-white/12"
                   />
                   <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest py-3 px-6 transition-all duration-300 uppercase h-12 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-serif text-base min-w-[140px] border border-[#dbbb90]/20">
-                    Subscribe
+                    {t('footer.newsletter.button')}
                   </Button>
                 </div>
               </div>
@@ -75,7 +76,7 @@ export default function Footer() {
             {/* Sitemap */}
             <div className="lg:col-span-1">
               <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
-                Sitemap
+                {t('footer.sitemap')}
                 <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <ul className="space-y-3">
@@ -99,7 +100,7 @@ export default function Footer() {
             {/* Contact */}
             <div className="lg:col-span-1">
               <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
-                Contact
+                {t('footer.contact')}
                 <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <address className="not-italic space-y-4 text-white/75 font-light leading-relaxed">
@@ -153,7 +154,7 @@ export default function Footer() {
             {/* Social Media */}
             <div className="lg:col-span-1">
               <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
-                Follow Us
+                {t('footer.followUs')}
                 <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <div className="flex flex-wrap gap-3">
@@ -266,12 +267,12 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
-                About Us
+                {t('footer.aboutUs')}
                 <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <div className="space-y-4 text-white/75 font-light leading-relaxed">
                 <p className="font-serif text-lg leading-relaxed">
-                  Dubai's premier luxury real estate destination, connecting discerning clients with exceptional properties.
+                  {t('footer.description')}
                 </p>
                 <div className="flex items-center gap-3 pt-4">
                   <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/8 backdrop-blur-sm">
@@ -284,8 +285,8 @@ export default function Footer() {
                     />
                   </div>
                   <div>
-                    <p className="font-serif font-medium text-white text-lg">The Avenue</p>
-                    <p className="text-base text-white/60 font-serif">Real Estate</p>
+                    <p className="font-serif font-medium text-white text-lg">{t('footer.companyName')}</p>
+                    <p className="text-base text-white/60 font-serif">{t('footer.companySlogan')}</p>
                   </div>
                 </div>
               </div>
@@ -299,25 +300,25 @@ export default function Footer() {
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
-                Privacy Policy
+                {t('legal.privacyPolicy')}
               </a>
               <a href="/terms-conditions" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
-                Terms & Conditions
+                {t('legal.termsConditions')}
               </a>
               <a href="/cookie-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
-                Cookie Policy
+                {t('legal.cookiePolicy')}
               </a>
               <a href="/disclaimer" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]
                              after:transition-all after:duration-300 hover:after:w-full">
-                Disclaimer
+                {t('legal.disclaimer')}
               </a>
             </div>
           </div>
@@ -340,7 +341,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="text-[#D4AF37] text-sm font-serif font-medium tracking-widest luxury-text-shadow">
-                Dubai's NO 1 Luxury Real Estate
+                {t('footer.tagline')}
               </div>
             </div>
           </div>
