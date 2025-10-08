@@ -5,6 +5,7 @@ import "./globals.css";
 import "../lib/crypto-polyfill";
 import Header from "@/src/components/common/header";
 import Footer from "@/src/components/common/footer";
+import WhatsAppToggle from "@/src/components/common/WhatsAppToggle";
 import { LanguageProvider } from "@/src/contexts/LanguageContext";
 
 const trajanPro = localFont({
@@ -62,6 +63,7 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
+            <WhatsAppToggle />
           </main>
         </LanguageProvider>
       </body>
