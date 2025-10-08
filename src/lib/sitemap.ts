@@ -247,8 +247,8 @@ export const seoKeywords = {
 };
 
 // Generate keyword combinations for SEO
-export const generateKeywordCombinations = () => {
-  const combinations = [];
+export const generateKeywordCombinations = (): string[] => {
+  const combinations: string[] = [];
   
   seoKeywords.locations.forEach(location => {
     seoKeywords.propertyTypes.forEach(type => {

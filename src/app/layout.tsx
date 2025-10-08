@@ -27,6 +27,7 @@ const trajanPro = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://theavenue.ae'),
   title: "The Avenue Real Estate - Dubai's Premier Luxury Property Experts",
   description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai with The Avenue Real Estate. Expert guidance for buying, renting, selling, and investing in Dubai's finest properties including Dubai Marina, Downtown Dubai, and Palm Jumeirah.",
   keywords: "Dubai real estate, luxury properties, off-plan projects, property investment, Dubai Marina apartments, Downtown Dubai penthouses, Palm Jumeirah villas, Business Bay properties, JLT apartments, Dubai Hills Estate, property management, mortgage services, real estate investment Dubai",

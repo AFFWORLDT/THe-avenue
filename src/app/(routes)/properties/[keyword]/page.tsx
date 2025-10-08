@@ -25,7 +25,7 @@ export default function KeywordPropertyPage() {
 
   // Mock property data based on keyword
   const getPropertyData = (keyword: string) => {
-    const locationMap: { [key: string]: any } = {
+    const locationMap: { [key: string]: { name: string; description: string; properties: Array<{ name: string; price: string; beds: number; baths: number; size: string; type: string; }> } } = {
       'dubai-marina': {
         name: 'Luxury Apartments in Dubai Marina',
         description: 'Discover premium apartments in Dubai Marina with stunning waterfront views and world-class amenities.',
@@ -154,7 +154,7 @@ export default function KeywordPropertyPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {propertyData.properties.map((property, index) => (
+              {propertyData.properties.map((property: { name: string; price: string; beds: number; baths: number; size: string; type: string; }, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
