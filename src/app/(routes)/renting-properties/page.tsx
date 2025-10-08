@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Key, Search, Filter, Shield, Clock, Users, MapPin, Star } from 'lucide-react';
 import { Button } from '@/src/components/ui/button';
 import { useLanguage } from '@/src/contexts/LanguageContext';
+import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
 
 export default function RentingPropertiesPage() {
   const { t } = useLanguage();
@@ -209,6 +210,30 @@ export default function RentingPropertiesPage() {
                   </motion.div>
                 ))}
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Capture Form Section */}
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <LeadCaptureForm
+                variant="default"
+                title="Find Your Perfect Rental Home"
+                subtitle="Get personalized rental recommendations and expert guidance for your next home"
+                showRecaptcha={true}
+                onSuccess={(data) => {
+                  console.log('Rental properties lead captured:', data);
+                }}
+              />
             </motion.div>
           </div>
         </div>

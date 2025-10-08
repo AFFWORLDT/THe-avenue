@@ -6,6 +6,7 @@ import { Search, MapPin, Home, TrendingUp, Star, Shield, Users, Award } from 'lu
 import { Button } from '@/src/components/ui/button';
 import { useLanguage } from '@/src/contexts/LanguageContext';
 import Image from 'next/image';
+import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
 
 export default function BuyingPropertiesPage() {
   const { t } = useLanguage();
@@ -174,6 +175,30 @@ export default function BuyingPropertiesPage() {
         </div>
       </section>
 
+      {/* Lead Capture Form Section */}
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <LeadCaptureForm
+                variant="default"
+                title="Ready to Find Your Dream Property?"
+                subtitle="Get personalized recommendations and expert guidance for your property investment journey"
+                showRecaptcha={true}
+                onSuccess={(data) => {
+                  console.log('Buying properties lead captured:', data);
+                }}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 lg:py-32 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -189,19 +214,19 @@ export default function BuyingPropertiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-serif">
-              Ready to Find Your
-              <span className="block">Dream Property?</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 font-serif">
+              Let's Start Your
+              <span className="block">Property Journey</span>
             </h2>
-            <p className="text-xl text-white/90 font-light max-w-3xl mx-auto mb-12 leading-relaxed">
-              Let our expert team guide you through Dubai's luxury property market and help you make the perfect investment decision.
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 font-light max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              Connect with our expert team and discover the perfect property for your investment goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                Get Started Today
-              </Button>
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-8 py-4 text-lg font-medium tracking-wider rounded-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium tracking-wider btn-unified shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
                 View Properties
+              </Button>
+              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium tracking-wider btn-unified transition-all duration-300 w-full sm:w-auto">
+                Schedule Call
               </Button>
             </div>
           </motion.div>

@@ -1,334 +1,203 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import { Card, CardContent } from "@/src/components/ui/card";
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select";
-import { motion } from "framer-motion";
-import { Bed, Bath, SquareGanttChart, MapPin, Search, Filter } from "lucide-react";
-import { SEO_KEYWORDS, generatePageTitle, generatePropertySEO } from "@/src/lib/seo";
-// import LeadCaptureForm from "@/src/components/common/LeadCaptureForm";
-import PropertyCardSkeleton from "@/src/components/common/property-card-skeleton";
+
+import React from 'react';
+import { useParams } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { MapPin, Home, Bed, Bath, Car, Ruler, TrendingUp, Star, Search } from 'lucide-react';
+import { Button } from '@/src/components/ui/button';
+import { Card, CardContent } from '@/src/components/ui/card';
+import SchemaMarkup from '@/src/components/seo/SchemaMarkup';
+import LeadCaptureForm from '@/src/components/common/LeadCaptureForm';
 
 export default function KeywordPropertyPage() {
   const params = useParams();
   const keyword = params.keyword as string;
-  const [properties, setProperties] = useState<any[]>([]);
-  const [filteredProperties, setFilteredProperties] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({
-    priceRange: "all",
-    bedrooms: "all",
-    propertyType: "all",
-    location: "all"
-  });
 
-  // Find SEO keyword data
-  const seoKeyword = SEO_KEYWORDS.find(k => 
-    k.keyword.toLowerCase().replace(/\s+/g, '-') === keyword.toLowerCase()
-  );
-
-  useEffect(() => {
-    fetchProperties();
-  }, [keyword]);
-
-  useEffect(() => {
-    applyFilters();
-  }, [properties, filters]);
-
-  const fetchProperties = async () => {
-    setLoading(true);
-    try {
-      // Mock API call - replace with actual endpoint
-      const response = await fetch(`/api/properties/keyword/${keyword}`);
-      const data = await response.json();
-      setProperties(data.properties || []);
-    } catch (error) {
-      console.error('Error fetching properties:', error);
-      // Fallback to mock data
-      setProperties(generateMockProperties());
-    } finally {
-      setLoading(false);
-    }
+  // Transform keyword to readable format
+  const formatKeyword = (keyword: string) => {
+    return keyword
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   };
 
-  const generateMockProperties = () => {
-    // Generate mock properties based on keyword
-    const baseProperties = [
-      {
-        id: 1,
-        title: "Luxury Marina Apartment",
-        location: "Dubai Marina",
-        price: 1200000,
-        bedrooms: 2,
-        bathrooms: 2,
-        area: 1200,
-        property_type: "APARTMENT",
-        photos: ["/images/property1.jpeg"],
-        developer: "Emaar Properties"
+  const formattedKeyword = formatKeyword(keyword);
+
+  // Mock property data based on keyword
+  const getPropertyData = (keyword: string) => {
+    const locationMap: { [key: string]: any } = {
+      'dubai-marina': {
+        name: 'Luxury Apartments in Dubai Marina',
+        description: 'Discover premium apartments in Dubai Marina with stunning waterfront views and world-class amenities.',
+        properties: [
+          { name: 'Marina Heights', price: '2.5M AED', beds: 2, baths: 2, size: '1200 sqft', type: 'Apartment' },
+          { name: 'Marina Promenade', price: '3.2M AED', beds: 3, baths: 3, size: '1800 sqft', type: 'Apartment' },
+          { name: 'Marina Walk', price: '4.1M AED', beds: 3, baths: 3, size: '2100 sqft', type: 'Apartment' }
+        ]
       },
-      {
-        id: 2,
-        title: "Premium Downtown Residence",
-        location: "Downtown Dubai",
-        price: 1800000,
-        bedrooms: 3,
-        bathrooms: 2,
-        area: 1500,
-        property_type: "APARTMENT",
-        photos: ["/images/property2.jpeg"],
-        developer: "Sobha Realty"
+      'downtown-dubai': {
+        name: 'Exclusive Properties in Downtown Dubai',
+        description: 'Experience luxury living in Downtown Dubai with iconic landmarks and premium lifestyle amenities.',
+        properties: [
+          { name: 'Burj Residences', price: '8.5M AED', beds: 3, baths: 4, size: '2500 sqft', type: 'Penthouse' },
+          { name: 'Dubai Mall Residences', price: '6.2M AED', beds: 2, baths: 3, size: '1800 sqft', type: 'Apartment' },
+          { name: 'Burj Plaza', price: '5.8M AED', beds: 2, baths: 2, size: '1600 sqft', type: 'Apartment' }
+        ]
       },
-      {
-        id: 3,
-        title: "Business Bay Tower",
-        location: "Business Bay",
-        price: 950000,
-        bedrooms: 2,
-        bathrooms: 2,
-        area: 1100,
-        property_type: "APARTMENT",
-        photos: ["/images/property3.jpeg"],
-        developer: "Damac Properties"
+      'palm-jumeirah': {
+        name: 'Luxury Villas on Palm Jumeirah',
+        description: 'Own a piece of paradise with exclusive villas on the world-famous Palm Jumeirah.',
+        properties: [
+          { name: 'Palm Villa A', price: '25M AED', beds: 6, baths: 7, size: '8500 sqft', type: 'Villa' },
+          { name: 'Palm Villa B', price: '18M AED', beds: 5, baths: 6, size: '6800 sqft', type: 'Villa' },
+          { name: 'Palm Villa C', price: '22M AED', beds: 6, baths: 7, size: '7200 sqft', type: 'Villa' }
+        ]
+      },
+      'business-bay': {
+        name: 'Modern Apartments in Business Bay',
+        description: 'Contemporary living in the heart of Dubai\'s business district with premium amenities.',
+        properties: [
+          { name: 'Bay Square', price: '2.8M AED', beds: 2, baths: 2, size: '1400 sqft', type: 'Apartment' },
+          { name: 'Business Bay Towers', price: '3.5M AED', beds: 3, baths: 3, size: '1900 sqft', type: 'Apartment' },
+          { name: 'Bay Central', price: '2.2M AED', beds: 1, baths: 2, size: '1100 sqft', type: 'Apartment' }
+        ]
       }
-    ];
+    };
 
-    return baseProperties.map(prop => generatePropertySEO(prop));
+    return locationMap[keyword] || {
+      name: `${formattedKeyword} Properties`,
+      description: `Discover premium properties in ${formattedKeyword} with exceptional amenities and prime locations.`,
+      properties: [
+        { name: 'Premium Residence A', price: '3.5M AED', beds: 2, baths: 2, size: '1500 sqft', type: 'Apartment' },
+        { name: 'Luxury Residence B', price: '4.2M AED', beds: 3, baths: 3, size: '1800 sqft', type: 'Apartment' },
+        { name: 'Exclusive Residence C', price: '5.8M AED', beds: 3, baths: 4, size: '2200 sqft', type: 'Apartment' }
+      ]
+    };
   };
 
-  const applyFilters = () => {
-    let filtered = [...properties];
-
-    if (filters.priceRange !== "all") {
-      const [min, max] = filters.priceRange.split('-').map(Number);
-      filtered = filtered.filter(prop => {
-        if (max) {
-          return prop.price >= min && prop.price <= max;
-        }
-        return prop.price >= min;
-      });
-    }
-
-    if (filters.bedrooms !== "all") {
-      filtered = filtered.filter(prop => prop.bedrooms === parseInt(filters.bedrooms));
-    }
-
-    if (filters.propertyType !== "all") {
-      filtered = filtered.filter(prop => prop.propertyType === filters.propertyType);
-    }
-
-    if (filters.location !== "all") {
-      filtered = filtered.filter(prop => prop.location === filters.location);
-    }
-
-    setFilteredProperties(filtered);
-  };
-
-  const handleFilterChange = (key: string, value: string) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
-  };
-
-  const priceRanges = [
-    { label: "All Prices", value: "all" },
-    { label: "Under AED 500K", value: "0-500000" },
-    { label: "AED 500K - 1M", value: "500000-1000000" },
-    { label: "AED 1M - 2M", value: "1000000-2000000" },
-    { label: "AED 2M - 5M", value: "2000000-5000000" },
-    { label: "Above AED 5M", value: "5000000-999999999" }
-  ];
-
-  const bedroomOptions = [
-    { label: "All Bedrooms", value: "all" },
-    { label: "Studio", value: "0" },
-    { label: "1 Bedroom", value: "1" },
-    { label: "2 Bedrooms", value: "2" },
-    { label: "3 Bedrooms", value: "3" },
-    { label: "4+ Bedrooms", value: "4" }
-  ];
-
-  const propertyTypes = [
-    { label: "All Types", value: "all" },
-    { label: "Apartment", value: "APARTMENT" },
-    { label: "Villa", value: "VILLA" },
-    { label: "Townhouse", value: "TOWNHOUSE" },
-    { label: "Penthouse", value: "PENTHOUSE" }
-  ];
-
-  const locations = [
-    { label: "All Locations", value: "all" },
-    { label: "Dubai Marina", value: "Dubai Marina" },
-    { label: "Downtown Dubai", value: "Downtown Dubai" },
-    { label: "Business Bay", value: "Business Bay" },
-    { label: "JBR", value: "JBR" },
-    { label: "Palm Jumeirah", value: "Palm Jumeirah" }
-  ];
+  const propertyData = getPropertyData(keyword);
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Schema Markup */}
+      <SchemaMarkup 
+        type="realEstate" 
+        data={{
+          name: propertyData.name,
+          description: propertyData.description,
+          url: `https://theavenue.ae/properties/${keyword}`,
+          image: '/images/hero-bg.jpg'
+        }} 
+      />
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              {seoKeyword?.keyword || keyword.replace(/-/g, ' ').toUpperCase()}
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              {seoKeyword?.description || `Discover premium ${keyword.replace(/-/g, ' ')} in Dubai`}
-            </p>
-            
-            {/* Breadcrumbs */}
-            <nav className="flex justify-center mb-8">
-              <ol className="flex items-center space-x-2 text-sm text-gray-600">
-                <li><a href="/" className="hover:text-primary">Home</a></li>
-                <li>/</li>
-                <li><a href="/properties" className="hover:text-primary">Properties</a></li>
-                <li>/</li>
-                <li className="text-primary font-semibold">{keyword.replace(/-/g, ' ')}</li>
-              </ol>
-            </nav>
-          </motion.div>
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#dbbb90] to-[#C2A17B] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dbbb90' fill-opacity='0.2'%3E%3Cpath d='M60 60c0-16.569-13.431-30-30-30s-30 13.431-30 30 13.431 30 30 30 30-13.431 30-30zm30 0c0-16.569-13.431-30-30-30s-30 13.431-30 30 13.431 30 30 30 30-13.431 30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
 
-          {/* Filters */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-6 shadow-lg"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Select value={filters.priceRange} onValueChange={(value) => handleFilterChange("priceRange", value)}>
-                <SelectTrigger className="rounded-lg">
-                  <SelectValue placeholder="Price Range" />
-                </SelectTrigger>
-                <SelectContent>
-                  {priceRanges.map(range => (
-                    <SelectItem key={range.value} value={range.value}>
-                      {range.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select value={filters.bedrooms} onValueChange={(value) => handleFilterChange("bedrooms", value)}>
-                <SelectTrigger className="rounded-lg">
-                  <SelectValue placeholder="Bedrooms" />
-                </SelectTrigger>
-                <SelectContent>
-                  {bedroomOptions.map(option => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select value={filters.propertyType} onValueChange={(value) => handleFilterChange("propertyType", value)}>
-                <SelectTrigger className="rounded-lg">
-                  <SelectValue placeholder="Property Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  {propertyTypes.map(type => (
-                    <SelectItem key={type.value} value={type.value}>
-                      {type.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select value={filters.location} onValueChange={(value) => handleFilterChange("location", value)}>
-                <SelectTrigger className="rounded-lg">
-                  <SelectValue placeholder="Location" />
-                </SelectTrigger>
-                <SelectContent>
-                  {locations.map(location => (
-                    <SelectItem key={location.value} value={location.value}>
-                      {location.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </motion.div>
+        <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <MapPin className="h-5 w-5 text-white" />
+                <span className="text-sm font-medium text-white uppercase tracking-wider">Premium Location</span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-white font-serif tracking-wide leading-tight">
+                <span className="block">{formattedKeyword}</span>
+                <span className="block text-white/90">Properties</span>
+              </h1>
+              
+              <p className="text-lg sm:text-xl md:text-2xl font-light text-white/90 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12">
+                {propertyData.description}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-light tracking-wider btn-unified shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
+                  View Properties
+                </Button>
+                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-light tracking-wider btn-unified transition-all duration-300 w-full sm:w-auto">
+                  Schedule Viewing
+                </Button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Properties Grid */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800">
-              {filteredProperties.length} Properties Found
-            </h2>
-            <Badge variant="secondary" className="bg-primary/10 text-primary">
-              {keyword.replace(/-/g, ' ')}
-            </Badge>
-          </div>
+      <section className="py-24 lg:py-32 bg-white relative">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
+                Featured
+                <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">{formattedKeyword}</span>
+                <span className="block">Properties</span>
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+                Discover our handpicked selection of premium properties in {formattedKeyword}
+              </p>
+            </motion.div>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[...Array(6)].map((_, index) => (
-                <PropertyCardSkeleton key={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProperties.map((property, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {propertyData.properties.map((property, index) => (
                 <motion.div
-                  key={property.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="group"
                 >
-                  <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={property.photos?.[0] || "/images/placeholder.jpg"}
-                        alt={property.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-4 right-4">
-                        <Badge variant="secondary" className="bg-white/90 text-gray-800">
-                          {property.propertyType}
-                        </Badge>
+                  <Card className="card-unified bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-2 overflow-hidden">
+                    <div className="relative h-48 bg-gradient-to-br from-[#dbbb90]/20 to-[#C2A17B]/20">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Home className="h-16 w-16 text-[#dbbb90]" />
+                      </div>
+                      <div className="absolute top-4 right-4 bg-[#dbbb90] text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {property.type}
                       </div>
                     </div>
-                    
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                        {property.title}
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#dbbb90] transition-colors duration-300">
+                        {property.name}
                       </h3>
-                      <div className="flex items-center text-sm text-gray-600 mb-3">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {property.location}
-                      </div>
-                      
-                      <div className="text-2xl font-bold text-primary mb-4">
-                        AED {property.price.toLocaleString()}
-                      </div>
-                      
-                      <div className="flex gap-4 mb-4 text-sm text-gray-600">
-                        <div className="flex items-center">
-                          <Bed className="w-4 h-4 mr-1" />
-                          {property.bedrooms}
+                      <p className="text-2xl font-bold text-[#dbbb90] mb-4">
+                        {property.price}
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                        <div className="flex items-center space-x-2">
+                          <Bed className="h-4 w-4 text-[#dbbb90]" />
+                          <span>{property.beds} Bedrooms</span>
                         </div>
-                        <div className="flex items-center">
-                          <Bath className="w-4 h-4 mr-1" />
-                          {property.bathrooms}
+                        <div className="flex items-center space-x-2">
+                          <Bath className="h-4 w-4 text-[#dbbb90]" />
+                          <span>{property.baths} Bathrooms</span>
                         </div>
-                        <div className="flex items-center">
-                          <SquareGanttChart className="w-4 h-4 mr-1" />
-                          {property.area} sq ft
+                        <div className="flex items-center space-x-2">
+                          <Ruler className="h-4 w-4 text-[#dbbb90]" />
+                          <span>{property.size}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Car className="h-4 w-4 text-[#dbbb90]" />
+                          <span>2 Parking</span>
                         </div>
                       </div>
-                      
-                      <Button className="w-full rounded-lg">
+                      <Button className="w-full mt-4 bg-[#dbbb90] hover:bg-[#C2A17B] text-white btn-unified">
                         View Details
                       </Button>
                     </CardContent>
@@ -336,41 +205,31 @@ export default function KeywordPropertyPage() {
                 </motion.div>
               ))}
             </div>
-          )}
-
-          {!loading && filteredProperties.length === 0 && (
-            <div className="text-center py-16">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                No Properties Found
-              </h3>
-              <p className="text-gray-600 mb-8">
-                Try adjusting your filters to see more properties
-              </p>
-              <Button 
-                onClick={() => setFilters({
-                  priceRange: "all",
-                  bedrooms: "all",
-                  propertyType: "all",
-                  location: "all"
-                })}
-                variant="outline"
-                className="rounded-lg"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* Lead Capture Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto max-w-4xl">
-          {/* <LeadCaptureForm 
-            title={`Interested in ${keyword.replace(/-/g, ' ')}?`}
-            subtitle="Get personalized property recommendations and expert guidance from our team"
-            variant="default"
-          /> */}
+      {/* Lead Capture Form */}
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <LeadCaptureForm
+                variant="default"
+                title={`Find Your Perfect Property in ${formattedKeyword}`}
+                subtitle="Get personalized recommendations and expert guidance for your property search"
+                showRecaptcha={true}
+                onSuccess={(data) => {
+                  console.log(`${keyword} properties lead captured:`, data);
+                }}
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
