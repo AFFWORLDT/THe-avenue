@@ -78,7 +78,7 @@ export default function WhatsAppToggle() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-6 right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -86,7 +86,7 @@ export default function WhatsAppToggle() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bottom-20 left-0 mb-4"
+            className="absolute bottom-20 right-0 mb-4"
           >
             <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 w-72 backdrop-blur-md bg-white/95">
               {/* Header */}
@@ -188,10 +188,10 @@ export default function WhatsAppToggle() {
         )}
 
         {/* Tooltip */}
-        <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           <div className="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap">
             {t('team.whatsapp')} Support
-            <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-800"></div>
+            <div className="absolute right-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-r-gray-800"></div>
           </div>
         </div>
       </motion.button>
@@ -204,7 +204,7 @@ export default function WhatsAppToggle() {
               key={i}
               className="absolute w-1 h-1 bg-green-400 rounded-full"
               style={{
-                left: `${20 + i * 15}px`,
+                right: `${20 + i * 15}px`,
                 top: `${15 + i * 10}px`,
               }}
               animate={{
