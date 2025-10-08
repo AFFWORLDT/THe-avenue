@@ -74,20 +74,20 @@ export default function RentingPropertiesPage() {
                 <span className="text-sm font-medium text-[#dbbb90] uppercase tracking-wider">Premium Rentals</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-gray-900 font-serif tracking-wide leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-gray-900 font-serif tracking-wide leading-tight">
                 <span className="block">RENTING</span>
                 <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent font-normal">PROPERTIES</span>
               </h1>
               
-              <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12">
                 Our service provides access to an extensive database of rental properties. We have a wide range of options to suit various budgets and preferences. We understand that each renter has unique requirements. Our team will work closely with you to understand your needs.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white px-8 py-4 text-lg font-light tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-light tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
                   Browse Rentals
                 </Button>
-                <Button variant="outline" className="border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white px-8 py-4 text-lg font-light tracking-wider rounded-xl transition-all duration-300">
+                <Button variant="outline" className="border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-light tracking-wider rounded-xl transition-all duration-300">
                   Get Rental Assistance
                 </Button>
               </div>
@@ -107,11 +107,11 @@ export default function RentingPropertiesPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
                 Why Choose Our
                 <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Rental Service</span>
               </h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
                 Experience seamless rental solutions tailored to your lifestyle and preferences
               </p>
             </motion.div>
@@ -126,12 +126,12 @@ export default function RentingPropertiesPage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="group"
                 >
-                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-2">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-2">
                     <div className="w-16 h-16 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
-                    <h3 className="text-2xl font-light text-gray-900 mb-4 font-serif">{feature.title}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed text-lg">{feature.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4 font-serif">{feature.title}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-base sm:text-lg">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -151,15 +151,15 @@ export default function RentingPropertiesPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
                 Property <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Types</span>
               </h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
                 From luxury apartments to premium villas, find your perfect rental home
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-16">
               {rentalTypes.map((type, index) => (
                 <motion.div
                   key={index}
@@ -169,10 +169,10 @@ export default function RentingPropertiesPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-1">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-1">
                     <div className="flex items-center space-x-4">
                       <div className="w-3 h-3 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-full"></div>
-                      <span className="text-gray-800 font-medium text-lg group-hover:text-[#dbbb90] transition-colors duration-300">{type}</span>
+                      <span className="text-gray-800 font-medium text-base sm:text-lg group-hover:text-[#dbbb90] transition-colors duration-300">{type}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -190,7 +190,7 @@ export default function RentingPropertiesPage() {
               <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-8 font-serif">
                 Premium <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Locations</span>
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                 {locations.map((location, index) => (
                   <motion.div
                     key={index}
@@ -200,10 +200,10 @@ export default function RentingPropertiesPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="group"
                   >
-                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#dbbb90]/30 transform hover:-translate-y-1">
                       <div className="flex items-center justify-center space-x-2">
                         <MapPin className="h-4 w-4 text-[#dbbb90]" />
-                        <span className="text-gray-800 font-medium text-sm group-hover:text-[#dbbb90] transition-colors duration-300">{location}</span>
+                        <span className="text-gray-800 font-medium text-xs sm:text-sm group-hover:text-[#dbbb90] transition-colors duration-300">{location}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -229,18 +229,18 @@ export default function RentingPropertiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-serif">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 font-serif">
               Find Your Perfect
               <span className="block">Rental Home</span>
             </h2>
-            <p className="text-xl text-white/90 font-light max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 font-light max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
               Let our rental specialists help you discover the ideal property that matches your lifestyle and budget in Dubai's most desirable locations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
                 Start Your Search
               </Button>
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-8 py-4 text-lg font-medium tracking-wider rounded-xl transition-all duration-300">
+              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium tracking-wider rounded-xl transition-all duration-300">
                 Contact Us
               </Button>
             </div>

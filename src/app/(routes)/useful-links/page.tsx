@@ -114,12 +114,12 @@ export default function UsefulLinksPage() {
                 <span className="text-sm font-medium text-[#dbbb90] uppercase tracking-wider">Resource Center</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-gray-900 font-serif tracking-wide leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-gray-900 font-serif tracking-wide leading-tight">
                 <span className="block">USEFUL</span>
                 <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent font-normal">LINKS</span>
               </h1>
               
-              <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12">
                 Discover our curated collection of useful links and navigate the world of real estate with ease!
               </p>
             </motion.div>
@@ -138,10 +138,10 @@ export default function UsefulLinksPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
                 GOVERNMENT <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">INSTITUTIONS</span>
               </h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
                 Essential government resources for real estate transactions and regulations
               </p>
             </motion.div>
@@ -160,8 +160,8 @@ export default function UsefulLinksPage() {
                     <div className="w-16 h-16 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                       {institution.icon}
                     </div>
-                    <h3 className="text-2xl font-light text-gray-900 mb-4 font-serif">{institution.name}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed text-lg mb-6">{institution.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4 font-serif">{institution.name}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-base sm:text-lg mb-6">{institution.description}</p>
                     <a
                       href={institution.url}
                       target="_blank"
@@ -190,10 +190,10 @@ export default function UsefulLinksPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
                 FINANCIAL <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">INSTITUTIONS</span>
               </h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
                 Leading banks and financial institutions for mortgage and banking services
               </p>
             </motion.div>
@@ -212,8 +212,8 @@ export default function UsefulLinksPage() {
                     <div className="w-16 h-16 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                       {institution.icon}
                     </div>
-                    <h3 className="text-2xl font-light text-gray-900 mb-4 font-serif">{institution.name}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed text-lg mb-6">{institution.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4 font-serif">{institution.name}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-base sm:text-lg mb-6">{institution.description}</p>
                     <a
                       href={institution.url}
                       target="_blank"
@@ -242,10 +242,10 @@ export default function UsefulLinksPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 font-serif">
                 USEFUL <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">RESOURCES</span>
               </h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
                 Tools and resources to help you make informed real estate decisions
               </p>
             </motion.div>
@@ -264,8 +264,8 @@ export default function UsefulLinksPage() {
                     <div className="w-16 h-16 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                       {resource.icon}
                     </div>
-                    <h3 className="text-2xl font-light text-gray-900 mb-4 font-serif">{resource.name}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed text-lg mb-6">{resource.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4 font-serif">{resource.name}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-base sm:text-lg mb-6">{resource.description}</p>
                     <a
                       href={resource.url}
                       className="inline-flex items-center space-x-2 text-[#dbbb90] hover:text-[#C2A17B] font-medium transition-colors duration-300 group"
@@ -296,13 +296,13 @@ export default function UsefulLinksPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-serif">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 font-serif">
               GET A FREE CONSULTANT NOW
             </h2>
-            <p className="text-xl text-white/90 font-light max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 font-light max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
               Need personalized assistance with your real estate journey? Our expert consultants are here to help you navigate Dubai's property market with confidence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-md mx-auto">
               <input
                 type="text"
                 placeholder="Your Name"
@@ -313,7 +313,7 @@ export default function UsefulLinksPage() {
                 placeholder="Email"
                 className="flex-1 px-6 py-4 rounded-xl border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors duration-300"
               />
-              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
                 Get Started
               </Button>
             </div>
