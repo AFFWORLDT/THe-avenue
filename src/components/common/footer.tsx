@@ -7,10 +7,17 @@ import { useLanguage } from "@/src/contexts/LanguageContext";
 
 const getSitemapLinks = (t: (key: string) => string) => [
   { href: "/buy", label: t('navigation.buy') },
-  { href: "/offPlans", label: t('navigation.projects') },
+  { href: "/buying-properties", label: t('services.buyingProperties') },
   { href: "/rent", label: t('navigation.rent') },
+  { href: "/renting-properties", label: t('services.rentingProperties') },
+  { href: "/selling-properties", label: t('services.sellingProperties') },
+  { href: "/offPlans", label: t('navigation.projects') },
+  { href: "/property-management", label: t('services.propertyManagement') },
+  { href: "/commercial-properties", label: t('services.commercialProperties') },
+  { href: "/mortgage-finance-consultancy", label: t('services.mortgageFinanceConsultancy') },
   { href: "/communities", label: t('navigation.areas') },
   { href: "/whyDubai", label: "Why Dubai" },
+  { href: "/useful-links", label: t('services.usefulLinks') },
   { href: "/service", label: t('navigation.services') },
   { href: "/contactUs", label: t('navigation.more') },
 ];

@@ -37,7 +37,13 @@ export const translations = {
       conveyancing: "Conveyancing",
       shortTermRentals: "Short Term Rentals",
       propertySnagging: "Property Snagging",
-      partnerProgram: "Partner Program"
+      partnerProgram: "Partner Program",
+      buyingProperties: "Buying Properties",
+      rentingProperties: "Renting Properties",
+      sellingProperties: "Selling Properties",
+      commercialProperties: "Commercial Properties",
+      mortgageFinanceConsultancy: "Mortgage Finance Consultancy",
+      usefulLinks: "Useful Links"
     },
     hero: {
       title: "Luxury Living",
@@ -206,7 +212,13 @@ export const translations = {
       conveyancing: "التوثيق القانوني",
       shortTermRentals: "الإيجار قصير المدى",
       propertySnagging: "فحص العقارات",
-      partnerProgram: "برنامج الشراكة"
+      partnerProgram: "برنامج الشراكة",
+      buyingProperties: "شراء العقارات",
+      rentingProperties: "تأجير العقارات",
+      sellingProperties: "بيع العقارات",
+      commercialProperties: "العقارات التجارية",
+      mortgageFinanceConsultancy: "استشارات التمويل العقاري",
+      usefulLinks: "الروابط المفيدة"
     },
     hero: {
       title: "العيش الفاخر",
@@ -375,7 +387,13 @@ export const translations = {
       conveyancing: "Notarisation",
       shortTermRentals: "Locations Court Terme",
       propertySnagging: "Inspection Immobilière",
-      partnerProgram: "Programme Partenaire"
+      partnerProgram: "Programme Partenaire",
+      buyingProperties: "Achat de Propriétés",
+      rentingProperties: "Location de Propriétés",
+      sellingProperties: "Vente de Propriétés",
+      commercialProperties: "Propriétés Commerciales",
+      mortgageFinanceConsultancy: "Conseil en Financement Hypothécaire",
+      usefulLinks: "Liens Utiles"
     },
     hero: {
       title: "Vie de Luxe",
@@ -518,7 +536,13 @@ export const translations = {
       conveyancing: "Юридическое Оформление",
       shortTermRentals: "Краткосрочная Аренда",
       propertySnagging: "Проверка Недвижимости",
-      partnerProgram: "Партнерская Программа"
+      partnerProgram: "Партнерская Программа",
+      buyingProperties: "Покупка Недвижимости",
+      rentingProperties: "Аренда Недвижимости",
+      sellingProperties: "Продажа Недвижимости",
+      commercialProperties: "Коммерческая Недвижимость",
+      mortgageFinanceConsultancy: "Консультации по Ипотечному Финансированию",
+      usefulLinks: "Полезные Ссылки"
     },
     hero: {
       title: "Роскошная Жизнь",
@@ -661,7 +685,13 @@ export const translations = {
       conveyancing: "法律转让",
       shortTermRentals: "短期租赁",
       propertySnagging: "房产检查",
-      partnerProgram: "合作伙伴计划"
+      partnerProgram: "合作伙伴计划",
+      buyingProperties: "购买房产",
+      rentingProperties: "租赁房产",
+      sellingProperties: "出售房产",
+      commercialProperties: "商业地产",
+      mortgageFinanceConsultancy: "抵押贷款咨询",
+      usefulLinks: "有用链接"
     },
     hero: {
       title: "奢华生活",
@@ -830,7 +860,13 @@ export const translations = {
       conveyancing: "Grundstücksübertragung",
       shortTermRentals: "Kurzzeitmiete",
       propertySnagging: "Immobilienprüfung",
-      partnerProgram: "Partnerprogramm"
+      partnerProgram: "Partnerprogramm",
+      buyingProperties: "Immobilien Kaufen",
+      rentingProperties: "Immobilien Mieten",
+      sellingProperties: "Immobilien Verkaufen",
+      commercialProperties: "Gewerbeimmobilien",
+      mortgageFinanceConsultancy: "Hypotheken Finanzberatung",
+      usefulLinks: "Nützliche Links"
     },
     hero: {
       title: "Luxusleben",
