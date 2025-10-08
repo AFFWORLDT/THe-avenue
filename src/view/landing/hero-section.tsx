@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import { MapPin, Home, Bed, Search } from "lucide-react";
 import { useLanguage } from "@/src/contexts/LanguageContext";
 import { useRouter } from "next/navigation";
+import { BackgroundImageSlider } from "@/src/components/ui/background-image-slider";
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -77,22 +78,8 @@ export default function HeroSection() {
       <div className="absolute bottom-20 left-20 w-28 h-28 luxury-bg-bronze rounded-full animate-luxuryPulse opacity-25 blur-xl"></div>
       <div className="absolute bottom-10 right-10 w-36 h-36 luxury-bg-radial rounded-full animate-luxuryFloat opacity-20 blur-2xl"></div>
 
-      {/* Ultra-Rich Cinematic Background */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Hero Video Background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{
-            filter: 'brightness(1.3) contrast(1.2) saturate(1.2) sepia(0.1)'
-          }}
-        >
-          <source src="/herooo.mp4" type="video/mp4" />
-        </video>
-      </div>
+      {/* Property Images Background */}
+      <BackgroundImageSlider className="z-0" />
 
       {/* Ultra-Luxury Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
