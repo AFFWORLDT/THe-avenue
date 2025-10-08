@@ -2,67 +2,66 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Shield, TrendingUp, Users, Clock, DollarSign, Home, Award } from 'lucide-react';
+import { TrendingUp, Target, Shield, Users, Award, Clock, DollarSign, Home } from 'lucide-react';
 import { Button } from '@/src/components/ui/button';
 import { useLanguage } from '@/src/contexts/LanguageContext';
 
-export default function PropertyManagementPage() {
+export default function SellingPropertiesPage() {
   const { t } = useLanguage();
 
   const features = [
     {
-      icon: <Settings className="h-8 w-8" />,
-      title: "Complete Property Care",
-      description: "Comprehensive maintenance and management services to ensure your property remains in pristine condition and maintains its value."
+      icon: <TrendingUp className="h-8 w-8" />,
+      title: "Maximize Property Value",
+      description: "Our expert team conducts comprehensive market analysis to ensure your property achieves maximum value in the competitive Dubai real estate market."
     },
     {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: "Maximize Investment Returns",
-      description: "Strategic rental management and optimization to maximize your property's income potential and long-term investment value."
+      icon: <Target className="h-8 w-8" />,
+      title: "Strategic Marketing",
+      description: "Targeted marketing campaigns across multiple channels to reach qualified buyers and create maximum exposure for your property listing."
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Risk Management",
-      description: "Comprehensive insurance coverage and risk assessment to protect your investment and ensure peace of mind."
+      title: "Secure Transactions",
+      description: "Complete legal support and secure documentation to ensure smooth and hassle-free property transactions with full protection."
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Tenant Management",
-      description: "Professional tenant screening, onboarding, and relationship management to ensure quality occupancy and reduce vacancy periods."
+      title: "Expert Negotiation",
+      description: "Skilled negotiators work on your behalf to secure the best possible terms and conditions for your property sale."
     }
   ];
 
   const services = [
-    "Property Maintenance & Repairs",
-    "Rent Collection & Financial Management",
-    "Tenant Screening & Onboarding",
-    "24/7 Emergency Response",
-    "Property Inspections & Reporting",
-    "Marketing & Tenant Acquisition",
-    "Legal Compliance & Documentation",
-    "Insurance & Risk Management"
+    "Property Valuation & Market Analysis",
+    "Professional Photography & Virtual Tours",
+    "Strategic Marketing & Advertising",
+    "Buyer Qualification & Screening",
+    "Negotiation & Contract Management",
+    "Legal Documentation & Transfer",
+    "Post-Sale Support & Follow-up"
   ];
 
   const benefits = [
     {
       icon: <DollarSign className="h-6 w-6" />,
-      title: "Higher Returns",
-      description: "Optimized rental income"
+      title: "Competitive Pricing",
+      description: "Market-driven pricing strategies"
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "24/7 Support",
-      description: "Round-the-clock assistance"
+      title: "Fast Sales",
+      description: "Quick turnaround times"
     },
     {
       icon: <Award className="h-6 w-6" />,
       title: "Premium Service",
-      description: "White-glove management"
+      description: "White-glove customer experience"
     },
     {
       icon: <Home className="h-6 w-6" />,
-      title: "Peace of Mind",
-      description: "Stress-free ownership"
+      title: "Wide Network",
+      description: "Access to qualified buyers"
     }
   ];
 
@@ -86,25 +85,25 @@ export default function PropertyManagementPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center space-x-2 bg-[#dbbb90]/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-[#dbbb90]/20">
-                <Settings className="h-5 w-5 text-[#dbbb90]" />
-                <span className="text-sm font-medium text-[#dbbb90] uppercase tracking-wider">Premium Management</span>
+                <TrendingUp className="h-5 w-5 text-[#dbbb90]" />
+                <span className="text-sm font-medium text-[#dbbb90] uppercase tracking-wider">Premium Sales</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-gray-900 font-serif tracking-wide leading-tight">
-                <span className="block">PROPERTY</span>
-                <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent font-normal">MANAGEMENT</span>
+                <span className="block">SELLING</span>
+                <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent font-normal">PROPERTIES</span>
               </h1>
               
               <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12">
-                Take the stress out of property management and maximize your investment potential. Our comprehensive property management services ensure your rental properties are well-maintained, profitable, and hassle-free.
+                Our Selling Properties Service is designed to help homeowners navigate the complex real estate market, maximize their property value, and streamline the selling process for a hassle-free experience.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white px-8 py-4 text-lg font-light tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                  Get Started Today
+                  Get Free Valuation
                 </Button>
                 <Button variant="outline" className="border-2 border-[#dbbb90] text-[#dbbb90] hover:bg-[#dbbb90] hover:text-white px-8 py-4 text-lg font-light tracking-wider rounded-xl transition-all duration-300">
-                  Contact us today
+                  Schedule Consultation
                 </Button>
               </div>
             </motion.div>
@@ -125,10 +124,10 @@ export default function PropertyManagementPage() {
             >
               <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
                 Why Choose Our
-                <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Management Service</span>
+                <span className="block bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Selling Service</span>
               </h2>
               <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
-                Experience professional property management that maximizes your returns and minimizes your stress
+                Experience unparalleled expertise and results-driven approach to property sales
               </p>
             </motion.div>
 
@@ -171,7 +170,7 @@ export default function PropertyManagementPage() {
                 Our <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Advantages</span>
               </h2>
               <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
-                What makes us the preferred choice for property management in Dubai
+                What sets us apart in the competitive Dubai real estate market
               </p>
             </motion.div>
 
@@ -211,10 +210,10 @@ export default function PropertyManagementPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-serif">
-                Complete <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Services</span>
+                Complete <span className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] bg-clip-text text-transparent">Service</span>
               </h2>
               <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
-                Comprehensive property management solutions tailored to your needs
+                End-to-end support throughout your property selling journey
               </p>
             </motion.div>
 
@@ -257,18 +256,18 @@ export default function PropertyManagementPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6 font-serif">
-              Ready to Maximize Your
-              <span className="block">Property Investment?</span>
+              Ready to Sell Your
+              <span className="block">Property?</span>
             </h2>
             <p className="text-xl text-white/90 font-light max-w-3xl mx-auto mb-12 leading-relaxed">
-              Let our expert property management team take care of your investment while you enjoy the returns. Contact us today to get started.
+              Get a free property valuation and discover how we can help you achieve the best price for your property in Dubai's competitive market.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button className="bg-white text-[#dbbb90] hover:bg-gray-50 px-8 py-4 text-lg font-medium tracking-wider rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                Get Started Today
+                Get Free Valuation
               </Button>
               <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#dbbb90] px-8 py-4 text-lg font-medium tracking-wider rounded-xl transition-all duration-300">
-                Contact Us Today
+                List Your Property
               </Button>
             </div>
           </motion.div>
