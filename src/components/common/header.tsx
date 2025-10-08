@@ -139,7 +139,7 @@ export default function Header() {
               alt="The Avenue Real Estate Logo"
               width={220}
               height={80}
-              className="object-contain w-52 h-16 sm:w-56 sm:h-18 md:w-60 md:h-20 lg:w-64 lg:h-22 xl:w-72 xl:h-24"
+              className="object-contain w-40 h-12 sm:w-44 sm:h-14 md:w-48 md:h-16 lg:w-56 lg:h-18 xl:w-64 xl:h-20"
             />
           </Link>
         </div>
@@ -269,7 +269,7 @@ export default function Header() {
       {/* Luxury Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full md:w-1/3 text-black z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl border-l-2 border-[#D4AF37]/30 ${
+        className={`fixed top-0 bottom-0 right-0 w-full sm:w-96 md:w-1/3 text-black z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl border-l-2 border-[#D4AF37]/30 ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ backgroundColor: '#ffffff' }}
@@ -286,7 +286,7 @@ export default function Header() {
                 alt="The Avenue Real Estate Logo"
                 width={160}
                 height={50}
-                className="object-contain w-40 h-12"
+                className="object-contain w-32 h-10 sm:w-36 sm:h-11"
               />
               <div className="absolute -top-1 -right-1 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
             </div>

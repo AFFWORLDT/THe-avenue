@@ -79,12 +79,12 @@ export default function Footer() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
             {/* Sitemap */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.sitemap')}
-                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <ul className="space-y-3">
                 {sitemapLinks.map((link, i) => (
@@ -106,9 +106,9 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.contact')}
-                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <address className="not-italic space-y-4 text-white/75 font-light leading-relaxed">
                 <div className="flex items-start gap-3 group">
@@ -160,17 +160,17 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.followUs')}
-                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/theavenurealestate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ export default function Footer() {
                   href="https://www.facebook.com/TheAvenue Real"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@ export default function Footer() {
                   href="mailto:realestatetheavenue@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Gmail"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -209,7 +209,7 @@ export default function Footer() {
                   href="https://www.pinterest.com/TheAvenueRE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Pinterest"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -222,7 +222,7 @@ export default function Footer() {
                   href="https://www.quora.com/profile/The-Avenue-Real-Estate-1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Quora"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -235,7 +235,7 @@ export default function Footer() {
                   href="https://www.snapchat.com/add/theavenuereales"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="Snapchat"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -248,7 +248,7 @@ export default function Footer() {
                   href="https://www.tiktok.com/@theavenuerealesta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="TikTok"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -261,7 +261,7 @@ export default function Footer() {
                   href="https://wa.me/971507705315"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
+                  className="group w-10 h-10 sm:w-12 sm:h-12 bg-white/8 hover:bg-[#dbbb90]/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-[#dbbb90]/30 luxury-hover"
                   aria-label="WhatsApp"
                 >
                   <svg className="w-5 h-5 text-white/70 group-hover:text-[#dbbb90] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
@@ -273,9 +273,9 @@ export default function Footer() {
 
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-light tracking-widest mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.aboutUs')}
-                <div className="absolute -bottom-1 left-0 w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
               <div className="space-y-4 text-white/75 font-light leading-relaxed">
                 <p className="font-serif text-lg leading-relaxed">
@@ -302,7 +302,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-white/60 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/60 mb-6 sm:mb-8">
               <a href="/privacy-policy" className="hover:text-[#dbbb90] transition-all duration-300 font-serif font-light tracking-widest relative group
                              after:content-[''] after:absolute after:left-0 after:bottom-0
                              after:h-[1px] after:w-0 after:bg-[#dbbb90]

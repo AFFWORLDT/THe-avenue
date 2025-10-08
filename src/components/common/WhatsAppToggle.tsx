@@ -78,7 +78,7 @@ export default function WhatsAppToggle() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -86,9 +86,9 @@ export default function WhatsAppToggle() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bottom-20 right-0 mb-4"
+            className="absolute bottom-16 sm:bottom-20 right-0 mb-4"
           >
-            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 w-72 backdrop-blur-md bg-white/95">
+            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 sm:p-4 w-64 sm:w-72 backdrop-blur-md bg-white/95">
               {/* Header */}
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
                 <div className="flex items-center space-x-3">
@@ -148,7 +148,7 @@ export default function WhatsAppToggle() {
         animate={{ scale: 1 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative w-14 h-14 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${
+        className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${
           isOpen 
             ? 'bg-gray-600 hover:bg-gray-700' 
             : 'bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600'
@@ -163,7 +163,7 @@ export default function WhatsAppToggle() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="h-6 w-6 text-white" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </motion.div>
           ) : (
             <motion.div
@@ -173,7 +173,7 @@ export default function WhatsAppToggle() {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="h-6 w-6 text-white" />
+              <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </motion.div>
           )}
         </AnimatePresence>
