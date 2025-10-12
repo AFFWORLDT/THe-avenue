@@ -90,6 +90,23 @@ export default function LeadCaptureForm({
     setRecaptchaToken(token || '');
   };
 
+  // Function to be called by reCAPTCHA script
+  const handleRecaptchaCallback = (token: string) => {
+    setRecaptchaToken(token);
+  };
+
+  // Make the callback function globally available for reCAPTCHA
+  React.useEffect(() => {
+    if (showRecaptcha) {
+      (window as any).onRecaptchaCallback = handleRecaptchaCallback;
+    }
+    return () => {
+      if ((window as any).onRecaptchaCallback) {
+        delete (window as any).onRecaptchaCallback;
+      }
+    };
+  }, [showRecaptcha]);
+
   if (isSuccess) {
     return (
       <motion.div
@@ -232,7 +249,7 @@ export default function LeadCaptureForm({
 
       {showRecaptcha && (
         <div className="flex justify-center">
-          <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key" data-callback={onRecaptchaChange}></div>
+          <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key" data-callback="onRecaptchaCallback"></div>
         </div>
       )}
 
