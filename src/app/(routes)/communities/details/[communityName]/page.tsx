@@ -1,7 +1,7 @@
 "use client";
 import { getCommunityArticles } from "@/src/api/communities";
 import { Loader } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, use } from "react";
 
 interface CommunityArticle {
   _id: string;
@@ -27,7 +27,8 @@ interface CommunityArticlesResponse {
   articles: CommunityArticle[];
 }
 
-export default function CommunityDetails({ params }: { params: { communityName: string } }) {
+export default function CommunityDetails({ params }: { params: Promise<{ communityName: string }> }) {
+  const resolvedParams = use(params);
   const [articles, setArticles] = useState<CommunityArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +37,7 @@ export default function CommunityDetails({ params }: { params: { communityName: 
     const fetchArticles = async () => {
       try {
         setLoading(true);
-        const decodedName = decodeURIComponent(params.communityName);
+        const decodedName = decodeURIComponent(resolvedParams.communityName);
         const response: CommunityArticlesResponse = await getCommunityArticles(decodedName);
         setArticles(response.articles);
       } catch (err) {
@@ -48,7 +49,7 @@ export default function CommunityDetails({ params }: { params: { communityName: 
     };
 
     fetchArticles();
-  }, [params.communityName]);
+  }, [resolvedParams.communityName]);
 
   if (loading) {
     return (
