@@ -107,10 +107,10 @@ export default function HeroSection() {
           <div className="w-full">
             {/* Property Type Selection */}
             <div className="flex justify-center mb-4">
-              <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20">
+              <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1.5 border border-white/20">
                 <button
                   onClick={() => handleFieldChange('listingType', 'buy')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-8 py-3 rounded-md text-base font-medium transition-all duration-300 ${
                     searchForm.listingType === 'buy'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 </button>
                 <button
                   onClick={() => handleFieldChange('listingType', 'rent')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-8 py-3 rounded-md text-base font-medium transition-all duration-300 ${
                     searchForm.listingType === 'rent'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -130,7 +130,7 @@ export default function HeroSection() {
                 </button>
                 <button
                   onClick={() => handleFieldChange('listingType', 'projects')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-8 py-3 rounded-md text-base font-medium transition-all duration-300 ${
                     searchForm.listingType === 'projects'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -142,19 +142,18 @@ export default function HeroSection() {
             </div>
 
             {/* Main Search Container */}
-            <div className="bg-white rounded-xl shadow-xl p-4">
-              <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <div className="bg-white rounded-xl shadow-xl p-6">
+              <div className="flex flex-col sm:flex-row gap-6 items-end">
                 {/* Location Search */}
                 <div className="flex-1 w-full">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <Input
                       type="text"
                       placeholder="Area, development..."
                       value={searchForm.location}
                       onChange={(e) => handleFieldChange('location', e.target.value)}
-                      className="pl-10 h-12 text-gray-900 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
+                      className="pl-12 h-14 text-base text-gray-900 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
                     />
                   </div>
                 </div>
@@ -163,9 +162,9 @@ export default function HeroSection() {
                 <div className="w-full sm:w-auto">
                   <Button
                     onClick={handleSearch}
-                    className="w-full sm:w-40 h-12 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white hover:from-[#B8860B] hover:to-[#D4AF37] border border-[#D4AF37] shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full sm:w-48 h-14 text-base bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white hover:from-[#B8860B] hover:to-[#D4AF37] border border-[#D4AF37] shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <Search className="w-4 h-4 mr-2" />
+                    <Search className="w-5 h-5 mr-2" />
                     1,080 results
                   </Button>
                 </div>

@@ -26,13 +26,29 @@ export default function GoogleMapsSection() {
 
   // Load Google Maps script
   useEffect(() => {
+    let script: HTMLScriptElement | null = null;
+    
     const loadGoogleMaps = () => {
       if (window.google && window.google.maps) {
         setIsLoaded(true);
         return;
       }
 
-      const script = document.createElement('script');
+      // Check if script already exists
+      const existingScript = document.querySelector('script[src*="maps.googleapis.com"]') as HTMLScriptElement;
+      if (existingScript) {
+        // Script exists, wait for it to load
+        if (existingScript.readyState === 'complete' || existingScript.readyState === 'loaded') {
+          setIsLoaded(true);
+        } else {
+          existingScript.addEventListener('load', () => {
+            setIsLoaded(true);
+          });
+        }
+        return;
+      }
+
+      script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCuk4slyXMzBAh1XocahaRnpkp_2sueWas&libraries=places`;
       script.async = true;
       script.defer = true;
@@ -48,6 +64,14 @@ export default function GoogleMapsSection() {
     };
 
     loadGoogleMaps();
+
+    // Cleanup function
+    return () => {
+      // Don't remove the script as it might be used by other components
+      // Just reset the state
+      setIsLoaded(false);
+      setHasError(false);
+    };
   }, []);
 
   // Initialize map when Google Maps is loaded
