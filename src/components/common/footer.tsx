@@ -42,26 +42,26 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#dbbb90]/30 to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#dbbb90]/20 to-transparent"></div>
       
-      <div className="relative z-10 py-12 px-6 md:px-8">
+      <div className="relative z-10 py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Newsletter Section */}
-          <div className="mb-12">
-            <div className="relative bg-gradient-to-r from-[#dbbb90]/10 via-[#C2A17B]/8 to-[#dbbb90]/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-[#dbbb90]/20 shadow-xl">
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <div className="relative bg-gradient-to-r from-[#dbbb90]/10 via-[#C2A17B]/8 to-[#dbbb90]/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border border-[#dbbb90]/20 shadow-xl">
               {/* Premium Decorative Elements */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[#dbbb90]/15 to-transparent rounded-full blur-xl"></div>
-              <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-tr from-[#C2A17B]/15 to-transparent rounded-full blur-lg"></div>
+              <div className="absolute top-4 right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#dbbb90]/15 to-transparent rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 left-4 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-tr from-[#C2A17B]/15 to-transparent rounded-full blur-lg"></div>
               
-              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
+              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-light tracking-widest leading-relaxed text-white font-serif mb-2">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-widest leading-relaxed text-white font-serif mb-2">
                     {t('footer.newsletter.title')}
                     <span className="block text-[#dbbb90] font-normal">{t('footer.newsletter.subtitle')}</span>
                   </h3>
-                  <p className="text-white/85 text-lg font-light leading-relaxed font-serif max-w-2xl">
+                  <p className="text-white/85 text-sm sm:text-base md:text-lg font-light leading-relaxed font-serif max-w-2xl">
                     {t('footer.newsletter.description')}
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-[400px]">
+                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-[350px] xl:min-w-[400px]">
                   <label htmlFor="email-subscribe" className="sr-only">
                     Email address for newsletter subscription
                   </label>
@@ -69,9 +69,9 @@ export default function Footer() {
                     id="email-subscribe"
                     type="email"
                     placeholder={t('footer.newsletter.placeholder')}
-                    className="flex-grow bg-white/8 text-white border-[#dbbb90]/40 placeholder:text-white/50 focus-visible:ring-offset-0 focus-visible:ring-[#dbbb90]/50 focus:border-[#dbbb90] rounded-xl h-12 backdrop-blur-sm font-serif text-base px-6 transition-all duration-300 hover:bg-white/12"
+                    className="flex-grow bg-white/8 text-white border-[#dbbb90]/40 placeholder:text-white/50 focus-visible:ring-offset-0 focus-visible:ring-[#dbbb90]/50 focus:border-[#dbbb90] rounded-xl h-10 sm:h-12 backdrop-blur-sm font-serif text-sm sm:text-base px-4 sm:px-6 transition-all duration-300 hover:bg-white/12"
                   />
-                  <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest py-3 px-6 transition-all duration-300 uppercase h-12 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-serif text-base min-w-[140px] border border-[#dbbb90]/20">
+                  <Button className="bg-gradient-to-r from-[#dbbb90] to-[#C2A17B] hover:from-[#C2A17B] hover:to-[#B8956A] text-white font-light tracking-widest py-2 sm:py-3 px-4 sm:px-6 transition-all duration-300 uppercase h-10 sm:h-12 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-serif text-sm sm:text-base min-w-[120px] sm:min-w-[140px] border border-[#dbbb90]/20">
                     {t('footer.newsletter.button')}
                   </Button>
                 </div>
@@ -80,14 +80,14 @@ export default function Footer() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
             {/* Sitemap */}
             <div className="lg:col-span-1">
-              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-base sm:text-lg md:text-xl font-light tracking-widest mb-3 sm:mb-4 md:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.sitemap')}
                 <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {sitemapLinks.map((link, i) => (
                   <li key={i}>
                     <a
@@ -95,7 +95,7 @@ export default function Footer() {
                       className="relative inline-block text-white/75 hover:text-white transition-all duration-300 font-light group
                                  after:content-[''] after:absolute after:left-0 after:bottom-0
                                  after:h-[1px] after:w-0 after:bg-[#dbbb90]
-                                 after:transition-all after:duration-300 hover:after:w-full font-serif text-base
+                                 after:transition-all after:duration-300 hover:after:w-full font-serif text-sm sm:text-base
                                  hover:translate-x-1"
                     >
                       {link.label}
@@ -107,32 +107,32 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="lg:col-span-1">
-              <h4 className="text-lg sm:text-xl font-light tracking-widest mb-4 sm:mb-6 font-serif text-[#dbbb90] relative">
+              <h4 className="text-base sm:text-lg md:text-xl font-light tracking-widest mb-3 sm:mb-4 md:mb-6 font-serif text-[#dbbb90] relative">
                 {t('footer.contact')}
                 <div className="absolute -bottom-1 left-0 w-6 sm:w-8 h-px bg-gradient-to-r from-[#dbbb90] to-transparent"></div>
               </h4>
-              <address className="not-italic space-y-4 text-white/75 font-light leading-relaxed">
-                <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-xl flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <address className="not-italic space-y-3 sm:space-y-4 text-white/75 font-light leading-relaxed">
+                <div className="flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-xl flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-serif text-base">1403, B2B Tower, Business Bay</p>
-                    <p className="font-serif text-base">Dubai, UAE</p>
+                    <p className="font-serif text-sm sm:text-base">1403, B2B Tower, Business Bay</p>
+                    <p className="font-serif text-sm sm:text-base">Dubai, UAE</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-3 sm:gap-4 group">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
                   <a
                     href="mailto:info@theavenue.ae"
-                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-base
+                    className="relative inline-block hover:text-white transition-all duration-300 font-serif text-sm sm:text-base
                                after:content-[''] after:absolute after:left-0 after:bottom-0
                                after:h-[1px] after:w-0 after:bg-[#dbbb90]
                                after:transition-all after:duration-300 hover:after:w-full"

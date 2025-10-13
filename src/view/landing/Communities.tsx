@@ -102,20 +102,20 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center px-4">
-        <p className="text-[#D4B88C] text-sm uppercase tracking-widest mb-2 font-light">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 text-center px-4 sm:px-6">
+        <p className="text-[#D4B88C] text-xs sm:text-sm uppercase tracking-widest mb-2 font-light">
           {t('communities.title')}
         </p>
-        <h1 className="text-3xl sm:text-4xl font-mono text-gray-800 mb-6 tracking-wide">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono text-gray-800 mb-4 sm:mb-6 tracking-wide">
           {t('communities.headline')}
         </h1>
-        <p className="max-w-4xl mx-auto text-gray-600 text-sm tracking-tight font-light">
+        <p className="max-w-3xl mx-auto text-gray-600 text-sm sm:text-base tracking-tight font-light">
           {t('communities.description')}
         </p>
       </section>
 
       {/* Communities Section - Carousel */}
-      <section className="relative pb-16 px-4 md:px-12">
+      <section className="relative pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-12">
         <Carousel
           setApi={setApi}
           opts={{
@@ -125,13 +125,13 @@ export default function Component() {
           plugins={[plugin.current]}
           className="w-full"
         >
-          <CarouselContent className="-ml-6">
+          <CarouselContent className="-ml-4 sm:-ml-6">
             {communities?.map((community: any, idx: number) => (
               <CarouselItem
                 key={`${community.id ?? idx}-${idx}`}
-                className="pl-6 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                className="pl-4 sm:pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <Card className="relative w-full h-[650px] rounded-lg overflow-hidden shadow-lg group border-none">
+                <Card className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-lg overflow-hidden shadow-lg group border-none">
                   <CardContent className="p-0 h-full">
                     <Image
                       src={community.photos[0]}
@@ -140,18 +140,18 @@ export default function Component() {
                       style={{ objectFit: "cover" }}
                       className="transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end text-white">
-                      <h3 className="text-2xl font-light mb-2 tracking-wide">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 flex flex-col justify-end text-white">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-light mb-2 tracking-wide">
                         {community.name}
                       </h3>
-                      <p className="text-sm mb-4 font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm mb-3 sm:mb-4 font-light leading-relaxed">
                         {community.order_description}
                       </p>
-                      <div className="w-full border-[0.5px] border-white/30 mb-4" />
+                      <div className="w-full border-[0.5px] border-white/30 mb-3 sm:mb-4" />
                       <Link
                         href={"/communities"}
                         className={cn(
-                          "relative pb-1 transition-all duration-300 text-primary uppercase text-base",
+                          "relative pb-1 transition-all duration-300 text-primary uppercase text-sm sm:text-base",
                           "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0",
                           "after:bg-primary after:transition-all after:duration-300 hover:after:w-20"
                         )}
@@ -168,11 +168,11 @@ export default function Component() {
         </Carousel>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6 sm:mt-8">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
                 index === current - 1
                   ? "bg-gold-accent"
                   : "bg-gray-300 hover:bg-gray-400"
@@ -185,10 +185,10 @@ export default function Component() {
             />
           ))}
         </div>
-        <div className="w-full flex justify-center items-center mt-11 mb-4">
+        <div className="w-full flex justify-center items-center mt-8 sm:mt-10 md:mt-11 mb-4">
           
         <Link href={"/communities"}>
-           <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-lg transition-colors uppercase">
+           <Button className="w-40 sm:w-48 h-10 sm:h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-lg transition-colors uppercase text-sm sm:text-base">
             View All Communities
           </Button>
         </Link>

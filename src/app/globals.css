@@ -627,3 +627,140 @@
   border-color: rgba(212, 175, 55, 0.4);
 }
 
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  .luxury-card {
+    padding: 20px;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .luxury-card {
+    padding: 24px;
+  }
+}
+
+/* Mobile-First Responsive Typography */
+@media (max-width: 640px) {
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .text-responsive-2xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-responsive-3xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-responsive-3xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+/* Responsive Spacing Utilities */
+@media (max-width: 640px) {
+  .mobile-px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .mobile-mb-8 {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Touch-Friendly Button Sizes */
+@media (max-width: 640px) {
+  .touch-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Responsive Image Containers */
+.responsive-image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 640px) {
+  .responsive-image-container {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* Smooth Scrolling for Mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Mobile Navigation Improvements */
+@media (max-width: 768px) {
+  .mobile-nav-item {
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Responsive Grid Improvements */
+@media (max-width: 640px) {
+  .mobile-grid-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .tablet-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Enhanced Mobile Form Styling */
+@media (max-width: 640px) {
+  .mobile-form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+  
+  .mobile-form-button {
+    min-height: 48px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
