@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/src/components/ui/button';
 import { Input } from '@/src/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/src/components/ui/card';
@@ -45,6 +45,12 @@ export default function LeadCaptureForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure component only renders reCAPTCHA on client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
@@ -97,7 +103,7 @@ export default function LeadCaptureForm({
 
   // Make the callback function globally available for reCAPTCHA
   React.useEffect(() => {
-    if (showRecaptcha) {
+    if (showRecaptcha && isClient) {
       (window as any).onRecaptchaCallback = handleRecaptchaCallback;
     }
     return () => {
@@ -105,7 +111,7 @@ export default function LeadCaptureForm({
         delete (window as any).onRecaptchaCallback;
       }
     };
-  }, [showRecaptcha]);
+  }, [showRecaptcha, isClient]);
 
   if (isSuccess) {
     return (
@@ -247,7 +253,7 @@ export default function LeadCaptureForm({
         />
       </div>
 
-      {showRecaptcha && (
+      {showRecaptcha && isClient && (
         <div className="flex justify-center">
           <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key" data-callback="onRecaptchaCallback"></div>
         </div>

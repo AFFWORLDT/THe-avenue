@@ -2,94 +2,141 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { getAllBuyProperties } from '@/src/api/buy';
+import { getAllProjects } from '@/src/api/offPlans';
+
+interface Project {
+  id: number;
+  name: string;
+  photos: string[];
+  description: string;
+  location: {
+    city: string;
+    community: string;
+    sub_community?: string;
+  };
+  newParam: {
+    price: number;
+    bedroomMin: number;
+    bedroomMax: number;
+  };
+  developer: {
+    name: string;
+  };
+}
 
 interface BackgroundImageSliderProps {
   className?: string;
+  onProjectChange?: (project: Project | null) => void;
 }
 
 export const BackgroundImageSlider: React.FC<BackgroundImageSliderProps> = ({
   className = "",
+  onProjectChange,
 }) => {
-  const [images, setImages] = useState<string[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPropertyImages = async () => {
+    const fetchProjects = async () => {
       try {
         setLoading(true);
+        console.log('🔄 Starting to fetch projects...');
         
-        // Fetch rent properties
+        // Fetch projects with the specified API endpoint
         const queryParams = new URLSearchParams({
-          listing_type: "RENT",
-          status: "ACTIVE",
-          page: "1",
-          size: "20", // Get more properties for more images
           sort_by: "total_count",
-          sort_order: "desc"
+          sort_order: "desc",
+          page: "1",
+          size: "9",
+          type: "off_plan"
         });
 
-        const response = await getAllBuyProperties(queryParams.toString());
-        const properties = response?.properties || [];
+        console.log('📡 API URL:', process.env.NEXT_PUBLIC_API_URL);
+        const response = await getAllProjects(queryParams.toString());
+        console.log('✅ API Response received:', response);
+        const projectsData = response?.projects || [];
 
-        // Extract images from properties
-        const propertyImages: string[] = [];
-        properties.forEach((property: any) => {
-          if (property.photos && Array.isArray(property.photos)) {
-            property.photos.forEach((photo: string) => {
-              if (photo && photo.trim() !== '') {
-                propertyImages.push(photo);
-              }
-            });
-          }
-        });
+        // Filter projects that have photos
+        const projectsWithPhotos = projectsData.filter((project: Project) => 
+          project.photos && project.photos.length > 0
+        );
 
-        // If we don't have enough images, add some fallback images
-        if (propertyImages.length < 5) {
-          const fallbackImages = [
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          ];
-          
-          // Add fallback images if we don't have enough real images
-          const neededImages = 5 - propertyImages.length;
-          for (let i = 0; i < neededImages && i < fallbackImages.length; i++) {
-            propertyImages.push(fallbackImages[i]);
-          }
+        console.log('📸 Projects with photos:', projectsWithPhotos.length);
+        setProjects(projectsWithPhotos);
+        
+        // Notify parent component about the current project
+        if (onProjectChange && projectsWithPhotos.length > 0) {
+          onProjectChange(projectsWithPhotos[0]);
         }
-
-        setImages(propertyImages.slice(0, 10)); // Limit to 10 images max
       } catch (error) {
-        console.error('Error fetching property images:', error);
-        // Fallback to luxury property images
-        setImages([
-          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
-        ]);
+        console.error('❌ Error fetching projects:', error);
+        console.log('🔄 Using fallback images...');
+        // Fallback to static images if API fails
+        const fallbackProjects: Project[] = [
+          {
+            id: 1,
+            name: "Dubai Marina",
+            photos: ["/images/dubai-marina.webp"],
+            description: "Luxury waterfront living",
+            location: { city: "Dubai", community: "Dubai Marina" },
+            newParam: { price: 2000000, bedroomMin: 1, bedroomMax: 3 },
+            developer: { name: "Emaar" }
+          },
+          {
+            id: 2,
+            name: "Palm Jumeirah",
+            photos: ["/images/Palm-Jumeirah.webp"],
+            description: "Exclusive island living",
+            location: { city: "Dubai", community: "Palm Jumeirah" },
+            newParam: { price: 5000000, bedroomMin: 2, bedroomMax: 4 },
+            developer: { name: "Nakheel" }
+          },
+          {
+            id: 3,
+            name: "Dubai Hills Estate",
+            photos: ["/images/Dubai-Hills-Estate.webp"],
+            description: "Family-friendly community",
+            location: { city: "Dubai", community: "Dubai Hills Estate" },
+            newParam: { price: 3000000, bedroomMin: 2, bedroomMax: 5 },
+            developer: { name: "Emaar" }
+          }
+        ];
+        console.log('📸 Fallback projects set:', fallbackProjects);
+        setProjects(fallbackProjects);
+        
+        if (onProjectChange && fallbackProjects.length > 0) {
+          onProjectChange(fallbackProjects[0]);
+        }
       } finally {
         setLoading(false);
+        console.log('✅ Loading completed');
       }
     };
 
-    fetchPropertyImages();
-  }, []);
+    fetchProjects();
+  }, []); // Remove onProjectChange dependency to prevent infinite loop
 
   // Auto-slide functionality
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (projects.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 6000); // Change image every 6 seconds
+      setCurrentIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % projects.length;
+        return newIndex;
+      });
+    }, 8000); // Change project every 8 seconds
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [projects.length]);
+
+  // Notify parent component when current project changes
+  useEffect(() => {
+    if (onProjectChange && projects.length > 0) {
+      onProjectChange(projects[currentIndex]);
+    }
+  }, [currentIndex, projects, onProjectChange]);
 
   if (loading) {
     return (
@@ -101,45 +148,38 @@ export const BackgroundImageSlider: React.FC<BackgroundImageSliderProps> = ({
     );
   }
 
-  if (!images || images.length === 0) {
+  if (!projects || projects.length === 0) {
     return (
       <div className={`absolute inset-0 w-full h-full bg-gray-900 ${className}`}>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <p>No images available</p>
+          <p>No projects available</p>
         </div>
       </div>
     );
   }
 
+  const currentProject = projects[currentIndex];
+
   return (
     <div className={`absolute inset-0 w-full h-full overflow-hidden ${className}`}>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={images[currentIndex]}
-            alt={`Property background ${currentIndex + 1}`}
-            fill
-            className="object-cover"
-            priority={currentIndex === 0}
-            quality={90}
-          />
-          
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/50" />
-        </motion.div>
-      </AnimatePresence>
+      <div className="absolute inset-0">
+        <Image
+          src={currentProject.photos[0]}
+          alt={`${currentProject.name} - ${currentProject.location.community}`}
+          fill
+          className="object-cover"
+          priority={currentIndex === 0}
+          quality={90}
+        />
+        
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
 
-      {/* Image counter (optional) */}
-      {images.length > 1 && (
+      {/* Project counter */}
+      {projects.length > 1 && (
         <div className="absolute top-4 right-4 z-10 bg-black/30 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-          {currentIndex + 1} / {images.length}
+          {currentIndex + 1} / {projects.length}
         </div>
       )}
     </div>

@@ -14,10 +14,11 @@ export default function Home() {
       <HeroSection />
       <PartnersSection />
       <Solutions/>
-      <GoogleMapsSection />
+      
       <Feature />
       <Communities />
       <Property />
+      <GoogleMapsSection />
       <InsightsInspiration />
       <CallToAction />
     </div>

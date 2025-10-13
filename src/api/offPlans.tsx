@@ -1,5 +1,22 @@
 import { api, handleApiError } from "@/src/lib/axios"
 
+export const getAllProjects = async (query?: string) => {
+  try {
+    console.log("Fetching projects with query:", query);
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+    
+    const endpoint = `/properties/projects${query ? `?${query}` : ''}`;
+    console.log("Trying endpoint:", endpoint);
+    
+    const res = await api.get(endpoint);
+    console.log("Projects API Response:", res.data);
+    return res.data;
+  } catch (error: any) {
+    console.error("Error in getAllProjects:", error);
+    throw handleApiError(error);
+  }
+};
+
 export const getAllProperties = async (querry?:string) => {
    try {
      console.log("Fetching properties with query:", querry);
@@ -20,7 +37,7 @@ export const getAllProperties = async (querry?:string) => {
          const res = await api.get(endpoint);
          console.log("API Response:", res.data);
          return res.data;
-       } catch (error) {
+       } catch (error: any) {
          console.log(`Endpoint ${endpoint} failed:`, error.response?.status);
          lastError = error;
          continue;
@@ -97,7 +114,7 @@ export const getPropertyById = async (id:string) => {
          const res = await api.get(endpoint);
          console.log("API Response:", res.data);
          return res.data;
-       } catch (error) {
+       } catch (error: any) {
          console.log(`Endpoint ${endpoint} failed:`, error.response?.status);
          lastError = error;
          continue;
@@ -122,7 +139,7 @@ export const getPropertyById = async (id:string) => {
          description: "A luxurious property in the heart of Dubai Marina"
        }
      };
-   } catch (error) {
+   } catch (error: any) {
     console.error("Error in getPropertyById:", error);
     throw handleApiError(error)
    }
