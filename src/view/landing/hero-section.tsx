@@ -183,20 +183,20 @@ export default function HeroSection() {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           {/* Separator above project title */}
-          <div className="w-24 sm:w-32 h-px bg-white/40 mx-auto mb-4 sm:mb-6"></div>
+          <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mb-4 sm:mb-6"></div>
           
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-3 sm:mb-4 md:mb-6 text-white font-serif tracking-tight leading-tight">
-            <span className="drop-shadow-lg">
+            <span className="drop-shadow-lg bg-gradient-to-r from-white via-[#D4AF37] to-white bg-clip-text text-transparent">
               {currentProject ? currentProject.name : t('hero.title')}
             </span>
             <br />
-            <span className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+            <span className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl bg-gradient-to-r from-[#D4AF37]/80 via-white to-[#D4AF37]/80 bg-clip-text text-transparent">
               {currentProject ? currentProject.location.community : t('hero.subtitle')}
             </span>
           </h1>
           
           <motion.p 
-            className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase max-w-4xl mx-auto text-white/90 leading-tight tracking-tight font-serif drop-shadow-md px-2"
+            className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase max-w-4xl mx-auto leading-tight tracking-tight font-serif drop-shadow-md px-2 bg-gradient-to-r from-[#D4AF37]/70 via-white/90 to-[#D4AF37]/70 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -208,7 +208,7 @@ export default function HeroSection() {
           </motion.p>
           
           {/* Separator below project description */}
-          <div className="w-24 sm:w-32 h-px bg-white/40 mx-auto mt-4 sm:mt-6"></div>
+          <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-4 sm:mt-6"></div>
 
           {/* Dynamic Project CTA Button */}
           {currentProject && (
@@ -220,7 +220,7 @@ export default function HeroSection() {
             >
               <Button 
                 onClick={() => router.push(`/offPlans/details/${currentProject.id}`)}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/30 font-semibold tracking-[0.1em] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm rounded-lg"
+                className="bg-gradient-to-r from-[#D4AF37]/20 via-white/10 to-[#D4AF37]/20 backdrop-blur-sm border border-[#D4AF37]/40 text-white hover:from-[#D4AF37]/30 hover:via-white/20 hover:to-[#D4AF37]/30 hover:border-[#D4AF37]/60 font-semibold tracking-[0.1em] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm rounded-lg"
               >
                 View Project Details
               </Button>
