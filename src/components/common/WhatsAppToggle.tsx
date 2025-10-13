@@ -49,29 +49,25 @@ export default function WhatsAppToggle() {
       icon: <MessageCircle className="h-5 w-5" />,
       label: 'WhatsApp',
       action: () => window.open(whatsappUrl, '_blank'),
-      color: 'bg-green-500 hover:bg-green-600',
-      description: '+971 50 770 5315'
+      color: 'bg-green-500 hover:bg-green-600'
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: t('team.call'),
       action: () => window.open(`tel:${phoneNumber}`, '_self'),
-      color: 'bg-blue-500 hover:bg-blue-600',
-      description: '+971 50 770 5315'
+      color: 'bg-blue-500 hover:bg-blue-600'
     },
     {
       icon: <Mail className="h-5 w-5" />,
       label: t('team.email'),
       action: () => window.open('mailto:info@theavenue.ae', '_self'),
-      color: 'bg-purple-500 hover:bg-purple-600',
-      description: 'info@theavenue.ae'
+      color: 'bg-purple-500 hover:bg-purple-600'
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: 'Location',
       action: () => window.open('https://maps.google.com/?q=1403,B2B+Tower,Business+Bay,Dubai,UAE', '_blank'),
-      color: 'bg-red-500 hover:bg-red-600',
-      description: 'Business Bay, Dubai'
+      color: 'bg-red-500 hover:bg-red-600'
     }
   ];
 
@@ -124,7 +120,6 @@ export default function WhatsAppToggle() {
                     </div>
                     <div className="flex-1 text-left">
                       <p className="font-medium text-sm">{option.label}</p>
-                      <p className="text-xs opacity-90">{option.description}</p>
                     </div>
                   </motion.button>
                 ))}
