@@ -97,16 +97,16 @@ export default function HeroSection() {
       {/* Luxury Cinematic Vignette */}
       <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/50 z-17" />
 
-      {/* Modern Search Form - Responsive Positioning */}
-      <div className="absolute top-20 sm:top-32 md:top-40 lg:top-48 xl:top-52 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
+      {/* Modern Search Form - Windows Optimized Positioning */}
+      <div className="absolute top-24 sm:top-36 md:top-44 lg:top-52 xl:top-56 2xl:top-60 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: -50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
         >
           <div className="w-full">
-            {/* Property Type Selection - Responsive */}
-            <div className="flex justify-center mb-3 sm:mb-4">
+            {/* Property Type Selection - Windows Optimized */}
+            <div className="flex justify-center mb-4 sm:mb-5 md:mb-6">
               <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1 sm:p-1.5 border border-white/20">
                 <button
                   onClick={() => handleFieldChange('listingType', 'buy')}
@@ -141,8 +141,8 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Main Search Container - Responsive */}
-            <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6">
+            {/* Main Search Container - Windows Optimized */}
+            <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-6 sm:mb-8 md:mb-10">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-end">
                 {/* Location Search */}
                 <div className="flex-1 w-full">
@@ -175,8 +175,8 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Ultra-Luxury Hero Title - Responsive Center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24">
+      {/* Ultra-Luxury Hero Title - Windows Optimized Center */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28 2xl:mt-32">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
