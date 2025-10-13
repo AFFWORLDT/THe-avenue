@@ -4,9 +4,9 @@ import React from "react";
 function Blog() {
   return (
     <div>
-      <section className="pt-32 pb-12 px-4 bg-white">
+      <section className="pt-32 pb-12 px-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B]">
         <div className=" mx-auto text-center">
-          <h1 className="text-5xl font-medium mb-6 text-black font-mono">
+          <h1 className="text-5xl font-medium mb-6 text-white font-mono">
             Blog
           </h1>
         </div>

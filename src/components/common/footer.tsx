@@ -17,6 +17,7 @@ const getSitemapLinks = (t: (key: string) => string) => [
   { href: "/mortgage-finance-consultancy", label: t('services.mortgageFinanceConsultancy') },
   { href: "/communities", label: t('navigation.areas') },
   { href: "/whyDubai", label: "Why Dubai" },
+  { href: "/why-abu-dhabi", label: "Why Abu Dhabi" },
   { href: "/useful-links", label: t('services.usefulLinks') },
   { href: "/service", label: t('navigation.services') },
   { href: "/contactUs", label: t('navigation.more') },

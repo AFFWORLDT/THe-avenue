@@ -62,7 +62,7 @@ const blogPost = {
 export default function DetailsBlog() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="pt-32 pb-12 px-4 bg-[#141442]">
+      <section className="pt-32 pb-12 px-4 bg-gradient-to-r from-[#dbbb90] to-[#C2A17B]">
         <div className=" mx-auto text-center">
           <h1 className="text-5xl font-medium mb-6 text-white font-mono">
             Blog
