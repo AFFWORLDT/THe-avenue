@@ -98,7 +98,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/50 z-17" />
 
       {/* Modern Search Form - Responsive Positioning */}
-      <div className="absolute top-20 sm:top-28 md:top-32 lg:top-36 xl:top-40 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
+      <div className="absolute top-32 sm:top-28 md:top-32 lg:top-36 xl:top-40 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl mt-8 sm:mt-6 md:mt-4">
         <motion.div
           initial={{ opacity: 0, y: -50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -176,7 +176,7 @@ export default function HeroSection() {
       </div>
 
       {/* Ultra-Luxury Hero Title - Responsive Center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
+      <div className="absolute top-[60%] sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-24 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
