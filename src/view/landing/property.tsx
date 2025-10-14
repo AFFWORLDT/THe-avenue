@@ -50,20 +50,20 @@ export default function Property() {
 
   return (
     <div className="min-h-screen bg-[#F2EEE8] text-[#1A202C]">
-      <main className="container mx-auto py-12 px-4 md:px-6 lg:px-8">
-        <section className="text-center mb-12">
-          <h2 className="text-black text-sm font-light tracking-widest mb-2 uppercase">
+      <main className="container mx-auto py-10 sm:py-12 px-4 sm:px-6 md:px-8">
+        <section className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-black text-xs sm:text-sm font-light tracking-widest mb-2 uppercase">
             {t('property.title')}
           </h2>
-          <h1 className="text-3xl sm:text-4xl font-mono mb-4 text-[#1A202C] tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono mb-3 sm:mb-4 text-[#1A202C] tracking-wide">
             {t('property.headline')}
           </h1>
-          <p className="max-w-4xl mx-auto text-sm font-light text-gray-700 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base font-light text-gray-700 leading-relaxed">
             {t('property.description')}
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {property?.map((obj:any,i) => (
             <PropertyCard
               photos={obj?.photos?.[0] || "/images/building.jpg"}
@@ -81,7 +81,7 @@ export default function Property() {
 
         <div className="text-center">
          <Link href={"/buy"}>
-           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-8 py-6 text-lg font-light tracking-wider rounded-lg shadow-md uppercase">
+           <Button className="bg-[#D4B88C] hover:bg-[#C2A77B] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-light tracking-wider rounded-lg shadow-md uppercase">
             {t('property.viewAll')}
           </Button>
          </Link>

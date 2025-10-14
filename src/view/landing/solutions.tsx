@@ -29,12 +29,12 @@ function Solutions() {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-white relative">
-      <div className="container mx-auto px-6 md:px-8 relative z-10">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Clean Header */}
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight font-serif tracking-tight">
+          <div className="mb-8 sm:mb-10 md:mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight font-serif tracking-tight">
               <span className="block mb-1">{t('solutions.headline.part1')}</span>
               <span className="block mb-1">{t('solutions.headline.part2')}</span>
               <span className="block text-[#dbbb90] font-normal">
@@ -43,23 +43,23 @@ function Solutions() {
             </h2>
             
             {/* Simple Separator */}
-            <div className="mt-8 flex items-center justify-center">
-              <div className="w-16 h-px bg-[#dbbb90]/40"></div>
+            <div className="mt-6 sm:mt-8 flex items-center justify-center">
+              <div className="w-12 sm:w-16 h-px bg-[#dbbb90]/40"></div>
               <div className="w-1 h-1 bg-[#dbbb90] rounded-full mx-2"></div>
-              <div className="w-16 h-px bg-[#dbbb90]/40"></div>
+              <div className="w-12 sm:w-16 h-px bg-[#dbbb90]/40"></div>
             </div>
           </div>
 
-          {/* Compact Solutions Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Responsive Solutions Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="group relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-[#dbbb90]/30 transition-all duration-300 cursor-pointer"
+                className="group relative bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg hover:border-[#dbbb90]/30 transition-all duration-300 cursor-pointer"
               >
                 {/* Icon Container */}
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-[#dbbb90]/10 rounded-lg flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-all duration-300">
+                <div className="mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#dbbb90]/10 rounded-lg flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-all duration-300">
                     <div className="transform group-hover:scale-105 transition-transform duration-300">
                       {solution.icon}
                     </div>
@@ -67,12 +67,12 @@ function Solutions() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-gray-900 font-medium text-lg leading-tight mb-3 group-hover:text-[#dbbb90] transition-colors duration-300">
+                <h3 className="text-gray-900 font-medium text-base sm:text-lg leading-tight mb-2 sm:mb-3 group-hover:text-[#dbbb90] transition-colors duration-300">
                   {solution.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {solution.description}
                 </p>
               </div>

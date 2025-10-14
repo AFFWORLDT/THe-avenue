@@ -28,27 +28,27 @@ export default function Feature() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center py-16 px-4 md:px-6 lg:px-8  container mx-auto">
-      <div className="text-center mb-12">
-        <p className="text-sm  uppercase tracking-wider  mb-2 text-primary">
+    <div className="flex flex-col items-center py-12 sm:py-16 px-4 sm:px-6 md:px-8 container mx-auto">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+        <p className="text-xs sm:text-sm uppercase tracking-wider mb-2 text-primary">
           {t('featured.title')}
         </p>
-        <h1 className="text-4xl  font-mono font-thin text-[#1A202C] leading-tight mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono font-thin text-[#1A202C] leading-tight mb-3 sm:mb-4">
           {t('featured.headline')}
         </h1>
-        <p className="text-[15px] text-gray-600  mx-auto">
+        <p className="text-sm sm:text-[15px] text-gray-600 mx-auto max-w-2xl">
           {t('featured.description')}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8  w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full max-w-6xl">
         {property?.map((property: any, i) => (
           <PropertyCard data={property} key={i} />
         ))}
       </div>
-      <div className="w-full flex justify-center items-center my-11">
+      <div className="w-full flex justify-center items-center my-8 sm:my-10 md:my-11">
         <Link href={"/offPlans"}>
-         <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-semibold py-2 px-4 rounded-lg transition-colors uppercase">
+         <Button className="w-40 sm:w-48 h-10 sm:h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-semibold py-2 px-4 rounded-lg transition-colors uppercase text-sm sm:text-base">
           {t('featured.viewAll')}
         </Button>
         </Link>

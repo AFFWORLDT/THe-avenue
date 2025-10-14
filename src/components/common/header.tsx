@@ -127,8 +127,8 @@ export default function Header() {
       
       <nav
         className={cn(
-          "w-full flex items-center relative z-10 px-4 md:px-6",
-          isScrolled ? "h-20" : "h-24"
+          "w-full flex items-center relative z-10 px-3 sm:px-4 md:px-6",
+          isScrolled ? "h-16 sm:h-18 md:h-20" : "h-18 sm:h-20 md:h-24"
         )}
       >
         {/* Clean Logo - True Left Position */}
@@ -139,7 +139,7 @@ export default function Header() {
               alt="The Avenue Real Estate Logo"
               width={220}
               height={80}
-              className="object-contain w-40 h-12 sm:w-44 sm:h-14 md:w-48 md:h-16 lg:w-56 lg:h-18 xl:w-64 xl:h-20"
+              className="object-contain w-28 h-8 sm:w-32 sm:h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 xl:w-48 xl:h-16"
             />
           </Link>
         </div>
@@ -253,15 +253,15 @@ export default function Header() {
         </div>
 
         {/* Right Side - Mobile Menu Only */}
-        <div className="flex items-center space-x-3 ml-auto lg:hidden">
+        <div className="flex items-center space-x-2 sm:space-x-3 ml-auto lg:hidden">
           {/* Language Switcher for Mobile */}
           <SimpleLanguageSwitcher variant="minimal" />
           {/* Clean Mobile Menu Button */}
           <div
-            className="cursor-pointer transition-all duration-300 p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+            className="cursor-pointer transition-all duration-300 p-1.5 sm:p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 touch-button"
             onClick={() => setIsOverlayOpen(true)}
           >
-            <Menu className="h-7 w-7" />
+            <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
           </div>
         </div>
       </nav>
@@ -269,7 +269,7 @@ export default function Header() {
       {/* Luxury Mobile Overlay */}
       <div
         data-mobile-overlay
-        className={`fixed top-0 bottom-0 right-0 w-full sm:w-96 md:w-1/3 text-black z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl border-l-2 border-[#D4AF37]/30 ${
+        className={`fixed top-0 bottom-0 right-0 w-full sm:w-80 md:w-96 lg:w-1/3 text-black z-[100] transform transition-transform duration-500 ease-in-out shadow-2xl border-l-2 border-[#D4AF37]/30 ${
           isOverlayOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ backgroundColor: '#ffffff' }}
@@ -278,7 +278,7 @@ export default function Header() {
         <div className="absolute inset-0 luxury-bg-pattern opacity-3"></div>
         <div className="absolute top-0 left-0 w-full h-1 luxury-bg-gold animate-luxuryShimmer"></div>
         
-        <div className="flex items-center justify-between p-6 border-b-2 border-[#D4AF37]/20 relative z-10" style={{ backgroundColor: '#ffffff' }}>
+        <div className="flex items-center justify-between p-3 sm:p-4 md:p-6 border-b-2 border-[#D4AF37]/20 relative z-10" style={{ backgroundColor: '#ffffff' }}>
           <div className="flex items-center">
             <div className="relative">
               <Image
@@ -286,23 +286,23 @@ export default function Header() {
                 alt="The Avenue Real Estate Logo"
                 width={160}
                 height={50}
-                className="object-contain w-32 h-10 sm:w-36 sm:h-11"
+                className="object-contain w-24 h-7 sm:w-28 sm:h-9 md:w-32 md:h-10"
               />
-              <div className="absolute -top-1 -right-1 w-2 h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
+              <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
             </div>
           </div>
           <button
             onClick={() => setIsOverlayOpen(false)}
-            className="text-[#D4AF37] hover:text-[#B8941F] p-2 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 group"
+            className="text-[#D4AF37] hover:text-[#B8941F] p-1.5 sm:p-2 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 group touch-button"
           >
             <div className="relative">
-              <X className="h-6 w-6 transition-all duration-300 group-hover:scale-110" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6 transition-all duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 luxury-bg-gold rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
             </div>
           </button>
         </div>
 
-        <nav className="flex flex-col p-6 space-y-3 relative z-10" style={{ backgroundColor: '#ffffff' }}>
+        <nav className="flex flex-col p-3 sm:p-4 md:p-6 space-y-2 sm:space-y-3 relative z-10" style={{ backgroundColor: '#ffffff' }}>
           {navLinks.map((link, i) => {
             if (link.href === "/service") {
               return (
@@ -310,13 +310,13 @@ export default function Header() {
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className={cn(
-                      "flex items-center justify-between w-full text-left text-black hover:text-[#D4AF37] transition-all duration-300 py-4 px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider",
+                      "flex items-center justify-between w-full text-left text-black hover:text-[#D4AF37] transition-all duration-300 py-3 sm:py-4 px-4 sm:px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider mobile-nav-item",
                       pathname === link.href && "text-[#D4AF37] font-medium bg-[#D4AF37]/10 border-[#D4AF37]/30"
                     )}
                   >
-                    <span className="text-lg font-medium">{link.label}</span>
+                    <span className="text-base sm:text-lg font-medium">{link.label}</span>
                     <ChevronDown className={cn(
-                      "h-5 w-5 transition-transform duration-300 text-[#D4AF37]",
+                      "h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 text-[#D4AF37]",
                       isServicesOpen && "rotate-180"
                     )} />
                   </button>
@@ -360,7 +360,7 @@ export default function Header() {
               key={i}
               href={link.href}
               className={cn(
-                  "text-black hover:text-[#D4AF37] transition-all duration-300 py-4 px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-lg font-medium",
+                  "text-black hover:text-[#D4AF37] transition-all duration-300 py-3 sm:py-4 px-4 sm:px-5 rounded-2xl border border-transparent hover:border-[#D4AF37]/20 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-base sm:text-lg font-medium mobile-nav-item",
                   pathname === link.href && "text-[#D4AF37] font-medium bg-[#D4AF37]/10 border-[#D4AF37]/30"
               )}
               onClick={() => setIsOverlayOpen(false)}
@@ -372,28 +372,28 @@ export default function Header() {
         </nav>
 
         {/* Luxury Footer Section */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t-2 border-[#D4AF37]/20 relative z-10" style={{ backgroundColor: '#ffffff' }}>
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 border-t-2 border-[#D4AF37]/20 z-10" style={{ backgroundColor: '#ffffff' }}>
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center">
+            <div className="flex items-center justify-center space-x-2 mb-2 sm:mb-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
-                  width={20}
-                  height={20}
-                  className="object-contain"
+                  width={16}
+                  height={16}
+                  className="object-contain w-3 h-3 sm:w-5 sm:h-5"
                 />
               </div>
-              <span className="luxury-text-static font-serif text-sm font-semibold tracking-wider">
+              <span className="luxury-text-static font-serif text-xs sm:text-sm font-semibold tracking-wider">
                 The Avenue
               </span>
             </div>
-            <p className="text-[#D4AF37] font-medium text-xs tracking-wider font-serif mb-4">
+            <p className="text-[#D4AF37] font-medium text-xs tracking-wider font-serif mb-3 sm:mb-4">
               Dubai's NO 1 Luxury Real Estate
             </p>
             <button
               onClick={() => setIsOverlayOpen(false)}
-              className="text-[#D4AF37] hover:text-[#B8941F] px-6 py-3 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-sm font-medium group"
+              className="text-[#D4AF37] hover:text-[#B8941F] px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37]/50 bg-white hover:bg-[#D4AF37]/5 font-serif tracking-wider text-xs sm:text-sm font-medium group touch-button"
             >
               <div className="relative">
                 <span className="relative z-10">Close Menu</span>

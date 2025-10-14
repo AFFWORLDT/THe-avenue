@@ -75,7 +75,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative h-screen md:h-[115vh] w-full flex items-center justify-center text-center luxury-bg overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center text-center luxury-bg overflow-hidden"
     >
       {/* Ultra-Luxury Background Effects */}
       <div className="absolute inset-0 luxury-bg-pattern opacity-20"></div>
@@ -97,20 +97,20 @@ export default function HeroSection() {
       {/* Luxury Cinematic Vignette */}
       <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/50 z-17" />
 
-      {/* Modern Search Form - Windows Optimized Positioning */}
-      <div className="absolute top-24 sm:top-36 md:top-44 lg:top-52 xl:top-56 2xl:top-60 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
+      {/* Modern Search Form - Responsive Positioning */}
+      <div className="absolute top-20 sm:top-28 md:top-32 lg:top-36 xl:top-40 left-1/2 transform -translate-x-1/2 z-30 px-4 sm:px-6 lg:px-8 container w-full max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: -50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
         >
           <div className="w-full">
-            {/* Property Type Selection - Windows Optimized */}
+            {/* Property Type Selection - Responsive */}
             <div className="flex justify-center mb-4 sm:mb-5 md:mb-6">
-              <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1 sm:p-1.5 border border-white/20">
+              <div className="flex bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20 overflow-x-auto">
                 <button
                   onClick={() => handleFieldChange('listingType', 'buy')}
-                  className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md text-sm sm:text-base font-medium transition-all duration-300 ${
+                  className={`px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
                     searchForm.listingType === 'buy'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 </button>
                 <button
                   onClick={() => handleFieldChange('listingType', 'rent')}
-                  className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md text-sm sm:text-base font-medium transition-all duration-300 ${
+                  className={`px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
                     searchForm.listingType === 'rent'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -130,7 +130,7 @@ export default function HeroSection() {
                 </button>
                 <button
                   onClick={() => handleFieldChange('listingType', 'projects')}
-                  className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md text-sm sm:text-base font-medium transition-all duration-300 ${
+                  className={`px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
                     searchForm.listingType === 'projects'
                       ? 'bg-white text-gray-900 shadow-sm'
                       : 'text-white hover:text-white/80'
@@ -141,19 +141,19 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Main Search Container - Windows Optimized */}
-            <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 mb-6 sm:mb-8 md:mb-10">
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-end">
+            {/* Main Search Container - Responsive */}
+            <div className="bg-white rounded-xl shadow-xl p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-end">
                 {/* Location Search */}
                 <div className="flex-1 w-full">
                   <div className="relative">
-                    <MapPin className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 w-4 sm:w-5 h-4 sm:h-5 text-gray-400" />
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
                       type="text"
                       placeholder="Area, development..."
                       value={searchForm.location}
                       onChange={(e) => handleFieldChange('location', e.target.value)}
-                      className="pl-10 sm:pl-12 h-12 sm:h-14 text-sm sm:text-base text-gray-900 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
+                      className="pl-10 h-10 sm:h-12 md:h-14 text-sm sm:text-base text-gray-900 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
                     />
                   </div>
                 </div>
@@ -162,9 +162,9 @@ export default function HeroSection() {
                 <div className="w-full sm:w-auto">
                   <Button
                     onClick={handleSearch}
-                    className="w-full sm:w-40 md:w-48 h-12 sm:h-14 text-sm sm:text-base bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white hover:from-[#B8860B] hover:to-[#D4AF37] border border-[#D4AF37] shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full sm:w-36 md:w-40 lg:w-48 h-10 sm:h-12 md:h-14 text-sm sm:text-base bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white hover:from-[#B8860B] hover:to-[#D4AF37] border border-[#D4AF37] shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <Search className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+                    <Search className="w-4 h-4 mr-2" />
                     <span className="hidden sm:inline">1,080 results</span>
                     <span className="sm:hidden">Search</span>
                   </Button>
@@ -175,8 +175,8 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Ultra-Luxury Hero Title - Windows Optimized Center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28 2xl:mt-32">
+      {/* Ultra-Luxury Hero Title - Responsive Center */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -185,18 +185,18 @@ export default function HeroSection() {
           {/* Separator above project title */}
           <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mb-4 sm:mb-6"></div>
           
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-3 sm:mb-4 md:mb-6 text-white font-serif tracking-tight leading-tight">
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-light mb-2 sm:mb-3 md:mb-4 text-white font-serif tracking-tight leading-tight">
             <span className="drop-shadow-lg bg-gradient-to-r from-white via-[#D4AF37] to-white bg-clip-text text-transparent">
               {currentProject ? currentProject.name : t('hero.title')}
             </span>
             <br />
-            <span className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl bg-gradient-to-r from-[#D4AF37]/80 via-white to-[#D4AF37]/80 bg-clip-text text-transparent">
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-gradient-to-r from-[#D4AF37]/80 via-white to-[#D4AF37]/80 bg-clip-text text-transparent">
               {currentProject ? currentProject.location.community : t('hero.subtitle')}
             </span>
           </h1>
           
           <motion.p 
-            className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase max-w-4xl mx-auto leading-tight tracking-tight font-serif drop-shadow-md px-2 bg-gradient-to-r from-[#D4AF37]/70 via-white/90 to-[#D4AF37]/70 bg-clip-text text-transparent"
+            className="text-xs sm:text-sm md:text-base lg:text-lg uppercase max-w-3xl mx-auto leading-tight tracking-tight font-serif drop-shadow-md px-2 bg-gradient-to-r from-[#D4AF37]/70 via-white/90 to-[#D4AF37]/70 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -220,9 +220,10 @@ export default function HeroSection() {
             >
               <Button 
                 onClick={() => router.push(`/offPlans/details/${currentProject.id}`)}
-                className="bg-gradient-to-r from-[#D4AF37]/20 via-white/10 to-[#D4AF37]/20 backdrop-blur-sm border border-[#D4AF37]/40 text-white hover:from-[#D4AF37]/30 hover:via-white/20 hover:to-[#D4AF37]/30 hover:border-[#D4AF37]/60 font-semibold tracking-[0.1em] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm rounded-lg"
+                className="bg-gradient-to-r from-[#D4AF37]/20 via-white/10 to-[#D4AF37]/20 backdrop-blur-sm border border-[#D4AF37]/40 text-white hover:from-[#D4AF37]/30 hover:via-white/20 hover:to-[#D4AF37]/30 hover:border-[#D4AF37]/60 font-semibold tracking-[0.1em] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-3 sm:px-4 md:px-5 py-2 sm:py-3 text-xs sm:text-sm rounded-lg"
               >
-                View Project Details
+                <span className="hidden sm:inline">View Project Details</span>
+                <span className="sm:hidden">View Details</span>
               </Button>
             </motion.div>
           )}

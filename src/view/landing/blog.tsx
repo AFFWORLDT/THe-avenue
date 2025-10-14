@@ -33,24 +33,24 @@ export function InsightsInspiration() {
   const { t } = useLanguage();
   
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="mx-auto px-6 md:px-10 lg:px-20 text-center">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+      <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-lg text-[#dbbb90] uppercase font-extralight tracking-wider mb-2">{t('blog.title')}</p>
-          <h2 className="text-3xl sm:text-4xl font-mono text-gray-800 mb-4 ">
+          <p className="text-sm sm:text-base md:text-lg text-[#dbbb90] uppercase font-extralight tracking-wider mb-2">{t('blog.title')}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-gray-800 mb-3 sm:mb-4">
             {t('blog.headline')}
           </h2>
-          <p className="text-sm font-extralight text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed tracking-wide">
+          <p className="text-xs sm:text-sm font-extralight text-gray-600 max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed tracking-wide">
             {t('blog.description')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           {blogPosts.map((post, index) => (
             <motion.div
               key={index}
@@ -73,7 +73,7 @@ export function InsightsInspiration() {
           whileTap={{ scale: 0.95 }}
         >
        <Link href={"/blog"} passHref>
-        <Button className="w-48 h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-extralight tracking-wider py-2 px-4 rounded-lg transition-colors uppercase">
+        <Button className="w-40 sm:w-48 h-10 sm:h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-extralight tracking-wider py-2 px-4 rounded-lg transition-colors uppercase text-sm sm:text-base">
        {t('blog.viewAll')}
           </Button>
        </Link>
