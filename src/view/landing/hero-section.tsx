@@ -176,7 +176,7 @@ export default function HeroSection() {
       </div>
 
       {/* Ultra-Luxury Hero Title - Responsive Center */}
-      <div className="absolute top-[60%] sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-24 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
+      <div className="absolute top-[65%] sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white text-center max-w-7xl w-full px-4 mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
