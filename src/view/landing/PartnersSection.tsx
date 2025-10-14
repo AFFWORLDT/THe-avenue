@@ -60,7 +60,7 @@ function PartnersSection() {
         <div className="hidden md:flex max-w-6xl mx-auto items-center justify-between">
           {/* Header */}
           <div className="flex-shrink-0">
-            <h2 className="text-gray-600 text-sm font-light tracking-widest font-serif leading-relaxed">
+            <h2 className="text-gray-600 text-sm font-light tracking-widest font-serif leading-relaxed mb-4">
               {t('partners.title')}
             </h2>
           </div>
@@ -98,7 +98,7 @@ function PartnersSection() {
         <div className="md:hidden max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-gray-600 text-xs sm:text-sm font-light tracking-widest font-serif leading-relaxed">
+            <h2 className="text-gray-600 text-xs sm:text-sm font-light tracking-widest font-serif leading-relaxed mb-20">
               {t('partners.title')}
             </h2>
           </div>
