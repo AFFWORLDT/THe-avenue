@@ -100,22 +100,22 @@ export default function Component() {
     fetchCommunities();
   }, []);
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 text-center px-4 sm:px-6">
+      <section className="py-8 sm:py-10 md:py-12 text-center px-4 sm:px-6">
         <p className="text-[#D4B88C] text-xs sm:text-sm uppercase tracking-widest mb-2 font-light">
           {t('communities.title')}
         </p>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-mono text-gray-800 mb-4 sm:mb-6 tracking-wide">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-mono text-gray-800 mb-3 sm:mb-4 tracking-wide">
           {t('communities.headline')}
         </h1>
-        <p className="max-w-3xl mx-auto text-gray-600 text-sm sm:text-base tracking-tight font-light">
+        <p className="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base tracking-tight font-light">
           {t('communities.description')}
         </p>
       </section>
 
       {/* Communities Section - Carousel */}
-      <section className="relative pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-12">
+      <section className="relative pb-8 sm:pb-10 px-4 sm:px-6 md:px-8 lg:px-12">
         <Carousel
           setApi={setApi}
           opts={{
@@ -131,7 +131,7 @@ export default function Component() {
                 key={`${community.id ?? idx}-${idx}`}
                 className="pl-4 sm:pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <Card className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-lg overflow-hidden shadow-lg group border-none">
+                <Card className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-lg overflow-hidden shadow-lg group border-none">
                   <CardContent className="p-0 h-full">
                     <Image
                       src={community.photos[0]}
@@ -168,7 +168,7 @@ export default function Component() {
         </Carousel>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+        <div className="flex justify-center gap-2 mt-4 sm:mt-6">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
@@ -185,10 +185,10 @@ export default function Component() {
             />
           ))}
         </div>
-        <div className="w-full flex justify-center items-center mt-8 sm:mt-10 md:mt-11 mb-4">
+        <div className="w-full flex justify-center items-center mt-6 sm:mt-8 mb-4">
           
         <Link href={"/communities"}>
-           <Button className="w-40 sm:w-48 h-10 sm:h-11 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-lg transition-colors uppercase text-sm sm:text-base">
+           <Button className="w-36 sm:w-44 h-9 sm:h-10 bg-[#dbbb90] hover:bg-[#C2A17B] text-white font-light tracking-wider py-2 px-4 rounded-lg transition-colors uppercase text-sm">
             View All Communities
           </Button>
         </Link>

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { User, Building, Download, MapPin } from "lucide-react";
 import { useLanguage } from "@/src/contexts/LanguageContext";
 
@@ -52,31 +53,40 @@ function Solutions() {
 
           {/* Responsive Solutions Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {solutions.map((solution, index) => (
-              <div
-                key={index}
-                className="group relative bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg hover:border-[#dbbb90]/30 transition-all duration-300 cursor-pointer"
-              >
-                {/* Icon Container */}
-                <div className="mb-3 sm:mb-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#dbbb90]/10 rounded-lg flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-all duration-300">
-                    <div className="transform group-hover:scale-105 transition-transform duration-300">
-                      {solution.icon}
+            {solutions.map((solution, index) => {
+              const isListYourProperty = index === 1; // second card: List Your Property
+              const Wrapper: React.ElementType = isListYourProperty ? 'a' : 'div';
+              const wrapperProps = isListYourProperty
+                ? { href: "/leasinglistingform.pdf", download: true }
+                : {};
+
+              return (
+                <Wrapper
+                  key={index}
+                  {...wrapperProps}
+                  className="group relative bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg hover:border-[#dbbb90]/30 transition-all duration-300 cursor-pointer"
+                >
+                  {/* Icon Container */}
+                  <div className="mb-3 sm:mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#dbbb90]/10 rounded-lg flex items-center justify-center group-hover:bg-[#dbbb90]/20 transition-all duration-300">
+                      <div className="transform group-hover:scale-105 transition-transform duration-300">
+                        {solution.icon}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Title */}
-                <h3 className="text-gray-900 font-medium text-base sm:text-lg leading-tight mb-2 sm:mb-3 group-hover:text-[#dbbb90] transition-colors duration-300">
-                  {solution.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-gray-900 font-medium text-base sm:text-lg leading-tight mb-2 sm:mb-3 group-hover:text-[#dbbb90] transition-colors duration-300">
+                    {solution.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                  {solution.description}
-                </p>
-              </div>
-            ))}
+                  {/* Description */}
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {solution.description}
+                  </p>
+                </Wrapper>
+              );
+            })}
           </div>
         </div>
       </div>
