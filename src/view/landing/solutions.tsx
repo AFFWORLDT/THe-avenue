@@ -6,6 +6,9 @@ import { useLanguage } from "@/src/contexts/LanguageContext";
 
 function Solutions() {
   const { t } = useLanguage();
+  const phoneNumber = '+971507705315';
+  const whatsappMessage = 'Hello! I would like to connect with a specialist.';
+  const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`;
   const solutions = [
     {
       icon: <User className="h-6 w-6 text-[#dbbb90]" />,
@@ -54,10 +57,19 @@ function Solutions() {
           {/* Responsive Solutions Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {solutions.map((solution, index) => {
-              const isListYourProperty = index === 1; // second card: List Your Property
-              const Wrapper: React.ElementType = isListYourProperty ? 'a' : 'div';
+              const isConnectWithSpecialist = index === 0; // first card
+              const isListYourProperty = index === 1; // second card
+              const isDownloadReport = index === 2; // third card
+              const isExploreProjects = index === 3; // fourth card
+              const Wrapper: React.ElementType = (isListYourProperty || isConnectWithSpecialist || isDownloadReport || isExploreProjects) ? 'a' : 'div';
               const wrapperProps = isListYourProperty
                 ? { href: "/leasinglistingform.pdf", download: true }
+                : isConnectWithSpecialist
+                ? { href: whatsappUrl, target: "_blank", rel: "noopener noreferrer" }
+                : isDownloadReport
+                ? { href: "/useful-links", target: "_blank", rel: "noopener noreferrer" }
+                : isExploreProjects
+                ? { href: "/developers", target: "_blank", rel: "noopener noreferrer" }
                 : {};
 
               return (
