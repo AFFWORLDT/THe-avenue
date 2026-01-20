@@ -17,7 +17,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           "name": "The Avenue Real Estate",
           "alternateName": "The Avenue",
           "url": "https://theavenue.ae",
-          "logo": "https://theavenue.ae/images/logo.png",
+          "logo": "https://theavenue.ae/images/avenue_logo.png",
           "description": "Dubai's premier luxury real estate destination, connecting discerning clients with exceptional properties.",
           "address": {
             "@type": "PostalAddress",
@@ -27,7 +27,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+971507705315",
+            "telephone": "+971522816492",
             "contactType": "customer service",
             "email": "info@theavenue.ae"
           },
@@ -175,7 +175,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
             "name": "The Avenue Real Estate",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://theavenue.ae/images/logo.png"
+              "url": "https://theavenue.ae/images/avenue_logo.png"
             }
           },
           "datePublished": data.datePublished,

@@ -81,7 +81,7 @@ export default function TermsConditionsPage() {
                         <p className="text-lg font-medium">The Avenue Realestate</p>
                         <p>1403, B2B Tower, Business Bay</p>
                         <p>Dubai, UAE</p>
-                        <p>Phone: <a href="tel:+971507705315" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">+971 50 770 5315</a></p>
+                        <p>Phone: <a href="tel:+971522816492" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">+971 52 281 6492</a></p>
                         <p>Email: <a href="mailto:info@theavenue.ae" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">info@theavenue.ae</a></p>
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function TermsConditionsPage() {
                 <p className="text-gray-700 mb-2"><strong>The Avenue Realestate</strong></p>
                 <p className="text-gray-700 mb-2">1403, B2B Tower, Business Bay</p>
                 <p className="text-gray-700 mb-2">Dubai, UAE</p>
-                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971542524242" className="text-blue-600 hover:underline">+971 50 770 5315</a></p>
+                <p className="text-gray-700 mb-2">Phone: <a href="tel:+971522816492" className="text-blue-600 hover:underline">+971 52 281 6492</a></p>
                 <p className="text-gray-700 mb-2">Email: <a href="mailto:legal@theavenue.ae" className="text-blue-600 hover:underline">legal@theavenue.ae</a></p>
                   <p className="text-gray-700">General Email: <a href="mailto:info@theavenue.ae" className="text-[#D4AF37] hover:text-[#B8941F] font-medium transition-colors">info@theavenue.ae</a></p>
                 </div>

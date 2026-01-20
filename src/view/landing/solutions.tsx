@@ -6,7 +6,7 @@ import { useLanguage } from "@/src/contexts/LanguageContext";
 
 function Solutions() {
   const { t } = useLanguage();
-  const phoneNumber = '+971507705315';
+  const phoneNumber = '+971522816492';
   const whatsappMessage = 'Hello! I would like to connect with a specialist.';
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`;
   const solutions = [

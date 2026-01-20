@@ -243,7 +243,7 @@ export default function Footer() {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/971507705315"
+                  href="https://wa.me/971522816492"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-10 h-10 sm:w-12 sm:h-12 bg-[#25D366] hover:bg-[#22C55E] rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30 luxury-hover"
@@ -282,7 +282,7 @@ export default function Footer() {
                 <div className="flex items-center gap-4 pt-4">
                   <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/8 backdrop-blur-sm">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/avenue_logo.png"
                       alt="The Avenue Real Estate Logo"
                       width={64}
                       height={64}

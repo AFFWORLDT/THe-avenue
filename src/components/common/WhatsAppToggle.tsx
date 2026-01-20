@@ -8,7 +8,7 @@ import { useLanguage } from '@/src/contexts/LanguageContext';
 export default function WhatsAppToggle() {
   const { t } = useLanguage();
 
-  const phoneNumber = '+971507705315';
+  const phoneNumber = '+971522816492';
   const whatsappMessage = 'Hello! I would like to know more about your luxury properties in Dubai.';
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`;
 

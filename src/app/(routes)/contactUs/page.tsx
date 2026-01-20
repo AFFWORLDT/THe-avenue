@@ -55,10 +55,10 @@ function ContactUs() {
                 <div>
                   <p className="text-gray-800 font-medium font-serif">Phone</p>
                   <a
-                    href="tel:+971507705315"
+                    href="tel:+971522816492"
                     className="text-[#dbbb90] hover:text-[#C2A17B] transition-colors font-serif"
                   >
-                    +971 50 770 5315
+                    +971 52 281 6492
                   </a>
                 </div>
               </div>

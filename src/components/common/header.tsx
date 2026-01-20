@@ -137,11 +137,11 @@ export default function Header() {
         <div className="flex items-center">
           <Link href={"/"} className="transition-all duration-300 hover:scale-105">
             <Image
-              src="/images/logo.png"
+              src="/images/avenue_logo.png"
               alt="The Avenue Real Estate Logo"
               width={220}
               height={80}
-              className="object-contain w-28 h-8 sm:w-32 sm:h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 xl:w-48 xl:h-16"
+              className="object-contain w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-60 lg:h-16 xl:w-72 xl:h-20"
             />
           </Link>
         </div>
@@ -284,11 +284,11 @@ export default function Header() {
           <div className="flex items-center">
             <div className="relative">
               <Image
-                src="/images/logo.png"
+                src="/images/avenue_logo.png"
                 alt="The Avenue Real Estate Logo"
                 width={160}
                 height={50}
-                className="object-contain w-24 h-7 sm:w-28 sm:h-9 md:w-32 md:h-10"
+                className="object-contain w-32 h-9 sm:w-36 sm:h-11 md:w-44 md:h-14"
               />
               <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 luxury-bg-gold rounded-full animate-luxurySparkle"></div>
             </div>
@@ -379,7 +379,7 @@ export default function Header() {
             <div className="flex items-center justify-center space-x-2 mb-2 sm:mb-3">
               <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-[#D4AF37] to-[#C2A17B] rounded-full flex items-center justify-center">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/avenue_logo.png"
                   alt="Logo"
                   width={16}
                   height={16}

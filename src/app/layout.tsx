@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/images/logo.png',
-    shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/avenue_logo.png',
+    shortcut: '/images/avenue_logo.png',
+    apple: '/images/avenue_logo.png',
   },
   openGraph: {
     title: "The Avenue Real Estate - Dubai's Premier Luxury Property Experts",
