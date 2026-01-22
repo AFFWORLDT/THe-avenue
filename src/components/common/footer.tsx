@@ -334,7 +334,7 @@ export default function Footer() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#dbbb90]/30 flex items-center justify-center bg-white/8 backdrop-blur-sm">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/avenue_logo.png"
                     alt="The Avenue Real Estate Logo"
                     width={48}
                     height={48}
