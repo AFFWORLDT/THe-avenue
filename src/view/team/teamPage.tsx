@@ -199,9 +199,15 @@ export default function TeamPage() {
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 leading-tight">
                         {agent.name}
                       </h3>
-                      <p className="text-[#dbbb90] font-medium text-sm sm:text-base uppercase tracking-wider mb-2 md:mb-3">
-                        {agent.role_name || agent.role || 'Real Estate Agent'}
-                      </p>
+                      {(() => {
+                        const role = agent.role_name || agent.role || 'Real Estate Agent';
+                        const isSystemRole = ['super admin', 'admin'].includes(role.toLowerCase().trim());
+                        return !isSystemRole ? (
+                          <p className="text-[#dbbb90] font-medium text-sm sm:text-base uppercase tracking-wider mb-2 md:mb-3">
+                            {role}
+                          </p>
+                        ) : null;
+                      })()}
                       {agent.team_name && agent.team_name !== 'No team assigned' && (
                         <p className="text-[#dbbb90] font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">
                           {agent.team_name}
