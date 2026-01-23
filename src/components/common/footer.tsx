@@ -152,7 +152,7 @@ export default function Footer() {
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/theavenuereal/"
+                  href="https://www.instagram.com/theavenuedubai/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30 luxury-hover"
@@ -165,7 +165,7 @@ export default function Footer() {
 
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/profile.php?id=61581601547044"
+                  href="https://www.facebook.com/share/1B1Lxb4FFr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-10 h-10 sm:w-12 sm:h-12 bg-[#1877F2] hover:bg-[#166FE5] rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 hover:border-white/30 luxury-hover"
@@ -190,7 +190,7 @@ export default function Footer() {
                 </a>
 
                 {/* Pinterest */}
-                <a
+                 <a
                   href="https://www.pinterest.com/TheAvenueRE"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -200,10 +200,10 @@ export default function Footer() {
                   <svg className="w-5 h-5 text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.747 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
                   </svg>
-                </a>
+                </a> 
 
                 {/* Quora */}
-                <a
+                {/* <a
                   href="https://www.quora.com/profile/The-Avenue-Real-Estate-1"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -213,10 +213,10 @@ export default function Footer() {
                   <svg className="w-5 h-5 text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.737 18.646h-3.464c.683-1.508 1.738-2.962 2.836-4.245l-1.137-.841c-1.102 1.298-2.355 2.956-3.124 4.575-.409-.016-.738-.016-1.076-.016-4.085 0-6.772-3.071-6.772-7.123 0-4.067 2.687-7.123 6.772-7.123s6.772 3.056 6.772 7.123c0 2.128-.85 4.067-2.23 5.387l1.423 1.262zm-5.573-9.031c0 1.307 1.042 2.347 2.349 2.347 1.307 0 2.349-1.04 2.349-2.347 0-1.307-1.042-2.349-2.349-2.349-1.307 0-2.349 1.042-2.349 2.349z"/>
                   </svg>
-                </a>
+                </a> *
 
                 {/* Snapchat */}
-                <a
+                {/* <a
                   href="https://www.snapchat.com/add/theavenuereales"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -226,10 +226,10 @@ export default function Footer() {
                   <svg className="w-5 h-5 text-black transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741a.36.36 0 0 1 .085.345c-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378 0 0-.6 2.281-.747 2.848-.269 1.045-1.004 2.352-1.498 3.146C9.66 23.651 10.843 24 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
                   </svg>
-                </a>
+                </a> */}
 
                 {/* TikTok */}
-                <a
+                {/* <a
                   href="https://www.tiktok.com/@theavenuerealesta"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -239,7 +239,7 @@ export default function Footer() {
                   <svg className="w-5 h-5 text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
                   </svg>
-                </a>
+                </a> */}
 
                 {/* WhatsApp */}
                 <a
