@@ -68,7 +68,11 @@ export default function Property() {
             <PropertyCard
               photos={obj?.photos?.[0] || "/images/building.jpg"}
               title={obj?.title || "Luxury Property"}
-              location={obj?.location || "Dubai, UAE"}
+              location={
+                (typeof obj?.location === 'object' 
+                  ? (obj?.location?.community || obj?.location?.city || "Dubai, UAE")
+                  : obj?.location) || "Dubai, UAE"
+              }
               price={obj?.price || "2,500,000"}
               bedrooms={obj?.bedrooms || 2}
               bathrooms={obj?.bathrooms || 2}
