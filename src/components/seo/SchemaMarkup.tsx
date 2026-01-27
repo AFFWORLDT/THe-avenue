@@ -83,7 +83,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           "name": data.name || "Luxury Properties in Dubai",
           "description": data.description || "Premium real estate properties in Dubai's most desirable locations",
           "url": data.url || "https://theavenue.ae",
-          "image": data.image || "https://theavenue.ae/images/hero-bg.jpg",
+          "image": data.image || "https://theavenue.ae/images/bgImage.webp",
           "provider": {
             "@type": "RealEstateAgent",
             "name": "The Avenue Real Estate"

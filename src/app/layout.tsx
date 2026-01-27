@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "The Avenue Real Estate",
     images: [
       {
-        url: "/images/hero-bg.jpg",
+        url: "/images/bgImage.webp",
         width: 1200,
         height: 630,
         alt: "The Avenue Real Estate - Luxury Properties Dubai",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Avenue Real Estate - Dubai's Premier Luxury Property Experts",
     description: "Discover luxury properties, off-plan projects, and premium real estate solutions in Dubai",
-    images: ["/images/hero-bg.jpg"],
+    images: ["/images/bgImage.webp"],
   },
   verification: {
     google: "your-google-verification-code",
