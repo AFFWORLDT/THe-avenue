@@ -44,6 +44,7 @@ export interface Agent {
   job_type?: string;
   qr_code?: string;
   documents?: any;
+  designation?: string;
 }
 
 export interface AgentsResponse {

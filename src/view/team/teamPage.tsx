@@ -81,11 +81,11 @@ export default function TeamPage() {
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#F8F6F0] via-white to-[#F2EEE8]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/3 via-transparent to-black/3"></div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-[#dbbb90]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#dbbb90]/8 rounded-full blur-3xl"></div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -94,7 +94,7 @@ export default function TeamPage() {
             className="text-center mb-12 md:mb-20"
           >
             {/* Main Title */}
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -110,9 +110,9 @@ export default function TeamPage() {
                 />
               </span> {t('team.titleSuffix')}
             </motion.h1>
-            
+
             {/* Subtitle */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -120,7 +120,7 @@ export default function TeamPage() {
             >
               {t('team.subtitle')} {t('team.location')}
             </motion.p>
-            
+
             {/* Decorative Line */}
             <motion.div
               initial={{ scaleX: 0 }}
@@ -200,7 +200,7 @@ export default function TeamPage() {
                         {agent.name}
                       </h3>
                       {(() => {
-                        const role = agent.role_name || agent.role || 'Real Estate Agent';
+                        const role = agent.designation || agent.role_name || agent.role || 'Real Estate Agent';
                         const isSystemRole = ['super admin', 'admin'].includes(role.toLowerCase().trim());
                         return !isSystemRole ? (
                           <p className="text-[#dbbb90] font-medium text-sm sm:text-base uppercase tracking-wider mb-2 md:mb-3">
