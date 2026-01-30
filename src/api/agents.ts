@@ -56,9 +56,10 @@ export interface AgentsResponse {
 export const getAllAgents = async (): Promise<Agent[]> => {
   try {
     console.log("Fetching all agents from:", API_BASE_URL);
-    
+
     // Try different possible endpoints for team/agents
     const endpoints = [
+      '/agent/public/list?limit=50&state=active&order_by=order',
       '/agent/all',
       '/api/agent/all',
       '/agents',
@@ -68,14 +69,14 @@ export const getAllAgents = async (): Promise<Agent[]> => {
       '/team/all',
       '/api/team/all'
     ];
-    
+
     let lastError;
     for (const endpoint of endpoints) {
       try {
         console.log("Trying endpoint:", `${API_BASE_URL}${endpoint}`);
         const response = await apiClient.get(endpoint);
         console.log("API Response:", response.data);
-        
+
         // Handle different response structures
         if (response.data?.data && Array.isArray(response.data.data)) {
           return response.data.data;
@@ -86,7 +87,7 @@ export const getAllAgents = async (): Promise<Agent[]> => {
         } else if (response.data?.team && Array.isArray(response.data.team)) {
           return response.data.team;
         }
-        
+
         return response.data;
       } catch (error) {
         console.log(`Endpoint ${endpoint} failed:`, error.response?.status, error.response?.data);
@@ -94,7 +95,7 @@ export const getAllAgents = async (): Promise<Agent[]> => {
         continue;
       }
     }
-    
+
     // If all endpoints fail, return mock data as fallback
     console.warn("All API endpoints failed, returning mock data for agents");
     return [
@@ -175,7 +176,7 @@ export const getAllAgents = async (): Promise<Agent[]> => {
 export const getAgentById = async (id: number): Promise<Agent> => {
   try {
     console.log("Fetching agent by ID:", id, "from:", API_BASE_URL);
-    
+
     // Try different possible endpoints
     const endpoints = [
       `/agent/${id}`,
@@ -185,14 +186,14 @@ export const getAgentById = async (id: number): Promise<Agent> => {
       `/team/${id}`,
       `/api/team/${id}`
     ];
-    
+
     let lastError;
     for (const endpoint of endpoints) {
       try {
         console.log("Trying endpoint:", `${API_BASE_URL}${endpoint}`);
         const response = await apiClient.get(endpoint);
         console.log("API Response:", response.data);
-        
+
         // Handle different response structures
         if (response.data?.data) {
           return response.data.data;
@@ -201,7 +202,7 @@ export const getAgentById = async (id: number): Promise<Agent> => {
         } else if (response.data?.team) {
           return response.data.team;
         }
-        
+
         return response.data;
       } catch (error) {
         console.log(`Endpoint ${endpoint} failed:`, error.response?.status, error.response?.data);
@@ -209,7 +210,7 @@ export const getAgentById = async (id: number): Promise<Agent> => {
         continue;
       }
     }
-    
+
     // If all endpoints fail, return mock data as fallback
     console.warn("All API endpoints failed for agent ID, returning mock data");
     return {
@@ -244,7 +245,7 @@ export const getAgentById = async (id: number): Promise<Agent> => {
 export const getFeaturedAgents = async (): Promise<Agent[]> => {
   try {
     console.log("Fetching featured agents from:", API_BASE_URL);
-    
+
     // Try different possible endpoints
     const endpoints = [
       '/agent/featured',
@@ -256,14 +257,14 @@ export const getFeaturedAgents = async (): Promise<Agent[]> => {
       '/team/top',
       '/api/team/top'
     ];
-    
+
     let lastError;
     for (const endpoint of endpoints) {
       try {
         console.log("Trying endpoint:", `${API_BASE_URL}${endpoint}`);
         const response = await apiClient.get(endpoint);
         console.log("API Response:", response.data);
-        
+
         // Handle different response structures
         if (response.data?.data && Array.isArray(response.data.data)) {
           return response.data.data;
@@ -274,7 +275,7 @@ export const getFeaturedAgents = async (): Promise<Agent[]> => {
         } else if (response.data?.team && Array.isArray(response.data.team)) {
           return response.data.team;
         }
-        
+
         return response.data;
       } catch (error) {
         console.log(`Endpoint ${endpoint} failed:`, error.response?.status, error.response?.data);
@@ -282,7 +283,7 @@ export const getFeaturedAgents = async (): Promise<Agent[]> => {
         continue;
       }
     }
-    
+
     // If all endpoints fail, fallback to all agents
     console.warn("All featured agent endpoints failed, falling back to all agents");
     return getAllAgents();
